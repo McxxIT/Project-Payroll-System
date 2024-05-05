@@ -39,9 +39,6 @@ Route::post('department.store', [DepartmentController::class,'store'])->name('de
 Route::post('position.store', [PositionController::class,'store'])->name('positionStore');
 
 
-Route::get('admin/payroll', function () {
-    return view('admin.payroll');
-})->name('payroll');
 
 Route::get('admin/payroll-update', function () {
     return view('admin.employee-payroll');
