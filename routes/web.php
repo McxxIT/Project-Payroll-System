@@ -1,5 +1,5 @@
 <?php
-HELLO WORLD
+hello world
 use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
