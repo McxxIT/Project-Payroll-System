@@ -1,0 +1,83 @@
+.content-body-wrapper {
+    padding: 0 10px;
+
+    .body-content {
+
+        .body-content-header {
+            display: flex;
+            padding-left: 10px;
+            border-bottom: 1px solid black;
+
+            a {
+                font-size: 1.4rem;
+                text-decoration: none;
+                color: black;
+                cursor: pointer;
+            }
+            .pad-left {
+                padding-left: 20px;
+            }
+            .pad-right {
+                padding-right: 20px;
+            }
+
+
+            .active-line {
+                border-bottom: 2px solid blue;
+            }
+        }
+
+        .body-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            padding-top: 20px;
+
+            .add-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 90px;
+                height: 30px;
+                background-color: rgb(27, 147, 251);
+                color: white;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                    color: white;
+                    cursor: pointer;
+                }
+
+            }
+
+            .search {
+                border-radius: 3px;
+                background: white;
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                transition: box-shadow 0.25s;
+            }
+
+            .search:focus-within {
+                box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+
+            }
+
+            .search-input {
+                font-size: 16px;
+                color: #333333;
+                margin-left: 10px;
+                outline: none;
+                border: none;
+                background: transparent;
+                width: 300px;
+            }
+        }
+    }
+}

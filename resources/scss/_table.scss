@@ -1,0 +1,1053 @@
+// =============EMPLOYEE TABLE===============
+.data {
+    overflow-x: auto;
+    border: 1px solid rgb(224, 224, 224);
+    width: 100%;
+
+    .table {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+
+        .table-header {
+            min-width: fit-content;
+
+            .table-row {
+                display: flex;
+                width: 100%;
+
+                .table-cell {
+                    border-top: 1px solid rgb(224, 224, 224);
+                    border-bottom: 1px solid rgb(224, 224, 224);
+                    padding: 10px;
+                    font-weight: bold;
+                    background-color: black;
+                    color: white;
+                    flex-grow: 1;
+
+                }
+
+                .table-cell:nth-child(1) {
+                    width: 10;
+                    min-width: 100px;
+                }
+
+                .table-cell:nth-child(2) {
+                    width: 26%;
+                    min-width: 260px;
+                }
+
+                .table-cell:nth-child(3) {
+                    width: 22%;
+                    min-width: 220px;
+                }
+
+                .table-cell:nth-child(4) {
+                    width: 22%;
+                    min-width: 220px;
+                }
+
+                .table-cell:nth-child(5) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+
+                .table-cell:nth-child(6) {
+                    width: 10%;
+                    min-width: 150px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+
+        .table-body {
+
+            .not-found-message {
+                display: none;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+                font-weight: bold;
+                height: 100px;
+                color: grey;
+            }
+
+            .highlight {
+                background-color: yellow;
+                font-weight: bold;
+            }
+
+            .table-row {
+                display: flex;
+                justify-content: space-between;
+
+                .table-cell {
+                    border-right: 1px solid rgb(224, 224, 224);
+                    border-bottom: 1px solid rgb(224, 224, 224);
+                    padding: 10px;
+                    white-space: nowrap;
+                    flex-grow: 1;
+                    font-size: 1rem;
+
+                    a {
+                        text-decoration: none;
+                    }
+                }
+
+                .red {
+                    color: red;
+                }
+
+                .green {
+                    color: green;
+                }
+
+                .table-cell:nth-child(1) {
+                    width: 10;
+                    min-width: 100px;
+                }
+
+                .table-cell:nth-child(2) {
+                    width: 26%;
+                    min-width: 260px;
+                }
+
+                .table-cell:nth-child(3) {
+                    width: 22%;
+                    min-width: 220px;
+                }
+
+                .table-cell:nth-child(4) {
+                    width: 22%;
+                    min-width: 220px;
+                }
+
+                .table-cell:nth-child(5) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+
+                .table-cell:nth-child(6) {
+                    width: 10%;
+                    min-width: 150px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 2px;
+
+                    .btn {
+                        border: none;
+                        padding: 5px;
+                        color: blue;
+                        background-color: transparent;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// ====================APPLICANT TABLE======================
+
+.data-1 {
+    overflow-x: auto;
+    border: 1px solid rgb(224, 224, 224);
+    width: 100%;
+
+    .table-1 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 0;
+
+        .table-header-1 {
+            min-width: fit-content;
+
+            .table-row-1 {
+                display: flex;
+                width: 100%;
+
+                .applicant-cell {
+                    border-top: 1px solid rgb(224, 224, 224);
+                    border-bottom: 1px solid rgb(224, 224, 224);
+                    padding: 10px;
+                    font-weight: bold;
+                    background-color: black;
+                    color: white;
+                    flex-grow: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .applicant-cell:nth-child(1) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+
+                .applicant-cell:nth-child(2) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .applicant-cell:nth-child(3) {
+                    width: 25%;
+                    min-width: 250px;
+                }
+
+                .applicant-cell:nth-child(4) {
+                    width: 25%;
+                    min-width: 200px;
+                }
+
+                .applicant-cell:nth-child(5) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+                .applicant-cell:nth-child(6) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+            }
+        }
+
+        .table-body-1 {
+
+            .not-found-message {
+                display: none;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+                font-weight: bold;
+                height: 100px;
+                color: grey;
+            }
+
+            .highlight {
+                background-color: yellow;
+                font-weight: bold;
+            }
+
+            .table-row-1 {
+                display: flex;
+                justify-content: space-between;
+
+                .applicant-cell {
+                    border-right: 1px solid rgb(224, 224, 224);
+                    border-bottom: 1px solid rgb(224, 224, 224);
+                    padding: 10px;
+                    white-space: nowrap;
+                    flex-grow: 1;
+
+                    a {
+                        text-decoration: none;
+                    }
+                }
+
+                .red {
+                    color: red;
+                }
+
+                .green {
+                    color: green;
+                }
+
+                .blue {
+                    color: blue;
+                }
+
+                .applicant-cell:nth-child(1) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+
+                .applicant-cell:nth-child(2) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .applicant-cell:nth-child(3) {
+                    width: 25%;
+                    min-width: 250px;
+                }
+
+                .applicant-cell:nth-child(4) {
+                    width: 25%;
+                    min-width: 200px;
+                }
+
+                .applicant-cell:nth-child(5) {
+                    width: 15%;
+                    min-width: 150px;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+
+                    form {
+                        .accept {
+                            background-color: green;
+                            color: white;
+                            padding: 3px 10px;
+                            border-radius: 3px;
+                        }
+
+                        .decline {
+                            background-color: red;
+                            color: white;
+                            padding: 3px 10px;
+                            border-radius: 3px;
+                        }
+                    }
+                }
+                .applicant-cell:nth-child(6) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+// =================PAYSLIP TABLE===================
+
+.data-2 {
+    overflow-x: auto;
+    border: 1px solid rgb(224, 224, 224);
+    width: 100%;
+
+    .table-2 {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+
+        .table-header-2 {
+            min-width: fit-content;
+
+            .table-row-2 {
+                display: flex;
+                width: 100%;
+
+                .payslip-cell {
+                    border-top: 1px solid rgb(224, 224, 224);
+                    border-bottom: 1px solid rgb(224, 224, 224);
+                    padding: 10px;
+                    font-weight: bold;
+                    background-color: black;
+                    color: white;
+                    flex-grow: 1;
+
+                }
+
+                .payslip-cell:nth-child(1) {
+                    width: 5%;
+                    min-width: 50px;
+                }
+
+                .payslip-cell:nth-child(2) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .payslip-cell:nth-child(3) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .payslip-cell:nth-child(4) {
+                    width: 30%;
+                    min-width: 300px;
+                }
+
+                .payslip-cell:nth-child(5) {
+                    width: 25%;
+                    min-width: 250px;
+                }
+
+                .payslip-cell:nth-child(6) {
+                    width: 10%;
+                    min-width: 150px;
+                }
+            }
+        }
+
+        .table-body-2 {
+
+            .not-found-message {
+                display: none;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+                font-weight: bold;
+                height: 100px;
+                color: grey;
+            }
+
+            .highlight {
+                background-color: yellow;
+                font-weight: bold;
+            }
+
+            .table-row-2 {
+                display: flex;
+                justify-content: space-between;
+
+                .payslip-cell {
+                    border-right: 1px solid rgb(224, 224, 224);
+                    border-bottom: 1px solid rgb(224, 224, 224);
+                    padding: 10px;
+                    white-space: nowrap;
+                    flex-grow: 1;
+
+                    a {
+                        text-decoration: none;
+                    }
+                }
+
+                .red {
+                    color: red;
+                }
+
+                .green {
+                    color: green;
+                }
+
+                .payslip-cell:nth-child(1) {
+                    width: 5%;
+                    min-width: 50px;
+                }
+
+                .payslip-cell:nth-child(2) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .payslip-cell:nth-child(3) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .payslip-cell:nth-child(4) {
+                    width: 30%;
+                    min-width: 300px;
+                }
+
+                .payslip-cell:nth-child(5) {
+                    width: 25%;
+                    min-width: 250px;
+                }
+
+                .payslip-cell:nth-child(6) {
+                    width: 10%;
+                    min-width: 150px;
+                }
+            }
+        }
+    }
+}
+
+// =============EMPLOYEE.PAYSLIP TABLE===============
+.data-3 {
+    overflow-x: auto;
+    border: 1px solid rgb(224, 224, 224);
+    width: 100%;
+
+    .table-3 {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+
+        .table-header-3 {
+            min-width: fit-content;
+
+            .table-row-3 {
+                display: flex;
+                width: 100%;
+
+                .emp-payslip-cell {
+                    border-top: 1px solid rgb(224, 224, 224);
+                    border-bottom: 1px solid rgb(224, 224, 224);
+                    padding: 10px;
+                    font-weight: bold;
+                    background-color: black;
+                    color: white;
+                    flex-grow: 1;
+
+                }
+
+                .emp-payslip-cell:nth-child(1) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+
+                .emp-payslip-cell:nth-child(2) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .emp-payslip-cell:nth-child(3) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .emp-payslip-cell:nth-child(4) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .emp-payslip-cell:nth-child(5) {
+                    width: 20%;
+                    min-width: 200px;
+                }
+
+                .emp-payslip-cell:nth-child(6) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .emp-payslip-cell:nth-child(7) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+            }
+        }
+
+        .table-body-3 {
+
+            .table-row-3 {
+                display: flex;
+                justify-content: space-between;
+
+                .emp-payslip-cell {
+                    border-right: 1px solid rgb(224, 224, 224);
+                    border-bottom: 1px solid rgb(224, 224, 224);
+                    padding: 10px;
+                    white-space: nowrap;
+                    flex-grow: 1;
+
+                    a {
+                        text-decoration: none;
+                    }
+                }
+
+                .red {
+                    color: red;
+                }
+
+                .green {
+                    color: green;
+                }
+
+                .emp-payslip-cell:nth-child(1) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+
+                .emp-payslip-cell:nth-child(2) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .emp-payslip-cell:nth-child(3) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .emp-payslip-cell:nth-child(4) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .emp-payslip-cell:nth-child(5) {
+                    width: 20%;
+                    min-width: 200px;
+                }
+
+                .emp-payslip-cell:nth-child(6) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .emp-payslip-cell:nth-child(7) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+            }
+        }
+    }
+}
+
+
+// =============THIS IS FOR EMPLOYEE PAGE TIMEKEEPING=============
+
+
+.data-4 {
+    overflow-x: auto;
+    border: 1px solid rgb(224, 224, 224);
+    width: 100%;
+
+    .table-4 {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+
+        .table-header-4 {
+            min-width: fit-content;
+
+            .table-row-4 {
+                display: flex;
+                width: 100%;
+
+                .tk-cell {
+                    border-top: 1px solid rgb(224, 224, 224);
+                    border-bottom: 1px solid rgb(224, 224, 224);
+                    padding: 10px;
+                    font-weight: bold;
+                    background-color: black;
+                    color: white;
+                    flex-grow: 1;
+
+                }
+
+                .tk-cell:nth-child(1) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+
+                .tk-cell:nth-child(2) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .tk-cell:nth-child(3) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .tk-cell:nth-child(4) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .tk-cell:nth-child(5) {
+                    width: 20%;
+                    min-width: 200px;
+                }
+
+                .tk-cell:nth-child(6) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .tk-cell:nth-child(7) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+            }
+        }
+
+        .table-body-4 {
+
+            .table-row-4 {
+                display: flex;
+                justify-content: space-between;
+
+                .tk-cell {
+                    border-right: 1px solid rgb(224, 224, 224);
+                    border-bottom: 1px solid rgb(224, 224, 224);
+                    padding: 10px;
+                    white-space: nowrap;
+                    flex-grow: 1;
+
+                    a {
+                        text-decoration: none;
+                    }
+                }
+
+                .red {
+                    color: red;
+                }
+
+                .green {
+                    color: green;
+                }
+
+                .tk-cell:nth-child(1) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+
+                .tk-cell:nth-child(2) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .tk-cell:nth-child(3) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .tk-cell:nth-child(4) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .tk-cell:nth-child(5) {
+                    width: 20%;
+                    min-width: 200px;
+                }
+
+                .tk-cell:nth-child(6) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .tk-cell:nth-child(7) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+            }
+        }
+    }
+}
+
+
+// =============TABLE FOR DEPARTMENT PAGE===============
+
+.data-5 {
+    overflow-x: auto;
+    border: 1px solid rgb(224, 224, 224);
+    width: 100%;
+
+    .table-5 {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+
+        .table-header-5 {
+            min-width: fit-content;
+
+            .table-row-5 {
+                display: flex;
+                width: 100%;
+
+                .table-cell-5 {
+                    border-top: 1px solid rgb(224, 224, 224);
+                    border-bottom: 1px solid rgb(224, 224, 224);
+                    padding: 10px;
+                    font-weight: bold;
+                    background-color: black;
+                    color: white;
+                    flex-grow: 1;
+
+                }
+
+                .table-cell-5:nth-child(1) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .table-cell-5:nth-child(2) {
+                    width: 45%;
+                    min-width: 450px;
+                }
+
+                .table-cell-5:nth-child(3) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+
+                .table-cell-5:nth-child(4) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+            }
+        }
+
+        .table-body-5 {
+
+            .not-found-message {
+                display: none;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+                font-weight: bold;
+                height: 100px;
+                color: grey;
+            }
+
+            .highlight {
+                background-color: yellow;
+                font-weight: bold;
+            }
+
+            .table-row-5 {
+                display: flex;
+                justify-content: space-between;
+
+                .table-cell-5 {
+                    border-right: 1px solid rgb(224, 224, 224);
+                    border-bottom: 1px solid rgb(224, 224, 224);
+                    padding: 10px;
+                    white-space: nowrap;
+                    flex-grow: 1;
+                    display: flex;
+                    align-items: center;
+
+                    a {
+                        text-decoration: none;
+                    }
+                }
+
+                .red {
+                    color: red;
+                }
+
+                .green {
+                    color: green;
+                }
+
+
+                .table-cell-5:nth-child(1) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .table-cell-5:nth-child(2) {
+                    width: 45%;
+                    min-width: 450px;
+                }
+
+                .table-cell-5:nth-child(3) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+
+                .table-cell-5:nth-child(4) {
+                    width: 10%;
+                    min-width: 100px;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+
+                    form {
+                        .accept {
+                            background-color: green;
+                            color: white;
+                            width: 70px;
+                            padding: 3px 10px;
+                            border-radius: 3px;
+                            cursor: pointer;
+                        }
+
+                        .decline {
+                            background-color: red;
+                            color: white;
+                            padding: 3px 10px;
+                            border-radius: 3px;
+                            width: 70px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// =============TABLE FOR POSITION PAGE===============
+
+.data-6 {
+    overflow-x: auto;
+    border: 1px solid rgb(224, 224, 224);
+    width: 100%;
+
+    .table-6 {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+
+        .table-header-6 {
+            min-width: fit-content;
+
+            .table-row-6 {
+                display: flex;
+                width: 100%;
+
+                .table-cell-6 {
+                    border-top: 1px solid rgb(224, 224, 224);
+                    border-bottom: 1px solid rgb(224, 224, 224);
+                    padding: 10px;
+                    font-weight: bold;
+                    background-color: black;
+                    color: white;
+                    flex-grow: 1;
+
+                }
+
+                .table-cell-6:nth-child(1) {
+                    width: 15%;
+                    min-width: 150px;
+                }
+
+                .table-cell-6:nth-child(2) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+
+                .table-cell-6:nth-child(3) {
+                    width: 35%;
+                    min-width: 350px;
+                }
+
+                .table-cell-6:nth-child(4) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+
+                .table-cell-6:nth-child(5) {
+                    width: 10%;
+                    min-width: 100px;
+                }
+            }
+        }
+
+        .table-body-6 {
+
+            .not-found-message {
+                display: none;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+                font-weight: bold;
+                height: 100px;
+                color: grey;
+            }
+
+            .highlight {
+                background-color: yellow;
+                font-weight: bold;
+            }
+
+            .table-row-6-header {
+                display: flex;
+                padding: 10px;
+                border-bottom: 1px solid rgb(224, 224, 224);
+                align-items: center;
+                width: 100%;
+
+                &:hover {
+                    background-color: rgba(171, 171, 171, 0.281);
+                }
+
+                .table-cell-6 {
+                    width: 100%;
+                    cursor: pointer;
+
+                }
+
+                .table-cell-6:nth-child(1) {
+                    width: 2%;
+                    min-width: 20px;
+
+                }
+            }
+
+            .position-body-wrapper {
+                display: none;
+                .dropdown-row {
+    
+                    .table-row-6 {
+                        .table-cell-6 {
+                            padding: 5px;
+                            border-bottom: 1px solid rgb(224, 224, 224);
+                            border-right: 1px solid rgb(224, 224, 224);
+                            display: flex;
+                            flex-grow: 1;
+                        }
+    
+                        .green {
+                            color: green;
+                        }
+    
+                        .red {
+                            color: red;
+                        }
+    
+                        .table-cell-6:nth-child(1) {
+                            width: 15%;
+                            min-width: 150px;
+    
+                        }
+    
+                        .table-cell-6:nth-child(2) {
+                            width: 10%;
+                            min-width: 100px;
+                        }
+    
+                        .table-cell-6:nth-child(3) {
+                            width: 35%;
+                            min-width: 350px;
+                        }
+    
+                        .table-cell-6:nth-child(4) {
+                            width: 10%;
+                            min-width: 100px;
+                        }
+    
+                        .table-cell-6:nth-child(5) {
+                            width: 10%;
+                            min-width: 100px;
+                            display: flex;
+                            justify-content: space-evenly;
+                            align-items: center;
+    
+                            form {
+                                .accept {
+                                    background-color: green;
+                                    color: white;
+                                    width: 70px;
+                                    padding: 3px 10px;
+                                    border-radius: 3px;
+                                }
+    
+                                .decline {
+                                    background-color: red;
+                                    color: white;
+                                    width: 70px;
+                                    padding: 3px 10px;
+                                    border-radius: 3px;
+                                }
+                            }
+                        }
+                    }
+    
+                    .dropdown-row-flex {
+                        display: flex;
+                        justify-content: space-between;
+                        flex-grow: 1;
+    
+                        span {
+                            width: 30%;
+                        }
+    
+                        span:nth-child(1) {
+                            width: 40%;
+                        }
+                    }
+                }
+    
+                .dropdown-row:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}

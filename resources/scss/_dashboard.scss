@@ -1,0 +1,336 @@
+.dashboard-container {
+    .content-wrapper {
+        margin-top: 100px;
+        margin-left: 230px;
+
+        .content-body {
+            .c-body-flex {
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+
+                .item-1 {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+
+                    .item-header {
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                    }
+
+                    .item-body {
+                        border-left: 3px solid rgb(2, 176, 2);
+                        height: auto;
+                        background-color: white;
+                        border-radius: 3px;
+                        padding: 20px 40px;
+                        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+
+                        .body-flex {
+                            display: flex;
+                            height: 100%;
+                            justify-content: space-between;
+                            gap: 15px;
+
+
+
+                            .body-flex-item {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                                justify-content: center;
+
+                                .header {
+                                    color: grey;
+                                    font-size: 0.9rem;
+                                    font-weight: 700;
+                                    white-space: nowrap;
+                                }
+
+                                .body {
+                                    font-size: 1.7rem;
+                                    font-weight: 700;
+                                    white-space: nowrap;
+                                }
+
+                                .redirect-details {
+                                    padding: 10px 5px;
+                                    width: 180px;
+                                    font-weight: 200;
+                                    text-align: center;
+                                    border-radius: 7px;
+                                    background-color: #42a5f5;
+                                    cursor: pointer;
+                                    font-size: 1.2rem;
+
+                                    &:hover {
+                                        background-color: #2693ed;
+                                    }
+
+                                    a {
+                                        text-decoration: none;
+                                        color: white;
+                                    }
+                                }
+
+                            }
+                        }
+
+                    }
+
+                }
+
+
+                .item-2 {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+
+                    .item-header {
+                        font-size: 1.2rem;
+                        font-weight: 700;
+
+                    }
+
+                    .item-body {
+                        height: 200px;
+                        border-radius: 3px;
+
+
+
+                        .body-flex {
+                            display: flex;
+                            height: 100%;
+                            width: 100%;
+                            gap: 15px;
+
+
+                            .body-flex-item {
+                                display: flex;
+                                justify-content: space-between;
+                                width: 70%;
+                                padding: 20px 40px;
+                                gap: 20px;
+                                background-color: white;
+                                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+                                .inside-body-item {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: space-evenly;
+
+                                    .header {
+                                        display: flex;
+                                        gap: 20px;
+                                        flex-direction: column;
+
+
+
+                                        .bi {
+                                            font-size: 1.1rem;
+                                            padding: 14px 15px;
+                                            background-color: rgba(0, 0, 255, 0.1);
+                                            border-radius: 100%;
+
+                                            color: blue;
+
+                                        }
+
+                                        .title {
+                                            color: blue;
+                                            font-size: 0.9rem;
+                                            font-weight: 700;
+                                            white-space: nowrap;
+
+                                        }
+
+                                    }
+
+                                    .body {
+
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 10px;
+
+                                        span:nth-child(1) {
+                                            font-size: 1.7rem;
+                                        }
+
+                                        a {
+                                            text-decoration: none;
+                                            color: blue;
+
+                                            &:hover {
+                                                color: rgb(0, 0, 192);
+                                            }
+                                        }
+
+                                    }
+                                }
+
+                                .inside-body-item:nth-child(2) {
+                                    .header {
+                                        .bi {
+                                            background-color: rgba(255, 166, 0, 0.1);
+                                            color: orange;
+                                        }
+
+                                        .title {
+                                            color: orange;
+                                        }
+                                    }
+                                }
+
+                                .inside-body-item:nth-child(3) {
+                                    .header {
+                                        .bi {
+                                            background-color: rgba(0, 128, 0, 0.1);
+                                            color: green;
+                                        }
+
+                                        .title {
+                                            color: green;
+                                        }
+                                    }
+                                }
+
+
+                            }
+
+                            .body-flex-item2 {
+                                width: 30%;
+                                padding: 40px 40px;
+                                background-color: white;
+                                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+                                .inside-body-item {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                    gap: 20px;
+
+                                    .header {
+                                        white-space: nowrap;
+                                        display: flex;
+
+                                        .t-employees {
+                                            font-size: 0.9rem;
+                                            color: grey;
+                                            font-weight: 700;
+
+                                        }
+                                    }
+
+                                    .body {
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+
+                                        .n-employees {
+                                            font-size: 2.5rem;
+                                            margin-bottom: 20px;
+
+                                        }
+
+                                        a {
+                                            text-decoration: none;
+                                            color: blue;
+
+                                            &:hover {
+                                                color: rgb(0, 0, 192);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .latest-employees {
+
+
+
+                            .header {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 15px;
+                                padding: 15px 0;
+
+                                .title {
+                                    font-size: 1.2rem;
+                                    font-weight: 700;
+                                }
+                            }
+
+                            .body {
+                                padding: 5px 10px;
+
+                                .header-col {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    border-bottom: 2px solid black;
+                                    padding: 5px 10px;
+                                    background-color: black;
+                                    border-top-left-radius: 10px;
+                                    border-top-right-radius: 10px;
+
+
+                                    span {
+                                        width: 20%;
+                                        color: white;
+                                    }
+
+                                    span:nth-child(2) {
+                                        width: 40%;
+                                    }
+
+                                    span:nth-child(3) {
+                                        width: 40%;
+                                    }
+                                }
+
+                                .content-col {
+                                    .body-row {
+                                        display: flex;
+                                        justify-content: space-between;
+                                        border-bottom: 1.5px solid grey;
+                                        padding: 5px 10px;
+
+                                        span {
+                                            width: 20%;
+                                        }
+
+                                        span:nth-child(2) {
+                                            width: 40%;
+                                        }
+
+                                        span:nth-child(3) {
+                                            width: 40%;
+                                        }
+                                    }
+
+                                    .body-row:last-child {
+                                        border-bottom: none;
+                                    }
+                                }
+
+                            }
+
+                        }
+
+
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+@media(max-width:1024px) {
+    .content-wrapper {
+        margin-left: 0;
+    }
+}

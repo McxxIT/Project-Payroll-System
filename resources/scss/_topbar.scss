@@ -1,0 +1,134 @@
+.topbar-wrapper {
+
+    background-color: rgb(20, 20, 20);
+    margin-left: 230px;
+    white-space: nowrap;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    
+
+    .profile-wrapper {
+        display: flex;
+        text-align: center;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 30px;
+
+
+        .c-header-flex {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+
+            .title {
+                font-size: 2rem;
+                font-weight: bold;
+                padding-right: 20px;
+                color: rgb(203, 200, 200);
+                border-right: 3px solid white;
+            }
+
+            .greetings {
+                font-size: 1.4rem;
+                color: grey;
+            }
+        }
+
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .name {
+                color: rgb(203, 200, 200);
+                font-size: 1.4rem;
+                text-decoration: none;
+
+                &:hover {
+                    color: blue;
+                }
+            }
+
+            img {
+                width: 50px;
+                height: auto;
+                border-radius: 100%;
+                cursor: pointer;
+
+                &:hover {
+                    color: blue;
+                }
+
+            }
+
+            .bi {
+                font-size: 2rem;
+                color: rgb(203, 200, 200);
+
+                &:hover {
+                    color: blue;
+                }
+            }
+
+            .out-flex-wrapper {
+                .text-logout {
+                    color: rgb(203, 200, 200);
+                    cursor: pointer;
+
+                    &:hover {
+                        color: blue;
+                    }
+                }
+                
+            }
+
+
+        }
+
+        .profile:hover {
+            cursor: default;
+        }
+
+        .profile-menu {
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+            gap: 10px;
+            padding: 20px 0 20px 0px;
+            font-family: fonts;
+            width: 100%;
+
+
+        }
+
+        a {
+
+            color: rgb(148, 157, 180);
+            text-decoration: none;
+
+            i {
+                margin-right: 10px;
+            }
+
+        }
+
+        a:not(.active):hover {
+            color: rgb(18, 0, 157);
+        }
+
+        .active {
+            color: green;
+
+            &:hover {
+                scale: 1.1;
+            }
+
+        }
+    }
+
+}
