@@ -1,5 +1,5 @@
 <?php
-hello world
+alkvna;qwnvlin
 use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
