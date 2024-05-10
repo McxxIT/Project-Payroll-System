@@ -25,14 +25,22 @@
                 </div>
 
                 <div class="sider-menu">
-                    <a class="menu-background" href="{{ route('dashboard') }}"><i class="bi bi-boxes"></i><span>Dashboard</span></a>
-                    <a class="menu-background" href="{{ route('employee') }}"><i class="bi bi-person-rolodex"></i><span>Employees</span></a>
-                    <a class="menu-background" href="{{ route('applicant') }}"><i class="bi bi-person-rolodex"></i><span>Applicant</span></a>
-                    <a class="menu-background" href="{{ route('archive') }}"><i class="bi bi-archive"></i><span>Archive</span></a>
-                    <a class="menu-background" href="{{ route('payroll') }}"><i class="bi bi-credit-card-2-front"></i><span>Payroll</span></a>
-                    <a class="menu-background" href="{{ route('payroll-report') }}"><i class="bi bi-file-earmark-post"></i></i><span>Payroll Report</span></a>
-                    <a class="menu-background" href="{{ route('payslip') }}"><i class="bi bi-wallet"></i><span>Payslip</span></a>
-                    <a class="menu-background" href="{{route('company')}}"><i class="bi bi-buildings"></i><span>Company</span></a>
+                    <a class="menu-background" href="{{ route('dashboard') }}"><i
+                            class="bi bi-boxes"></i><span>Dashboard</span></a>
+                    <a class="menu-background" href="{{ route('employee') }}"><i
+                            class="bi bi-person-rolodex"></i><span>Employees</span></a>
+                    <a class="menu-background" href="{{ route('applicant') }}"><i
+                            class="bi bi-person-rolodex"></i><span>Applicant</span></a>
+                    <a class="menu-background" href="{{ route('archive') }}"><i
+                            class="bi bi-archive"></i><span>Archive</span></a>
+                    <a class="menu-background" href="{{ route('payroll') }}"><i
+                            class="bi bi-credit-card-2-front"></i><span>Payroll</span></a>
+                    <a class="menu-background" href="{{ route('payroll-report') }}"><i
+                            class="bi bi-file-earmark-post"></i></i><span>Payroll Report</span></a>
+                    <a class="menu-background" href="{{ route('payslip') }}"><i
+                            class="bi bi-wallet"></i><span>Payslip</span></a>
+                    <a class="menu-background" href="{{ route('company') }}"><i
+                            class="bi bi-buildings"></i><span>Company</span></a>
                 </div>
             </div>
         </div>
@@ -61,8 +69,8 @@
         </div>
         <!-- ================MAIN CONTENT DATA=========== -->
         <div class="content-wrapper">
-            <form action="">
-
+            <form action="{{ route('employee-payslip') }}" method="POST">
+                @csrf
                 <div class="payroll-wrapper">
 
                     <fieldset class="parent-card">
@@ -72,13 +80,17 @@
                                 <legend class="card-header">Employee</legend>
                                 <div class="card-body">
                                     <span>Employee ID: </span>
-                                    <input type="number" class="form-control" placeholder="123456789">
+                                    <input type="number" class="form-control" value="{{ $employee->userID }}"
+                                        disabled>
                                     <span>Employee Name</span>
-                                    <input type="text" class="form-control" placeholder="Robert Falle">
-                                    <span>Position</span>
-                                    <input type="text" class="form-control" placeholder="Clerk">
+                                    <input type="text" class="form-control"
+                                        value="{{ $employee->firstname }} {{ $employee->lastname }}" disabled>
                                     <span>Department</span>
-                                    <input type="text" class="form-control" placeholder="Front Desk">
+                                    <input type="text" class="form-control" value="{{ $employee->department }}"
+                                        disabled>
+                                    <span>Position</span>
+                                    <input type="text" class="form-control" value="{{ $employee->position }}"
+                                        disabled>
 
                                 </div>
                             </fieldset>
@@ -92,13 +104,13 @@
                                 <legend class="card-header">Income</legend>
                                 <div class="card-body">
                                     <span>Work days: </span>
-                                    <input type="number" class="form-control" placeholder="0">
+                                    <input type="number" class="form-control" placeholder="0" name="workDays" id="workDaysInput" required>
                                     <span>Hourly Rate: </span>
-                                    <input type="number" class="form-control" placeholder="0.00">
+                                    <input type="number" class="form-control" placeholder="0.00" name="hourlyRate" id="hourlyRateInput" required>
                                     <span>Hours Rendered: </span>
-                                    <input type="number" class="form-control" placeholder="0">
+                                    <input type="number" class="form-control" placeholder="0" name="hoursRender" id="hoursRenderInput" required>
                                     <span>Total: </span>
-                                    <input type="number" class="form-control" placeholder="0.00" disabled>
+                                    <input type="number" class="form-control" placeholder="0" name="totalIncome" id="totalIncomeInput" disabled>
                                 </div>
 
 
@@ -107,22 +119,22 @@
                                     <div class="card-body">
                                         <div class="card-body-flex">
                                             <span>Reqular OT: </span>
-                                            <input type="number" class="form-control" placeholder="0.00">
+                                            <input type="number" class="form-control" placeholder="0.00" name="regularOT" id="regularOTInput">
                                             <span>Sunday OT: </span>
-                                            <input type="number" class="form-control" placeholder="0.00">
+                                            <input type="number" class="form-control" placeholder="0.00" name="sundayOT" id="sundayOTInput">
                                             <span>Holiday OT: </span>
-                                            <input type="number" class="form-control" placeholder="0.00">
+                                            <input type="number" class="form-control" placeholder="0.00" name="holidayOT" id="holidayOTInput">
                                         </div>
 
                                         <div class="card-body-flex">
                                             <span>Allowances: </span>
-                                            <input type="number" class="form-control" placeholder="0.00">
+                                            <input type="number" class="form-control" placeholder="0.00" name="allowances" id="allowancesInput">
                                             <span>Incentives: </span>
-                                            <input type="number" class="form-control" placeholder="0.00">
+                                            <input type="number" class="form-control" placeholder="0.00" name="incentives" id="incentivesInput">
                                             <span>Bonuses: </span>
-                                            <input type="number" class="form-control" placeholder="0.00">
+                                            <input type="number" class="form-control" placeholder="0.00" name="bonuses" id="bonusesInput">
                                             <span>Total: </span>
-                                            <input type="number" class="form-control" placeholder="0.00" disabled>
+                                            <input type="number" class="form-control" placeholder="0.00" name="totalOT" id="totalOTInput" disabled>
                                         </div>
 
                                     </div>
@@ -130,7 +142,7 @@
 
                                 <div class="total-footer">
                                     <span>Gross Salary: </span>
-                                    <input type="number" class="form-control" placeholder="0.00" disabled>
+                                    <input type="number" class="form-control" placeholder="0.00" name="grossSalary" id="grossSalaryInput" disabled>
                                 </div>
 
 
@@ -143,37 +155,31 @@
                                     <div class="card-body-flex">
                                         <div class="flex">
                                             <span>PhilHealth: </span>
-                                            <input type="number" class="form-control" placeholder="0.00">
+                                            <input type="number" class="form-control" placeholder="0.00" name="philHealth" id="philHealthInput">
                                         </div>
                                         <div class="flex">
                                             <span>Pag-ibig: </span>
-                                            <input type="number" class="form-control" placeholder="0.00">
+                                            <input type="number" class="form-control" placeholder="0.00" name="pagIbig" id="pagIbigInput">
                                         </div>
                                         <div class="flex">
-                                            <span>SSS Loans: </span>
-                                            <input type="number" class="form-control" placeholder="0.00">
+                                            <span>SSS: </span>
+                                            <input type="number" class="form-control" placeholder="0.00" name="sss" id="sssInput">
                                         </div>
                                     </div>
                                     <div class="card-body-flex">
                                         <div class="flex">
                                             <span>Lates: </span>
-                                            <input type="number" class="form-control" placeholder="0">
+                                            <input type="number" class="form-control" placeholder="0" name="lates" id="latesInput">
                                         </div>
                                         <div class="flex">
                                             <span>Absents: </span>
-                                            <input type="number" class="form-control" placeholder="0">
+                                            <input type="number" class="form-control" placeholder="0" name="absents" id="absentsInput">
                                         </div>
-
-
                                     </div>
-
-
-
                                 </div>
-
                                 <div class="total-footer">
                                     <span>Total Deductions: </span>
-                                    <input type="text" class="form-control" placeholder="0" disabled>
+                                    <input type="number" class="form-control" placeholder="0" name="totalDeductions" id="totalDeductionsInput" disabled>
                                 </div>
 
 
@@ -181,8 +187,7 @@
 
                             <div class="content-foooter">
                                 <span>TOTAL SALARY: </span>
-                                <input type="text" class="form-control" placeholder="0.00" disabled>
-
+                                <input type="number" class="form-control" placeholder="0.00" name="totalSalary" id="totalSalaryInput" disabled>
                             </div>
 
                         </div>
@@ -200,6 +205,85 @@
         </div>
 
     </div>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function updateTotalIncome() {
+                var workDays = parseFloat(document.getElementById('workDaysInput').value) || 0;
+                var hoursRender = parseFloat(document.getElementById('hoursRenderInput').value) || 0;
+                var hourlyRate = parseFloat(document.getElementById('hourlyRateInput').value) || 0;
+                var income = (hoursRender * hourlyRate) * workDays;
+                document.getElementById('totalIncomeInput').value = income.toFixed(2);
+                updateTotalIncomeAndOT();
+                updateTotalSalary();
+            }
+
+            function updateTotalOT() {
+                var regularOT = parseFloat(document.getElementById('regularOTInput').value) || 0;
+                var sundayOT = parseFloat(document.getElementById('sundayOTInput').value) || 0;
+                var holidayOT = parseFloat(document.getElementById('holidayOTInput').value) || 0;
+                var allowances = parseFloat(document.getElementById('allowancesInput').value) || 0;
+                var incentives = parseFloat(document.getElementById('incentivesInput').value) || 0;
+                var bonuses = parseFloat(document.getElementById('bonusesInput').value) || 0;
+                var totalOT = regularOT + sundayOT + holidayOT + allowances + incentives + bonuses;
+                document.getElementById('totalOTInput').value = totalOT.toFixed(2);
+                updateTotalIncomeAndOT();
+            }
+
+            function updateTotalIncomeAndOT() {
+                var totalIncome = parseFloat(document.getElementById('totalIncomeInput').value) || 0;
+                var totalOT = parseFloat(document.getElementById('totalOTInput').value) || 0;
+                var totalIncomeAndOT = totalIncome + totalOT;
+                document.getElementById('grossSalaryInput').value = totalIncomeAndOT.toFixed(2);
+                updateTotalSalary(); 
+
+            function updateTotalDeductions() {
+                var philHealth = parseFloat(document.getElementById('philHealthInput').value) || 0;
+                var pagIbig = parseFloat(document.getElementById('pagIbigInput').value) || 0;
+                var sss = parseFloat(document.getElementById('sssInput').value) || 0;
+                var lates = parseFloat(document.getElementById('latesInput').value) || 0;
+                var absents = parseFloat(document.getElementById('absentsInput').value) || 0;
+                var totalDeductions = philHealth + pagIbig + sss + lates + absents;
+                document.getElementById('totalDeductionsInput').value = totalDeductions.toFixed(2);
+                updateTotalSalary();
+            }
+
+            function updateTotalSalary() {
+                var totalIncomeAndOT = parseFloat(document.getElementById('grossSalaryInput').value) || 0;
+                var totalDeductions = parseFloat(document.getElementById('totalDeductionsInput').value) || 0;
+                var overallSalary = totalIncomeAndOT - totalDeductions;
+                document.getElementById('totalSalaryInput').value = overallSalary.toFixed(2);
+            }
+
+            document.getElementById('workDaysInput').addEventListener('input', updateTotalIncome);
+            document.getElementById('hoursRenderInput').addEventListener('input', updateTotalIncome);
+            document.getElementById('hourlyRateInput').addEventListener('input', updateTotalIncome);
+
+            document.getElementById('regularOTInput').addEventListener('input', updateTotalOT);
+            document.getElementById('sundayOTInput').addEventListener('input', updateTotalOT);
+            document.getElementById('holidayOTInput').addEventListener('input', updateTotalOT);
+            document.getElementById('allowancesInput').addEventListener('input', updateTotalOT);
+            document.getElementById('incentivesInput').addEventListener('input', updateTotalOT);
+            document.getElementById('bonusesInput').addEventListener('input', updateTotalOT);
+
+            document.getElementById('philHealthInput').addEventListener('input', updateTotalDeductions);
+            document.getElementById('pagIbigInput').addEventListener('input', updateTotalDeductions);
+            document.getElementById('sssInput').addEventListener('input', updateTotalDeductions);
+            document.getElementById('latesInput').addEventListener('input', updateTotalDeductions);
+            document.getElementById('absentsInput').addEventListener('input', updateTotalDeductions);
+
+            updateTotalIncome();
+            updateTotalOT();
+            updateTotalDeductions();
+            updateTotalSalary(); 
+        });
+    </script>
+
+
+
+
 
 </body>
 

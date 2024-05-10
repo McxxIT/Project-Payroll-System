@@ -1,0 +1,23 @@
+@media(max-width:736px){
+
+
+    .sidebar-wrapper {
+        display: none;
+        margin-top: 70px;
+        width: 0;
+        transition: width 0.3s ease;
+
+        &.active {
+            width: 230px;
+        }
+
+        .sidebar-toggle {
+            display: block;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 1100;
+        }
+    }
+}
+

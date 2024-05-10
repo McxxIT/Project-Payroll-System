@@ -137,7 +137,7 @@
 
                                     @foreach ($employees as $employee)
                                         <div class="table-row">
-                                            <div class="table-cell">{{ $employee->userID }}</div>
+                                            <div class="table-cell">E{{ $employee->userID }}</div>
                                             <div class="table-cell">{{ $employee->firstname }}
                                                 {{ $employee->lastname }}</div>
                                             <div class="table-cell">{{ $employee->position }}</div>
@@ -148,7 +148,7 @@
                                             @elseif ($employee->is_active == 0)
                                                 <div class="table-cell red">Inactive</div>
                                             @endif
-                                            <form action="/employee-details/{{ $employee->id }}" method="post" class="table-cell">
+                                            <form action="/employee-details/{{ $employee->userID }}" method="post" class="table-cell">
                                                 @csrf
                                                 <button type="submit" class="btn"><span>
                                                     <i class="bi bi-pencil-square"></i>View Details</span>

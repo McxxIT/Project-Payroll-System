@@ -22,7 +22,7 @@ class EmployeeController extends Controller
     }
 
     public function getEmployee ($id) {
-        $employee = User::findOrFail($id);
+        $employee = User::where('userID', $id)->first();
         $departments = Department::where('is_active',1)->get();
         $positions = Position::where('is_active',1)->get();
         return view('admin.view-employees-details')

@@ -81,7 +81,7 @@
                     <img src="/assets/imgs/pfp.jpg">
                 </div>
                 <div class="username">
-                    <span>{{ $employee->firstname }}{{ $employee->lastname }}</span>
+                    <span>{{ $employee->firstname }} {{ $employee->lastname }}</span>
                     <span>{{ $employee->email }}</span>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                                     <span>Full Name</span>
                                 </div>
                                 <div class="flex">
-                                    <span>{{ $employee->firstname }}{{ $employee->lastname }}</span>
+                                    <span>{{ $employee->firstname }} {{ $employee->lastname }}</span>
                                 </div>
                             </div>
 
@@ -130,41 +130,7 @@
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="by-details">
-                        <div class="header">
-                            <span>Contact Information</span>
-                        </div>
-                        <div class="body">
-                            <div class="inside-body">
-                                <div class="flex">
-                                    <span>Mailing Address</span>
-                                </div>
-                                <div class="flex">
-                                    <span>{{ $employee->email }}</span>
-                                </div>
-                            </div>
-
-                            <div class="inside-body">
-                                <div class="flex">
-                                    <span>Phone Number</span>
-                                </div>
-                                <div class="flex">
-                                    <span>{{ $employee->contact }}</span>
-                                </div>
-                            </div>
-
-                            <div class="inside-body">
-                                <div class="flex">
-                                    <span>Telephone Number</span>
-                                </div>
-                                <div class="flex">
-                                    <span>set telephone no.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                     <div class="by-details">
                         <div class="header">
@@ -176,7 +142,7 @@
                                     <span>Employee ID</span>
                                 </div>
                                 <div class="flex">
-                                    <span>{{ $employee->id }}</span>
+                                    <span>E{{ $employee->userID }}</span>
                                 </div>
                             </div>
 
@@ -186,9 +152,9 @@
                                 </div>
                                 <div class="flex">
                                     <select name="department_id" id="departmentSelect">
+                                        <option value="">-</option>
                                         @foreach ($departments as $department)
-                                            <option value="{{ $department->id }}" id="department">
-                                                {{ $department->department_name }}</option>
+                                            <option value="{{ $department->id }}" id="department"> {{ $department->department_name }}</option>
                                         @endforeach
 
                                     </select>
@@ -201,9 +167,9 @@
                                 </div>
                                 <div class="flex">
                                     <select name="position_id" id="position">
+                                        <option value="">-</option>
                                         @foreach ($positions as $position)
-                                            <option value="{{ $position->id }}">{{ $position->position_name }}
-                                            </option>
+                                            <option value="{{ $position->id }}" id="position">{{ $position->position_name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -228,6 +194,19 @@
                                     @elseif ($employee->is_active == 0)
                                         <span>Inactive</span>
                                     @endif
+                                </div>
+                            </div>
+
+                            <div class="inside-body">
+                                <div class="flex">
+                                    <span>Work Shift</span>
+                                </div>
+                                <div class="flex">
+                                    <select name="user_type" id="type">
+                                        <option>Day Shift (7am-3pm)</option>
+                                        <option>Swing Shif (3pm-11pm)</option>
+                                        <option>Graveyard Shift (11pm-7am)</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -299,6 +278,40 @@
                                 </div>
                                 <div class="flex">
                                     <span>{{ $employee->nationality }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="by-details">
+                        <div class="header">
+                            <span>Contact Information</span>
+                        </div>
+                        <div class="body">
+                            <div class="inside-body">
+                                <div class="flex">
+                                    <span>Mailing Address</span>
+                                </div>
+                                <div class="flex">
+                                    <span>{{ $employee->email }}</span>
+                                </div>
+                            </div>
+
+                            <div class="inside-body">
+                                <div class="flex">
+                                    <span>Phone Number</span>
+                                </div>
+                                <div class="flex">
+                                    <span>{{ $employee->contact }}</span>
+                                </div>
+                            </div>
+
+                            <div class="inside-body">
+                                <div class="flex">
+                                    <span>Telephone Number</span>
+                                </div>
+                                <div class="flex">
+                                    <span>set telephone no.</span>
                                 </div>
                             </div>
                         </div>

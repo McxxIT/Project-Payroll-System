@@ -17,6 +17,9 @@
         justify-content: space-between;
         padding: 20px 30px;
 
+        .sidebar-toggle{
+            display: none;
+        }
 
         .c-header-flex {
             display: flex;

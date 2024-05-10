@@ -55,6 +55,29 @@
         {{-- ===================MAIN CONTENT===================== --}}
 
 
+        <div class="modal-wrapper">
+
+            <div class="modal-card">
+                <div class="modal-flex-card">
+                    <div class="heading">
+                        <span class="">Request a Leave</span>
+                    </div>
+                    <form action="{{ route('departmentStore') }}" method="POST" class="body-form">
+                        @csrf
+                        <div class="body">
+                            <label for="" class="title">Leave Reason:</label>
+                            <input type="text" name="department_name">
+                        </div>
+                        <div class="footer">
+                            <button class="close">Cancel</button>
+                            <button type="submit">Save</button>
+                        </div>  
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
         <div class="content-wrapper">
 
             <div class="content-body-wrapper">
@@ -78,6 +101,10 @@
                 </div>
 
                 <div class="body-content">
+
+                    <div class="leave-form">
+                        <button class="add">Request a Leave</button>
+                    </div>
 
                     <div class="body-content-flex">
 
@@ -140,6 +167,12 @@
         </div>
 
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../javascript/modal-script.js"></script>
 
 </body>
 
