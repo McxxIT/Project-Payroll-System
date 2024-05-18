@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('income', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('employee_id');
+            $table->integer('income_id');
+            $table->integer('userID');
             $table->integer('workDays');
             $table->integer('hourlyRate');
             $table->integer('hoursRendered');
-            $table->integer('incomeTotal');
+            $table->integer('totalIncome');
 
             $table->integer('RegOT');
             $table->integer('SunOT');
@@ -27,6 +28,10 @@ return new class extends Migration
             $table->integer('Bonuses');
             $table->integer('otTotal');
 
+            $table->date('datefrom');
+            $table->date('dateto');
+
+            $table->foreign('userID')->references('userID')->on('users');
             $table->integer('grossSalary');
             $table->timestamps();
         });

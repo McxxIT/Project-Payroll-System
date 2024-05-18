@@ -115,7 +115,7 @@
 
 
                                 <div class="table-row-1">
-                                    <div class="applicant-cell">{{ $applicant->id }}</div>
+                                    <div class="applicant-cell">{{ $applicant->userID }}</div>
                                     <div class="applicant-cell">{{ $applicant->username }}</div>
                                     <div class="applicant-cell">{{ $applicant->firstname }} {{ $applicant->lastname }}</div>
                                     <div class="applicant-cell">{{ $applicant->email }}</div>

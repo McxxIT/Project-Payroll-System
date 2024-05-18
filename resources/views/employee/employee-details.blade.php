@@ -28,7 +28,7 @@
                 <div class="sider-menu">
                     <a class="menu-background" href="{{ route('employee-dashboard') }}"><i
                             class="bi bi-boxes"></i><span>Dashboard</span></a>
-                    <a class="menu-background" href="{{ route('employee-payslip') }}"><i
+                    <a class="menu-background" href="{{ route ('employee.payslip') }}"><i
                             class="bi bi-person-rolodex"></i><span>Payslip</span></a>
                     <a class="menu-background" href="{{ route('employee-timekeeping') }}"><i
                             class="bi bi-alarm"></i><span>Timekeeping</span></a>
@@ -74,12 +74,12 @@
                                 <span>Address:</span>
                             </div>
                             <div class="p-h-content">
-                                <span>123</span>
-                                <span>Robert Falle</span>
-                                <span>HR</span>
-                                <span>RobertJhonDoe@example.com</span>
-                                <span>0987654321</span>
-                                <span>Davao, Central, Manila City</span>
+                                <span>{{ $employee->userID }}</span>
+                                <span>{{ $employee->firstname }}{{ $employee->lastname }}</span>
+                                <span>{{ $employee->position_name }}</span>
+                                <span>{{ $employee->email }}</span>
+                                <span>{{ $employee->contact }}</span>
+                                <span>{{ $employee->address }}</span>
                             </div>
                         </div>
                         <div class="payslip-header-right">

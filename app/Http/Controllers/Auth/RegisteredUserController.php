@@ -34,12 +34,7 @@ class RegisteredUserController extends Controller
             'lastname' => 'required',
             'email' => 'required|email|unique:users',
             'username' => 'required|unique:users',
-            'address' => 'required',
-            'contact' => 'required',
-            'birthdate' => 'required|date',
-            'gender' => 'required',
-            'status' => 'required',
-            'nationality' => 'required',
+            'birthdate' => 'required',
         ]);
 
         do {
@@ -58,7 +53,7 @@ class RegisteredUserController extends Controller
             'gender' => $request->gender,
             'status' => $request->status,
             'nationality' => $request->nationality,
-            'password' => Hash::make($request->password),
+            'password' => Hash::make('admin'),
         ]);
 
         event(new Registered($user));

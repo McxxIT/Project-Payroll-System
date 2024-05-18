@@ -31,24 +31,24 @@
                         <div class="item1">
                             <div class="input">
                                 <label for="" class="">First Name</label>
-                                <input type="text" name="firstname" class="" placeholder="First Name">
+                                <input type="text" name="firstname" class="" placeholder="First Name" required>
                             </div>
                             <div class="input">
                                 <label for="" class="">Last Name</label>
-                                <input type="text" name="lastname" class="" placeholder="Last Name">
+                                <input type="text" name="lastname" class="" placeholder="Last Name" required>
                             </div>
                         </div>
                         <div class="item1">
                             <div class="input">
                                 <label for="" class="">Email Address</label>
                                 <input type="text" name="email" class=""
-                                    placeholder="e.g. robertfalle@gmail.com">
+                                    placeholder="e.g. robertfalle@gmail.com" required>
                             </div>
                         </div>
                         <div class="item1">
                             <div class="input">
                                 <label for="" class="">Username</label>
-                                <input type="text" name="username" class="" placeholder="Username">
+                                <input type="text" name="username" class="" placeholder="Username" required>
                             </div>
                         </div>
                         <div class="item1">
@@ -99,19 +99,6 @@
                     
                     
                 </div>
-
-                <!--
-                First Name
-                Last Name
-                Username
-                Email
-                Contact Number
-                Status
-                Nationality
-                VBirthdate
-                Gender
-                Address
-             -->
             </div>
         </div>
 

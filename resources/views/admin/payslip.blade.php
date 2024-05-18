@@ -106,40 +106,20 @@
                                     <div id="notFoundMessage" class="not-found-message">
                                         NOT FOUND
                                     </div>
-
+                                    @foreach ($employees as $employee)
                                     <div class="table-row-2">
-                                        <div class="payslip-cell">1</div>
-                                        <div class="payslip-cell">Donald Macasampon</div>
-                                        <div class="payslip-cell">Manager</div>
-                                        <div class="payslip-cell">IT</div>
-                                        <div class="payslip-cell green">Active</div>
+                                        <div class="payslip-cell">{{ $employee->userID }}</div>
+                                        <div class="payslip-cell">{{ $employee->department }}</div>
+                                        <div class="payslip-cell">{{ $employee->position }}</div>
+                                        <div class="payslip-cell">{{ $employee->firstname }} {{ $employee->lastname }}</div>
+                                        <div class="payslip-cell green">{{ $employee->email }}</div>
                                         <div class="payslip-cell">
                                             <a href="#"><span>
                                                     <i class="bi bi-pencil-square"></i>View Details
                                                 </span></a>
                                         </div>
                                     </div>
-                                    <div class="table-row-2">
-                                        <div class="payslip-cell">2</div>
-                                        <div class="payslip-cell">tom</div>
-                                        <div class="payslip-cell">tr</div>
-                                        <div class="payslip-cell">te</div>
-                                        <div class="payslip-cell green">Active</div>
-                                        <div class="payslip-cell blue">
-                                            <span><i class="bi bi-pencil-square"></i>View Details</span>
-                                        </div>
-                                    </div>
-                                    <div class="table-row-2">
-                                        <div class="payslip-cell">3</div>
-                                        <div class="payslip-cell">jav</div>
-                                        <div class="payslip-cell">hr</div>
-                                        <div class="payslip-cell">et</div>
-                                        <div class="payslip-cell red">Inactive</div>
-                                        <div class="payslip-cell blue">
-                                            <span><i class="bi bi-pencil-square"></i>View Details</span>
-                                        </div>
-                                    </div>
-
+                                    @endforeach
                                 </div>
 
                             </div>

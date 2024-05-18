@@ -1,8 +1,6 @@
 @media(max-width:736px){
-
-
     .sidebar-wrapper {
-        display: none;
+        /* Remove display: none; */
         margin-top: 70px;
         width: 0;
         transition: width 0.3s ease;
@@ -20,4 +18,3 @@
         }
     }
 }
-

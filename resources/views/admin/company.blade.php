@@ -128,7 +128,7 @@
 
                                 @foreach ($departments as $department)
                                     <div class="table-row-5">
-                                        <div class="table-cell-5">D{{ $department->department_id }}</div>
+                                        <div class="table-cell-5">{{ $department->department_id }}</div>
                                         <div class="table-cell-5">{{ $department->department_name }}</div>
                                         <div class="table-cell-5 green">
 

@@ -23,7 +23,7 @@
 
                 <div class="sider-menu">
                     <a class="menu-background active"><i class="bi bi-boxes"></i><span>Dashboard</span></a>
-                    <a class="menu-background" href="{{ route ('employee-payslip') }}"><i class="bi bi-person-rolodex"></i><span>Payslip</span></a>
+                    <a class="menu-background" href="{{ route ('employee.payslip') }}"><i class="bi bi-person-rolodex"></i><span>Payslip</span></a>
                     <a class="menu-background" href="{{ route ('employee-timekeeping') }}"><i class="bi bi-alarm"></i><span>Timekeeping</span></a>
                 </div>
             </div>

@@ -17,17 +17,6 @@
 
     <!-- CHILD CONTAINER -->
 
-    <div class="login-topbar">
-
-      <div class="topbar-flex">
-
-        <div class="topbar-logo">
-          <a href="login.php"><img src="/assets/imgs/brand.png" alt="MPS"></a>
-        </div>
-
-      </div>
-
-    </div>
 
     <!-- CHILD CONTAINER -->
 
@@ -37,6 +26,7 @@
       <div class="login-content-flex">
 
         <div class="card">
+          
           <div class="login-intro">
             <h2>Welcome to our MPS - Marcamo Payroll System!</h2>
             <p>Your ultimate solution for streamlined employee payroll management</p>
@@ -47,6 +37,9 @@
             <div class="login-form-flex">
 
               <div class="form-header">
+                <div class="topbar-logo">
+                  <a href="login.php" class=img-logo><img src="/assets/imgs/brand.png" alt="MPS"></a>
+                </div>
                 <h2>Log in to MPS</h2>
               </div>
 

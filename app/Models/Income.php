@@ -11,10 +11,11 @@ class Income extends Model
 
     protected $table = 'income';
     protected $fillable = [
+        'userID',
         'workDays',
         'hourlyRate',
         'hoursRendered',
-        'incomeTotal',
+        'totalIncome',
 
         'RegOT',
         'SunOT',
@@ -23,6 +24,9 @@ class Income extends Model
         'Incentives',
         'Bonuses',
         'otTotal',
-        'grossSalary'
+        'grossSalary',
+
+        'datefrom',
+        'dateto',
     ];
 }

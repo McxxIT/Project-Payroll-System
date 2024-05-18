@@ -101,7 +101,7 @@
                                 </div>
                                 @foreach($userApplicants as $userApplicant)
                                 <div class="table-row-1">
-                                    <div class="applicant-cell">{{ $userApplicant->id }}</div>
+                                    <div class="applicant-cell">{{ $userApplicant->userID }}</div>
                                     <div class="applicant-cell">{{ $userApplicant->username }}</div>
                                     <div class="applicant-cell">{{ $userApplicant->firstname }} {{ $userApplicant->lastname }}</div>
                                     <div class="applicant-cell">{{ $userApplicant->email }}</div>

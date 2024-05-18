@@ -93,39 +93,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="department-flex">
-                            <div class="flex">
-                                <i class="bi bi-circle-fill color3"></i>
-                                <div class="body-flex-item">
-                                    <div class="header">Security</div>
-                                    <div class="body ">₱100,000</div>
-                                </div>
-                            </div>
-                            <div class="flex">
-                                <i class="bi bi-circle-fill color4"></i>
-                                <div class="body-flex-item">
-                                    <div class="header">Human Resources</div>
-                                    <div class="body ">₱100,000</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="department-flex">
-                            <div class="flex">
-                                <i class="bi bi-circle-fill color5"></i>
-                                <div class="body-flex-item">
-                                    <div class="header">Sales and Marketing</div>
-                                    <div class="body ">₱100,000</div>
-                                </div>
-                            </div>
-                            <div class="flex">
-                                <i class="bi bi-circle-fill color6"></i>
-                                <div class="body-flex-item">
-                                    <div class="header">Technical</div>
-                                    <div class="body ">₱100,000</div>
-                                </div>
-                            </div>
-                        </div>
-                        
+
                     </div>
 
                 </div>

@@ -88,13 +88,14 @@
 
                         <div class="divider"></div>
 
+
                         <div class="flex-row-card">
                             <div class="card-wrapper">
-                                <span class="number-green">{{ $employees->count('is_active', 1) }}</span>
+                                <span class="number-green">{{ $activeEmployeesCount }}</span>
                                 <span class="text-pending">ACTIVE</span>
                             </div>
                             <div class="card-wrapper">
-                                <span class="number-red">{{ $employees->count('is_active', 0) }}</span>
+                                <span class="number-red">{{ $inactiveEmployeesCount }}</span>
                                 <span class="text-overdue">INACTIVE</span>
                             </div>
                         </div>
@@ -137,7 +138,7 @@
 
                                     @foreach ($employees as $employee)
                                         <div class="table-row">
-                                            <div class="table-cell">E{{ $employee->userID }}</div>
+                                            <div class="table-cell">{{ $employee->userID }}</div>
                                             <div class="table-cell">{{ $employee->firstname }}
                                                 {{ $employee->lastname }}</div>
                                             <div class="table-cell">{{ $employee->position }}</div>

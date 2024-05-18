@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ApplicantController extends Controller
 {
     public function redirect(){
-        $userApplicants = User::where('is_accepted', 1)->where('is_active', 1)->get();
+        $userApplicants = User::where('type', 2)->where('is_accepted', 1)->where('is_active', 1)->get();
         return view('admin.applicant')->with('userApplicants', $userApplicants);
     }
 
@@ -19,6 +19,7 @@ class ApplicantController extends Controller
 
     public function acceptedApplicant ($id) {
         $acceptedApplicant = User::findOrFail($id);
+        $acceptedApplicant->password = $acceptedApplicant->username . $acceptedApplicant->userID;
         $acceptedApplicant->is_accepted = 2;
         $acceptedApplicant->save();
         return redirect()->back();

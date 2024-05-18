@@ -153,7 +153,7 @@
                                                 <div class="dropdown-row">
                                                     <div class="table-row-6 dropdown-row-flex">
                                                         <div class="table-cell-6"></div>
-                                                        <div class="table-cell-6">P{{ $position->position_id }}</div>
+                                                        <div class="table-cell-6">{{ $position->position_id }}</div>
                                                         <div class="table-cell-6">{{ $position->position_name }}</div>
                                                         @if ($position->is_active == 1)
                                                             <div class="table-cell-6 green">Active</div>

@@ -29,7 +29,9 @@ class User extends Authenticatable
         'birthdate', 
         'gender', 
         'status', 
-        'nationality'
+        'nationality',
+        'department_id',
+        'position_id'
     ];
 
     /**

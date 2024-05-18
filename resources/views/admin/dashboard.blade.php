@@ -69,7 +69,7 @@
             <!-- ================MAIN CONTENT DATA=========== -->
             <div class="content-body">
                 <div class="c-body-flex">
-                    <div class="item-1">
+                    {{-- <div class="item-1">
                         <div class="item-header">Last Pay Run</div>
                         <div class="item-body">
                             <div class="body-flex">
@@ -95,7 +95,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="item-2">
                         <div class="item-header">
                         </div>
