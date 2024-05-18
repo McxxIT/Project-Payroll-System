@@ -1,97 +1,99 @@
-.content-wrapper {
-    .payslip-body {
-        margin: 20px;
-        background-color: white;
+    .content-wrapper {
+        #payslip-body {
+            margin: 20px;
+            background-color: white;
 
-        .payslip-header {
-            padding: 20px;
+            .payslip-header {
+                padding: 20px;
 
-            .p-h-flex {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                border-bottom: 2px solid black;
-                padding: 10px 0;
-
-                .payslip-header-left {
-                    width: 30%;
-                    min-width: 350px;
+                .p-h-flex {
                     display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-bottom: 2px solid black;
+                    padding: 10px 0;
 
-                    .p-h-content {
+                    .payslip-header-left {
+                        width: 30%;
+                        min-width: 350px;
                         display: flex;
-                        flex-direction: column;
 
-                        &:nth-child(1) {
-                            font-weight: bold;
-                            width: 10%;
-                            min-width: 100px;
+                        .p-h-content {
+                            display: flex;
+                            flex-direction: column;
+
+                            &:nth-child(1) {
+                                font-weight: bold;
+                                width: 10%;
+                                min-width: 100px;
+                            }
+
+                            &:nth-child(2) {
+                                width: 20%;
+                                min-width: 300px;
+                            }
                         }
 
-                        &:nth-child(2) {
-                            width: 20%;
-                            min-width: 300px;
-                        }
                     }
 
-                }
-
-                .payslip-header-right {
-                    .brand {
-                        a {
-                            img {
-                                width: 200px;
-                                height: auto;
+                    .payslip-header-right {
+                        .brand {
+                            a {
+                                img {
+                                    width: 200px;
+                                    height: auto;
+                                }
                             }
                         }
                     }
                 }
             }
-        }
 
-        .payslip-content {
-            padding: 0 20px;
+            .payslip-content {
+                padding: 20px 20px;
 
-            .p-c-date {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                margin-bottom: 20px;
-
-                .p-c-header {
-                    width: 50%;
-                    min-width: 500px;
-                    .p-c {
-                        display: flex;
-                        justify-content: center;
-                        span {
-                            font-weight: bold;
-                        }
-                    }
-                }
-
-                .p-c-body {
+                .p-c-date {
                     display: flex;
-                    white-space: nowrap;
-                    gap: 30px;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 20px;
 
-                    .p-c {
-                        display: flex;
+                    .p-c-header {
+                        width: 50%;
+                        min-width: 500px;
 
-                        span:nth-child(1) {
-                            font-weight: bold;
-                            width: 30%;
-                            min-width: 100px;
-                        }
-    
-                        span:nth-child(2) {
+                        .p-c {
                             display: flex;
-                            justify-content: flex-start;
+                            justify-content: center;
+
+                            span {
+                                font-weight: bold;
+                            }
+                        }
+                    }
+
+                    .p-c-body {
+                        display: flex;
+                        white-space: nowrap;
+                        gap: 30px;
+
+                        .p-c {
+                            display: flex;
+
+                            span:nth-child(1) {
+                                font-weight: bold;
+                                width: 30%;
+                                min-width: 100px;
+                            }
+
+                            span:nth-child(2) {
+                                display: flex;
+                                justify-content: flex-start;
+                            }
                         }
                     }
                 }
-            }
 
                 .p-c-flex {
                     display: flex;
@@ -299,17 +301,23 @@
             justify-content: flex-end;
             margin-right: 30px;
 
-            button {
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 background-color: rgb(38, 38, 38);
                 color: white;
                 width: 100px;
                 padding: 5px;
                 min-width: fit-content;
+                text-decoration: none;
                 cursor: pointer;
 
                 &:hover {
                     background-color: black;
                 }
+
+
             }
         }
     }

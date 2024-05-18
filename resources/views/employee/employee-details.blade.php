@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="../css/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
         integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
 </head>
 
-<body>
+<body onload="autoClick();">
 
     <div class="employee_c">
 
@@ -24,7 +28,7 @@
                 <div class="sider-menu">
                     <a class="menu-background" href="{{ route('employee-dashboard') }}"><i
                             class="bi bi-boxes"></i><span>Dashboard</span></a>
-                    <a class="menu-background" href="{{ route('employee-payslip') }}"><i
+                    <a class="menu-background" href="{{ route ('employee.payslip') }}"><i
                             class="bi bi-person-rolodex"></i><span>Payslip</span></a>
                     <a class="menu-background" href="{{ route('employee-timekeeping') }}"><i
                             class="bi bi-alarm"></i><span>Timekeeping</span></a>
@@ -56,9 +60,8 @@
 
         {{-- ===================MAIN CONTENT===================== --}}
 
-
         <div class="content-wrapper">
-            <div class="payslip-body"id="contentToExport">
+            <form id="payslip-body">
                 <div class="payslip-header">
                     <div class="p-h-flex">
                         <div class="payslip-header-left">
@@ -71,12 +74,12 @@
                                 <span>Address:</span>
                             </div>
                             <div class="p-h-content">
-                                <span>123</span>
-                                <span>Robert Falle</span>
-                                <span>HR</span>
-                                <span>RobertJhonDoe@example.com</span>
-                                <span>0987654321</span>
-                                <span>Davao, Central, Manila City</span>
+                                <span>{{ $employee->userID }}</span>
+                                <span>{{ $employee->firstname }}{{ $employee->lastname }}</span>
+                                <span>{{ $employee->position_name }}</span>
+                                <span>{{ $employee->email }}</span>
+                                <span>{{ $employee->contact }}</span>
+                                <span>{{ $employee->address }}</span>
                             </div>
                         </div>
                         <div class="payslip-header-right">
@@ -208,35 +211,32 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
             <div class="btn-to-export">
-                <button id="exportButton">Export</button>
+                <a id="download">Export</a>
             </div>
         </div>
 
     </div>
 
-
-    <!-- Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
-
-    <!-- Script for PDF conversion -->
-    <script>
-        document.getElementById('exportButton').addEventListener('click', function () {
-            // Convert HTML to image
-            domtoimage.toPng(document.getElementById('contentToExport'))
-                .then(function (dataUrl) {
-                    // Create PDF
-                    var pdf = new jsPDF('p', 'pt', 'a4');
-                    var width = pdf.internal.pageSize.getWidth();
-                    var height = pdf.internal.pageSize.getHeight();
-                    pdf.addImage(dataUrl, 'PNG', 0, 0, width, height);
-                    pdf.save('payslip.pdf');
-                })
-                .catch(function (error) {
-                    console.error('Error converting HTML to image:', error);
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var element = $("#payslip-body");
+    
+            $("#download").on('click', function() {
+                html2canvas(element, {
+                    onrendered: function(canvas) {
+                        var imageData = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+                        var link = document.createElement('a');
+                        link.download = "image.jpg";
+                        link.href = imageData;
+                        link.click();
+                    }
                 });
+            });
+    
+            // Optional: Automatically trigger the download when the page loads
+            // $("#download").click();
         });
     </script>
 

@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('departments', function (Blueprint $table) {
+        Schema::create('shift', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('department_id')->unique();
-            $table->string('department_name')->unique();
-            $table->boolean('is_active')->default(true); 
+            $table->unsignedBigInteger('workshift_id')->unique();
+            $table->time('shift_start');
+            $table->time('shift_end');
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('departments');
+        Schema::dropIfExists('shift');
     }
 };

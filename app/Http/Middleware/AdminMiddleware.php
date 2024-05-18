@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
+use Illuminate\Support\Facades\Auth;
 
 use Closure;
 use Illuminate\Http\Request;
@@ -15,11 +16,18 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
 
         if (!Auth::check()) {
             return redirect()->route('login');
         }
         $userType = Auth::user()->type;
+
+        if ($userType == 1) {
+            return $next($request);
+        }
+        if ($userType == 2) {
+            return abort(403, 'Access Denied');
+        }
+        return redirect()->route('login');
     }
 }

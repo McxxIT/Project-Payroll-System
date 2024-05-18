@@ -88,7 +88,7 @@
                                 border:none;
                                 font-size:16px;
                                 color:black;
-                                width:20%;
+                                width:30%;
                               
                             }
 
@@ -126,11 +126,40 @@
 }
 
 
-@media(max-width: 300px) {
-    .register-container {
-        min-width:500px;
 
-        
+@media(max-width:425px){
+    .register-container {
+        padding: 10px;
+        background-color: white;
+        background-image: none;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        .register-wrapper {
+            border:none;
+            width:100%;
+
+            .register-body{
+                padding:20px 10px;
+                .register-flex-body {
+
+                    form {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+    
+                        .item1{
+                            flex-direction: column;
+                        }
+                    }
+                }
+                
+            }
+        }
     }
 }
 

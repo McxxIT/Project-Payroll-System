@@ -43,6 +43,9 @@
 
         <div class="topbar-wrapper">
             <div class="profile-wrapper">
+                <div class="sidebar-toggle" id="sidebarToggle">
+                    <i class="bi bi-list"></i>
+                </div>
                 <div class="c-header-flex">
                     <span class="title">Dashboard</span>
                     <span class="greetings">Hello, Robert! Welcome Back!</span>
@@ -66,7 +69,7 @@
             <!-- ================MAIN CONTENT DATA=========== -->
             <div class="content-body">
                 <div class="c-body-flex">
-                    <div class="item-1">
+                    {{-- <div class="item-1">
                         <div class="item-header">Last Pay Run</div>
                         <div class="item-body">
                             <div class="body-flex">
@@ -92,7 +95,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="item-2">
                         <div class="item-header">
                         </div>
@@ -193,6 +196,16 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.x.x/dist/alpine.min.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sidebarToggle = document.getElementById("sidebarToggle");
+            const sidebar = document.querySelector(".sidebar-wrapper");
+    
+            sidebarToggle.addEventListener("click", () => {
+                sidebar.classList.toggle("active");
+            });
+        });
+    </script>
 
 </body>
 

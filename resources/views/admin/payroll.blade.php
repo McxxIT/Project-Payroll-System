@@ -100,8 +100,8 @@
                                 <div class="table-row">
                                     <div class="table-cell">ID</div>
                                     <div class="table-cell">Name</div>
-                                    <div class="table-cell">Position</div>
                                     <div class="table-cell">Department</div>
+                                    <div class="table-cell">Position</div>
                                     <div class="table-cell">Status</div>
                                     <div class="table-cell">Action</div>
                                 </div>
@@ -116,14 +116,18 @@
                                 @foreach ($employees as $employee)
 
                                 <div class="table-row">
-                                    <div class="table-cell">123</div>
+                                    <div class="table-cell">{{ $employee->userID }}</div>
                                     <div class="table-cell">{{ $employee->firstname }} {{ $employee->lastname }}</div>
-                                    <div class="table-cell">Manager</div>
-                                    <div class="table-cell">IT</div>
+                                    <div class="table-cell">{{ $employee->department }}</div>
+                                    <div class="table-cell">{{ $employee->position }}</div>
                                     <div class="table-cell red">Pending</div>
                                     <div class="table-cell blue">
-                                        <span><a href="{{ route('payroll-update') }}"><i
-                                                    class="bi bi-pencil-square"></i>Update</a></span>
+                                        <form method="POST" action="/payroll-update/{{ $employee->userID }}">
+                                        @csrf
+                                            <button type="submit"><i
+                                                    class="bi bi-pencil-square"></i>Update
+                                                </button>
+                                        </form>
                                     </div>
                                 </div>
                                 @endforeach

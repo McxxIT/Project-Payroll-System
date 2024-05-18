@@ -88,13 +88,14 @@
 
                         <div class="divider"></div>
 
+
                         <div class="flex-row-card">
                             <div class="card-wrapper">
-                                <span class="number-green">{{ $employees->count('is_active', 1) }}</span>
+                                <span class="number-green">{{ $activeEmployeesCount }}</span>
                                 <span class="text-pending">ACTIVE</span>
                             </div>
                             <div class="card-wrapper">
-                                <span class="number-red">{{ $employees->count('is_active', 0) }}</span>
+                                <span class="number-red">{{ $inactiveEmployeesCount }}</span>
                                 <span class="text-overdue">INACTIVE</span>
                             </div>
                         </div>
@@ -148,7 +149,7 @@
                                             @elseif ($employee->is_active == 0)
                                                 <div class="table-cell red">Inactive</div>
                                             @endif
-                                            <form action="/employee-details/{{ $employee->id }}" method="post" class="table-cell">
+                                            <form action="/employee-details/{{ $employee->userID }}" method="post" class="table-cell">
                                                 @csrf
                                                 <button type="submit" class="btn"><span>
                                                     <i class="bi bi-pencil-square"></i>View Details</span>

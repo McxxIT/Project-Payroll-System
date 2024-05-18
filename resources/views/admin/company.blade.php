@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
         integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../../css/style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../css/style.css?v=<?php echo time(); ?>">
 </head>
 
 <body>
@@ -77,7 +77,6 @@
                 <div class="modal-flex-card">
                     <div class="heading">
                         <span class="">Add Department</span>
-                        {{-- <i class="bi bi-x-lg close"></i> --}}
                     </div>
                     <form action="{{ route('departmentStore') }}" method="POST" class="body-form">
                         @csrf
@@ -152,13 +151,7 @@
                                     </div>
                                 @endforeach
                             </div>
-
                         </div>
-
-                        <div class="table-footer">
-
-                        </div>
-
                     </div>
                 </div>
             </div>
