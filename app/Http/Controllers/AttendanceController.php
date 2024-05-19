@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Leave;
+use App\Models\Attendance;
 
-class LeaveController extends Controller
+class AttendanceController extends Controller
 {
     public function redirect(){
-        $leave = Leave::where('is_active', 1)->get();
-        return view('admin.company')->with('departments', $departments);
+        $clockin = Attendance::where('userID', auth()->user()->id)->where('clock-in', null)->first();
+        $clockout = Attendance::where('userID', auth()->user()->id)->where('clock-out', null)->first();
+        return view('attendance-monitoring.attendance')->with('clockin', $clockin)->with('clockout', $clockout);
     }
+    
 }
