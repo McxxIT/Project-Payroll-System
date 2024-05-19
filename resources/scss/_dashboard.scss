@@ -96,9 +96,9 @@
 
                     .item-body {
 
-                        height:100%;
+                        height: 100%;
                         border-radius: 3px;
-                        display:flex;
+                        display: flex;
                         flex-direction: column;
 
 
@@ -262,7 +262,7 @@
 
                         .latest-employees {
 
-                      
+
 
 
 
@@ -310,7 +310,7 @@
                                     }
 
                                     span:nth-child(3) {
-                                        width: 40%; 
+                                        width: 40%;
                                         min-width: 100px;
                                     }
                                 }
@@ -362,12 +362,9 @@
 
 }
 
-@media(max-width: 1000px){
+@media(max-width: 1000px) {}
 
 
-}
-
-}
 
 @media(max-width: 1000px) {
 
@@ -376,7 +373,7 @@
             margin-top: 100px;
             margin-left: 230px;
 
-    
+
 
 
 
@@ -394,20 +391,6 @@
                         flex-direction: column;
                         gap: 15px;
 
-    
-                        .item-header {
-                            font-size: 1.2rem;
-                            font-weight: 700;
-    
-                        }
-    
-                        .item-body {
-                          
-                            border-radius: 3px;
-    
-    
-    
-
 
                         .item-header {
                             font-size: 1.2rem;
@@ -422,49 +405,66 @@
 
 
 
-                            .body-flex {
-                                display: flex;
-                                flex-direction: column;
-                                height: 100%;
-                                width: 100%;
 
-                                flex-grow:1;
-                                gap: 15px;
-                                .body-flex-item{
-                                    width:100%;
-                                }
-                                .body-flex-item2{
-                                    width:100%;
+                            .item-header {
+                                font-size: 1.2rem;
+                                font-weight: 700;
 
-                                flex-grow: 1;
-                                gap: 15px;
+                            }
 
-                                .body-flex-item {
+                            .item-body {
+
+                                border-radius: 3px;
+
+
+
+
+                                .body-flex {
+                                    display: flex;
+                                    flex-direction: column;
+                                    height: 100%;
                                     width: 100%;
 
-                                }
+                                    flex-grow: 1;
+                                    gap: 15px;
 
-                                .body-flex-item2 {
-                                    width: 100%;
+                                    .body-flex-item {
+                                        width: 100%;
+                                    }
 
+                                    .body-flex-item2 {
+                                        width: 100%;
+
+                                        flex-grow: 1;
+                                        gap: 15px;
+
+                                        .body-flex-item {
+                                            width: 100%;
+
+                                        }
+
+                                        .body-flex-item2 {
+                                            width: 100%;
+
+                                        }
+                                    }
                                 }
                             }
+
+
+
+
                         }
+
+
+
                     }
-
-                    
-                    
-
-
-
-
                 }
             }
         }
+
+
     }
-
-
-}
 
 }
 
@@ -580,5 +580,3 @@
     }
 
 }
-
-
