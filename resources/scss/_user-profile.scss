@@ -12,6 +12,7 @@
 
     .profile-account {
         position: relative;
+
         .profile-pic {
             display: flex;
             justify-content: center;
@@ -55,25 +56,33 @@
         width: 100%;
         margin: 20px 0;
         padding-bottom: 30px;
-        white-space: nowrap;
-    
+        white-space: wrap;
+
+        @media screen and (max-width: 780px) {
+            flex-direction: column;
+
+        }
+
+
 
         .by-col {
             display: flex;
             flex-direction: column;
             width: 50%;
+
             .by-details {
                 display: flex;
                 flex-direction: column;
                 padding: 0 20px 20px 20px;
-                
+
                 .header {
                     display: flex;
                 }
+
                 .body {
-                    display: flex;  
-                    flex-direction: column;              
-    
+                    display: flex;
+                    flex-direction: column;
+
                     .inside-body {
                         background-color: white;
                         display: flex;
@@ -81,22 +90,23 @@
                         border: 1px solid grey;
                         border-bottom: none;
                         padding: 5px;
-    
+
                         .flex:nth-child(1) {
                             width: 50%;
                             min-width: 150px;
                         }
+
                         .flex:nth-child(2) {
                             width: 40%;
                             min-width: 200px;
                             color: grey;
                         }
                     }
-    
+
                     .inside-body:first-child {
                         margin-top: 5px;
                     }
-    
+
                     .inside-body:last-child {
                         border-bottom: 1px solid;
                     }
@@ -119,6 +129,11 @@
     margin-left: 230px;
     margin-top: 90px;
 
+    @media screen and (max-width: 780px) {
+        margin-left: 0px;
+
+    }
+
     .background {
         width: 100%;
         height: 100px;
@@ -127,6 +142,7 @@
 
     .profile-account {
         position: relative;
+
         .profile-pic {
             display: flex;
             justify-content: center;
@@ -170,33 +186,72 @@
         width: 100%;
         margin: 20px 0;
         padding-top: 10px;
-        white-space: nowrap;    
+
+        @media screen and (max-width: 1250px) {
+            flex-direction: column;
+
+        }
+
+        @media screen and (max-width: 780px) {
+            flex-direction: column;
+
+        }
 
         .by-col {
             display: flex;
             flex-direction: column;
             width: 50%;
+
+            @media screen and (max-width: 1250px) {
+                width: 100%;
+
+            }
+
+            @media screen and (max-width: 780px) {
+                width: 100%;
+
+            }
+
             .by-details {
                 display: flex;
                 flex-direction: column;
                 padding: 0 20px 20px 20px;
-                
+                word-wrap: break-word;
+
                 .header {
                     display: flex;
                 }
+
                 .body {
-                    display: flex;  
-                    flex-direction: column;              
-    
+                    display: flex;
+                    flex-direction: column;
+
                     .inside-body {
                         background-color: white;
                         display: flex;
                         align-items: center;
                         width: 100%;
                         border: 1px solid grey;
+                        white-space: wrap;
                         border-bottom: none;
                         padding: 10px;
                         font-size: large;
+
+                        @media screen and (max-width: 780px) {
+
+                            width: 100%;
+
+
+                        }
+
+                        @media screen and (max-width: 550px) {
+                            width: 100%;
+                            flex-direction: column;
+                            align-items: center;
+                            overflow-x: auto;
+                            justify-content: center;
+
+                        }
 
                         .flex {
                             select {
@@ -204,30 +259,43 @@
                                 font-size: large;
                                 color: grey;
                             }
+
+                            @media screen and (max-width: 550px) {
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+
+                            }
                         }
-    
+
                         .flex:nth-child(1) {
                             width: 50%;
                             min-width: 150px;
                         }
+
                         .flex:nth-child(2) {
                             width: 40%;
                             min-width: 200px;
                             color: grey;
+
+
+
                         }
                     }
-    
+
                     .inside-body:first-child {
                         margin-top: 5px;
                     }
-    
+
                     .inside-body:last-child {
                         border-bottom: 1px solid;
                     }
                 }
             }
 
-            
+
 
         }
 
@@ -238,12 +306,14 @@
         .by-col:nth-child(2) {
             display: flex;
             justify-content: space-between;
+
             .footer {
                 display: flex;
                 justify-content: right;
                 padding: 30px;
                 width: 100%;
                 gap: 30px;
+
 
                 button {
                     width: 90px;
@@ -261,12 +331,15 @@
 
                 .blue {
                     background-color: blue;
+
                     &:hover {
                         background-color: rgb(6, 6, 219);
                     }
                 }
+
                 .green {
                     background-color: green;
+
                     &:hover {
                         background-color: rgb(3, 99, 3);
                     }

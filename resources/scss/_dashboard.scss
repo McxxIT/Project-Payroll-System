@@ -119,6 +119,9 @@
                             width: 100%;
                             gap: 15px;
 
+                            @media(max-width: 980px) {
+                                flex-direction: column;
+                            }
 
                             .body-flex-item {
                                 display: flex;
@@ -129,15 +132,38 @@
                                 background-color: white;
                                 box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
+                                @media(max-width: 980px) {
+                                    width: 100%;
+                                    flex-direction: column;
+                                    align-items: center;
+                                }
+
+
                                 .inside-body-item {
                                     display: flex;
                                     flex-direction: column;
                                     justify-content: space-evenly;
+                                    gap: 20px;
+
+                                    @media(max-width: 980px) {
+                                        gap: 20px;
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                        width: 100%;
+
+                                    }
 
                                     .header {
                                         display: flex;
                                         gap: 20px;
                                         flex-direction: column;
+
+                                        @media(max-width: 980px) {
+                                            gap: 20px;
+                                            flex-direction: row;
+                                            align-items: center;
+                                        }
+
 
 
 
@@ -166,6 +192,10 @@
                                         display: flex;
                                         flex-direction: column;
                                         gap: 10px;
+
+                                        @media(max-width: 980px) {
+                                            align-items: center;
+                                        }
 
                                         span:nth-child(1) {
                                             font-size: 1.7rem;
@@ -218,11 +248,26 @@
                                 background-color: white;
                                 box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
+                                @media(max-width: 980px) {
+                                    width: 100%;
+                                    padding: 20px 40px;
+                                }
+
                                 .inside-body-item {
                                     display: flex;
                                     flex-direction: column;
                                     align-items: center;
                                     gap: 20px;
+
+                                    @media(max-width: 980px) {
+                                        flex-direction: row;
+                                        justify-content: space-between;
+                                    }
+
+                                    @media(max-width:600px) {
+                                        flex-direction: column;
+                                        align-items: center;
+                                    }
 
                                     .header {
                                         white-space: nowrap;
@@ -261,15 +306,6 @@
                         }
 
                         .latest-employees {
-
-
-
-
-
-
-
-
-
                             overflow-x: auto;
 
                             .header {
@@ -289,7 +325,7 @@
 
                                 .header-col {
                                     display: flex;
-                                    justify-content: space-between;
+                                    width: 100%;
                                     border-bottom: 2px solid black;
                                     padding: 5px 10px;
                                     min-width: 1000px;
@@ -300,40 +336,27 @@
 
                                     span {
                                         width: 20%;
-                                        min-width: 100px;
+                                        padding-right: 20px;
                                         color: white;
                                     }
 
-                                    span:nth-child(2) {
-                                        width: 40%;
-                                        min-width: 100px;
-                                    }
-
-                                    span:nth-child(3) {
-                                        width: 40%;
-                                        min-width: 100px;
-                                    }
                                 }
 
                                 .content-col {
                                     .body-row {
                                         display: flex;
-                                        justify-content: space-between;
+                                        width: 100%;
+                                        min-width: 1000px;
                                         border-bottom: 1.5px solid grey;
                                         padding: 5px 10px;
 
                                         span {
+                                            padding-right: 20px;
                                             width: 20%;
-                                            min-width: 100px;
+                                            word-wrap: break-word;
                                         }
 
-                                        span:nth-child(2) {
-                                            width: 40%;
-                                        }
 
-                                        span:nth-child(3) {
-                                            width: 40%;
-                                        }
                                     }
 
                                     .body-row:last-child {
@@ -361,8 +384,6 @@
     }
 
 }
-
-@media(max-width: 1000px) {}
 
 
 

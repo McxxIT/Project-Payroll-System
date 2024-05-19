@@ -21,7 +21,6 @@ use App\Http\Controllers\PositionController;
 use App\Http\Controllers\PayrollController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\IncomeController;
-use App\Http\Controllers\LeaveController;
 
 
 Route::middleware('guest')->group(function () {
@@ -145,8 +144,6 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::post('payroll-update/{id}', [PayrollController::class, 'employeePayroll'])->name('employeePayroll');
 
     Route::post('employeeIncome', [IncomeController::class, 'getIncome'])->name('submit-payslip');
-
-    Route::post('leave.store', [LeaveController::class, 'store'])->name('request-leave');
 
     Route::post('update-employee', [PayslipController::class, 'updatePayslip'])->name('update-payslip');
 
