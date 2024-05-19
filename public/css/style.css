@@ -408,25 +408,16 @@ html {
   }
 }
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
 @media (max-width: 736px) {
-=======
-@media (max-width: 780px) {
->>>>>>> Stashed changes
-=======
-@media (max-width: 780px) {
->>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
   .sidebar-wrapper {
     display: none;
   }
 }
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
+@media (max-width: 780px) {
+  .sidebar-wrapper {
+    display: none;
+  }
+}
 .topbar-wrapper {
   background-color: rgb(20, 20, 20);
   margin-left: 230px;
@@ -918,11 +909,6 @@ html {
     margin-left: 0;
   }
 }
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
 @media (max-width: 1000px) {
   .dashboard-container .content-wrapper {
     margin-top: 100px;
@@ -1026,62 +1012,6 @@ html {
     width: 100%;
   }
 }
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-@media (max-width: 780px) {
-  .dashboard-container .content-wrapper {
-    margin-left: 0;
-  }
-  .dashboard-container .content-wrapper .content-body .c-body-flex {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-  }
-  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-header {
-    font-size: 1.2rem;
-    font-weight: 700;
-  }
-  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body {
-    border-radius: 3px;
-  }
-  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    flex-grow: 1;
-    gap: 15px;
-  }
-  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item {
-    width: 100%;
-    flex-direction: column;
-  }
-  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item .inside-body-item {
-    flex-direction: row;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-  }
-  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item .inside-body-item .header {
-    flex-direction: row;
-  }
-  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item .inside-body-item .body {
-    flex-direction: row;
-    align-items: center;
-  }
-  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item2 {
-    width: 100%;
-  }
-}
-=======
->>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
 @media (max-width: 600px) {
   .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item .inside-body-item {
     flex-direction: column;
@@ -1094,11 +1024,6 @@ html {
     align-items: center;
   }
 }
-<<<<<<< HEAD
->>>>>>> Stashed changes
->>>>>>> Stashed changes
-=======
->>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
 .employee-container {
   background: whitesmoke;
 }
@@ -3575,11 +3500,6 @@ html {
 }
 .content-wrapper .btn-to-export a:hover {
   background-color: black;
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
 }
 
 .leave-form {
@@ -3595,7 +3515,6 @@ html {
   width: 120px;
   height: 30px;
   border-radius: 3px;
-<<<<<<< Updated upstream
 }
 
 @media (max-width: 736px) {
@@ -3614,48 +3533,5 @@ html {
     top: 15px;
     left: 15px;
     z-index: 1100;
-  }
-}
-@media (max-width: 736px) {
-  html {
-    height: 100%;
-  }
-  .dashboard-container {
-    height: 100%;
-  }
-  .dashboard-container .content-wrapper {
-    margin-left: 0px;
-  }
-  .dashboard-container .content-wrapper .content-body .c-body-flex .item-1 .item-body .body-flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .dashboard-container .content-wrapper .content-body .c-body-flex .item-1 .item-body .body-flex .body-flex-item {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-  }
-  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 {
-    width: 100%;
-  }
-  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-width: 100%;
-  }
-  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .latest-employees {
-    display: none;
   }
 }/*# sourceMappingURL=style.css.map */
