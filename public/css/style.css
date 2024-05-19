@@ -83,6 +83,11 @@ html {
 .container .login-content .login-content-flex .card .login-wrapper .login-form-flex .form-header h2 {
   font-family: "Courier New", Courier, monospace;
 }
+.container .login-content .login-content-flex .card .login-wrapper .login-form-flex .error {
+  margin-top: 15px;
+  align-self: flex-start;
+  color: red;
+}
 .container .login-content .login-content-flex .card .login-wrapper .login-form-flex .login-form {
   display: flex;
   flex-direction: column;
@@ -3515,23 +3520,4 @@ html {
   width: 120px;
   height: 30px;
   border-radius: 3px;
-}
-
-@media (max-width: 736px) {
-  .sidebar-wrapper {
-    /* Remove display: none; */
-    margin-top: 70px;
-    width: 0;
-    transition: width 0.3s ease;
-  }
-  .sidebar-wrapper.active {
-    width: 230px;
-  }
-  .sidebar-wrapper .sidebar-toggle {
-    display: block;
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    z-index: 1100;
-  }
 }/*# sourceMappingURL=style.css.map */

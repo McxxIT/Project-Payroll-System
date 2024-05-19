@@ -19,7 +19,7 @@
             display: flex;
             justify-content: center;
 
-           
+
         }
     }
 
@@ -76,9 +76,16 @@
                                     }
                                 }
                             }
+
                             h2 {
                                 font-family: 'Courier New', Courier, monospace;
                             }
+                        }
+
+                        .error {
+                            margin-top: 15px;
+                            align-self: flex-start;
+                            color: red;
                         }
 
                         .login-form {
@@ -173,43 +180,38 @@
         background-repeat: no-repeat;
         background-size: cover;
         height: 100dvh;
-    
+
         .login-topbar {
-        
-    
+
+
             .topbar-flex {
-    
-    
+
+
                 .topbar-logo {
                     a {
-                        img {
-                          
-                        }
+                        img {}
                     }
                 }
             }
         }
-    
+
         .login-content {
-          
-    
+
+
             .login-content-flex {
-                
-    
+
+
                 .card {
-                 
-    
-    
-                    .login-intro {
-                       
-                    }
-    
+
+
+
+                    .login-intro {}
+
                     .login-wrapper {
-                        width:100%;
+                        width: 100%;
                     }
                 }
             }
         }
     }
 }
-
