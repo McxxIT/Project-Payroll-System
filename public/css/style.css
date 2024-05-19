@@ -383,9 +383,22 @@ html {
   scale: 1.1;
 }
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+@media (max-width: 736px) {
+=======
+@media (max-width: 780px) {
+>>>>>>> Stashed changes
+  .sidebar-wrapper {
+    display: none;
+  }
+}
+>>>>>>> Stashed changes
 .topbar-wrapper {
   background-color: rgb(20, 20, 20);
   margin-left: 230px;
+  height: 100px;
   white-space: nowrap;
   position: fixed;
   top: 0;
@@ -397,6 +410,7 @@ html {
   display: flex;
   text-align: center;
   flex-direction: row;
+  height: 100%;
   justify-content: space-between;
   padding: 20px 30px;
 }
@@ -485,6 +499,40 @@ html {
   scale: 1.1;
 }
 
+@media (max-width: 780px) {
+  .topbar-wrapper {
+    margin-left: 0px;
+  }
+  .topbar-wrapper .profile-wrapper {
+    padding: 10px;
+  }
+  .topbar-wrapper .profile-wrapper .sidebar-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .topbar-wrapper .profile-wrapper .sidebar-toggle .bi {
+    font-size: 2rem;
+    color: white;
+  }
+  .topbar-wrapper .profile-wrapper .c-header-flex {
+    width: 100%;
+  }
+  .topbar-wrapper .profile-wrapper .c-header-flex .title {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    border: none;
+  }
+  .topbar-wrapper .profile-wrapper .c-header-flex .greetings {
+    display: none;
+  }
+  .topbar-wrapper .profile-wrapper .profile {
+    display: none;
+  }
+}
 .dashboard-container .content-wrapper {
   margin-top: 100px;
   margin-left: 230px;
@@ -670,6 +718,9 @@ html {
 .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item2 .inside-body-item .body a:hover {
   color: rgb(0, 0, 192);
 }
+.dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .latest-employees {
+  overflow-x: auto;
+}
 .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .latest-employees .header {
   display: flex;
   flex-direction: column;
@@ -688,19 +739,23 @@ html {
   justify-content: space-between;
   border-bottom: 2px solid black;
   padding: 5px 10px;
+  min-width: 1000px;
   background-color: black;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .latest-employees .body .header-col span {
   width: 20%;
+  min-width: 100px;
   color: white;
 }
 .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .latest-employees .body .header-col span:nth-child(2) {
   width: 40%;
+  min-width: 100px;
 }
 .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .latest-employees .body .header-col span:nth-child(3) {
   width: 40%;
+  min-width: 100px;
 }
 .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .latest-employees .body .content-col .body-row {
   display: flex;
@@ -710,6 +765,7 @@ html {
 }
 .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .latest-employees .body .content-col .body-row span {
   width: 20%;
+  min-width: 100px;
 }
 .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .latest-employees .body .content-col .body-row span:nth-child(2) {
   width: 40%;
@@ -726,6 +782,11 @@ html {
     margin-left: 0;
   }
 }
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 @media (max-width: 1000px) {
   .dashboard-container .content-wrapper {
     margin-top: 100px;
@@ -763,6 +824,73 @@ html {
     width: 100%;
   }
 }
+<<<<<<< Updated upstream
+=======
+@media (max-width: 780px) {
+  .dashboard-container .content-wrapper {
+    margin-left: 0;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-header {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body {
+    border-radius: 3px;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    flex-grow: 1;
+    gap: 15px;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item {
+    width: 100%;
+    flex-direction: column;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item .inside-body-item {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item .inside-body-item .header {
+    flex-direction: row;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item .inside-body-item .body {
+    flex-direction: row;
+    align-items: center;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item2 {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item .inside-body-item {
+    flex-direction: column;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item .inside-body-item .header {
+    flex-direction: row;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item .inside-body-item .body {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 .employee-container {
   background: whitesmoke;
 }
@@ -2971,6 +3099,11 @@ html {
 }
 .content-wrapper .btn-to-export a:hover {
   background-color: black;
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 }
 
 .leave-form {
@@ -2986,6 +3119,7 @@ html {
   width: 120px;
   height: 30px;
   border-radius: 3px;
+<<<<<<< Updated upstream
 }
 
 @media (max-width: 736px) {
@@ -3080,4 +3214,7 @@ html {
   .topbar-wrapper .profile-wrapper .c-header-flex .greetings {
     display: none;
   }
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 }/*# sourceMappingURL=style.css.map */

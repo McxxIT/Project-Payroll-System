@@ -26,13 +26,20 @@
 
                 <div class="sider-menu">
                     <a class="menu-background active"><i class="bi bi-boxes"></i><span>Dashboard</span></a>
-                    <a class="menu-background" href="{{ route('employee') }}"><i class="bi bi-person-rolodex"></i><span>Employees</span></a>
-                    <a class="menu-background" href="{{ route('applicant') }}"><i class="bi bi-person-rolodex"></i><span>Applicant</span></a>
-                    <a class="menu-background" href="{{ route('archive') }}"><i class="bi bi-archive"></i><span>Archive</span></a>
-                    <a class="menu-background" href="{{ route('payroll') }}"><i class="bi bi-credit-card-2-front"></i><span>Payroll</span></a>
-                    <a class="menu-background" href="{{ route('payroll-report') }}"><i class="bi bi-file-earmark-post"></i></i><span>Payroll Report</span></a>
-                    <a class="menu-background" href="{{ route('payslip') }}"><i  class="bi bi-wallet"></i><span>Payslip</span></a>
-                    <a class="menu-background" href="{{ route('company') }}"><i class="bi bi-buildings"></i><span>Company</span></a>
+                    <a class="menu-background" href="{{ route('employee') }}"><i
+                            class="bi bi-person-rolodex"></i><span>Employees</span></a>
+                    <a class="menu-background" href="{{ route('applicant') }}"><i
+                            class="bi bi-person-rolodex"></i><span>Applicant</span></a>
+                    <a class="menu-background" href="{{ route('archive') }}"><i
+                            class="bi bi-archive"></i><span>Archive</span></a>
+                    <a class="menu-background" href="{{ route('payroll') }}"><i
+                            class="bi bi-credit-card-2-front"></i><span>Payroll</span></a>
+                    <a class="menu-background" href="{{ route('payroll-report') }}"><i
+                            class="bi bi-file-earmark-post"></i></i><span>Payroll Report</span></a>
+                    <a class="menu-background" href="{{ route('payslip') }}"><i
+                            class="bi bi-wallet"></i><span>Payslip</span></a>
+                    <a class="menu-background" href="{{ route('company') }}"><i
+                            class="bi bi-buildings"></i><span>Company</span></a>
                 </div>
             </div>
         </div>
@@ -171,7 +178,7 @@
 
                                         @php
                                             $displayedEmployees = $employees->sortByDesc('created_at')->take(5);
-                                        @endphp 
+                                        @endphp
                                         @foreach ($displayedEmployees as $employee)
                                             <div class="body-row">
                                                 <span>{{ $employee->created_at }}</span>
@@ -196,16 +203,29 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.x.x/dist/alpine.min.js" defer></script>
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const sidebarToggle = document.getElementById("sidebarToggle");
             const sidebar = document.querySelector(".sidebar-wrapper");
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
             sidebarToggle.addEventListener("click", () => {
                 sidebar.classList.toggle("active");
             });
         });
     </script>
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 </body>
 
