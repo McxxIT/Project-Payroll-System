@@ -51,8 +51,8 @@
             <div class="profile-wrapper">
 
                 <div class="c-header-flex">
-                    <span class="title">Employees</span>
-                    <span class="greetings">List of all Employees</span>
+                    <span class="title">Attendance</span>
+                    <span class="greetings">Attendance Monitoring</span>
                 </div>
                 <div class="profile">
                     <a href="../admin/admin-profile.php" class="name">Robert</a>
@@ -73,8 +73,8 @@
             <div class="content-body-wrapper">
 
                 <div class="body-content-header">
-                    <a href="#" class="active-line">Employees</a>
-                    <a href="{{ route('admin-attendance') }}" class="pad-left">Attendance</a>
+                    <a href="{{ route('employee') }}" class="pad-right">Employees</a>
+                    <a href="#" class="active-line">Attendance</a>
                 </div>
 
                 <div class="cards-container">
@@ -88,20 +88,6 @@
                             <div class="card-wrapper">
                                 <span class="number">0</span>
                                 <span class="text-overdue">ABSENTS</span>
-                            </div>
-                        </div>
-
-                        <div class="divider"></div>
-
-
-                        <div class="flex-row-card">
-                            <div class="card-wrapper">
-                                <span class="number-green">{{ $activeEmployeesCount }}</span>
-                                <span class="text-pending">ACTIVE</span>
-                            </div>
-                            <div class="card-wrapper">
-                                <span class="number-red">{{ $inactiveEmployeesCount }}</span>
-                                <span class="text-overdue">INACTIVE</span>
                             </div>
                         </div>
 
@@ -154,7 +140,7 @@
                                             @elseif ($employee->is_active == 0)
                                                 <div class="table-cell red">Inactive</div>
                                             @endif
-                                            <form action="{{ route('attendance-employee', ['id' => $employee->userID]) }}" method="POST" class="table-cell">
+                                            <form action="{{ route('view-attendance', ['id' => $employee->userID]) }}" method="post" class="table-cell">
                                                 @csrf
                                                 <button type="submit" class="btn">
                                                     <span><i class="bi bi-pencil-square"></i> View Details</span>
@@ -162,28 +148,6 @@
                                             </form>                                            
                                         </div>
                                     @endforeach
-
-
-                                    {{-- <div class="table-row">
-                                        <div class="table-cell">2</div>
-                                        <div class="table-cell">tom</div>
-                                        <div class="table-cell">tr</div>
-                                        <div class="table-cell">te</div>
-                                        <div class="table-cell green">Active</div>
-                                        <div class="table-cell blue">
-                                            <span><i class="bi bi-pencil-square"></i>View Details</span>
-                                        </div>
-                                    </div>
-                                    <div class="table-row">
-                                        <div class="table-cell">3</div>
-                                        <div class="table-cell">jav</div>
-                                        <div class="table-cell">hr</div>
-                                        <div class="table-cell">et</div>
-                                        <div class="table-cell red">Inactive</div>
-                                        <div class="table-cell blue">
-                                            <span><i class="bi bi-pencil-square"></i>View Details</span>
-                                        </div>
-                                    </div> --}}
 
                                 </div>
 

@@ -40,7 +40,7 @@
                             class="bi bi-file-earmark-post"></i></i><span>Payroll Report</span></a>
                     <a class="menu-background" href="{{ route('payslip') }}"><i
                             class="bi bi-wallet"></i><span>Payslip</span></a>
-                    <a class="menu-background active"><i class="bi bi-buildings"></i><span>Company</span></a>
+                    <a class="menu-background active" href="{{ route('company') }}"><i class="bi bi-buildings"></i><span>Company</span></a>
                 </div>
             </div>
         </div>

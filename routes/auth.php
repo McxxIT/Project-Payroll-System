@@ -21,7 +21,7 @@ use App\Http\Controllers\PositionController;
 use App\Http\Controllers\PayrollController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\IncomeController;
-use App\Http\Controllers\LeaveController;
+use App\Http\Controllers\AttendanceController;
 
 
 Route::middleware('guest')->group(function () {
@@ -101,7 +101,7 @@ Route::middleware(['auth', 'verified', 'employee'])->group(function () {
 
     Route::get('employee/payslip', [IncomeController::class, 'submitEmployeePayslip'])->name('employee.payslip');
 
-    Route::post('employee-payslip/{id}', [EmployeeController::class,'getEmployeeForEmpPage'])->name('employee.employee-details');
+    Route::post('employee-payslip/{id}', [EmployeeController::class, 'getEmployeeForEmpPage'])->name('employee.employee-details');
 
 });
 
@@ -128,8 +128,9 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
 
     Route::get('admin.payslip', [PayslipController::class, 'redirect'])->name('payslip');
 
+    Route::get('employee-attendance', [EmployeeController::class, 'getEmployees'])->name('admin-attendance');
 
-    
+
 
 
     Route::post('applicant/accepted/{id}', [ApplicantController::class, 'acceptedApplicant'])->name('acceptedApplicant');
@@ -146,13 +147,15 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
 
     Route::post('employeeIncome', [IncomeController::class, 'getIncome'])->name('submit-payslip');
 
-    Route::post('leave.store', [LeaveController::class, 'store'])->name('request-leave');
-
     Route::post('update-employee', [PayslipController::class, 'updatePayslip'])->name('update-payslip');
 
-    Route::put('update-employee/{id}', [EmployeeController::class, 'updateEmployee'])->name('update-employee');
+    Route::post('attendance-details/{id}', [EmployeeController::class, 'getEmployee'])->name('attendance-employee');
 
-        
+    Route::post('view-attendance/{id}', [AttendanceController::class, 'getEmployee'])->name('view-attendance');
+
+
+
+    Route::put('update-employee/{id}', [EmployeeController::class, 'updateEmployee'])->name('update-employee');
 
 
     Route::get('admin/payroll-report', function () {
@@ -166,10 +169,6 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::get('admin/profile', function () {
         return view('admin.admin-profile');
     })->name('admin-profile');
-
-    Route::get('attendance-monitoring/attendance', function () {
-        return view('attendance-monitoring.attendance');
-    })->name('monitoring-attendance');
 
 });
 

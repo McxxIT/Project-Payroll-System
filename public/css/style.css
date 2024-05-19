@@ -775,6 +775,27 @@ html {
   font-weight: bold;
   font-size: 2rem;
 }
+.employee-container .content-wrapper .content-body-wrapper .body-content-header {
+  display: flex;
+  padding-left: 10px;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+.employee-container .content-wrapper .content-body-wrapper .body-content-header a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.employee-container .content-wrapper .content-body-wrapper .body-content-header .pad-left {
+  padding-left: 20px;
+}
+.employee-container .content-wrapper .content-body-wrapper .body-content-header .pad-right {
+  padding-right: 20px;
+}
+.employee-container .content-wrapper .content-body-wrapper .body-content-header .active-line {
+  border-bottom: 2px solid blue;
+}
 .employee-container .content-wrapper .content-body-wrapper .cards-container {
   width: 70%;
   margin: auto;
@@ -1879,6 +1900,13 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px 10px 20px;
+}
+.body-content-header-flex a .bi {
+  cursor: pointer;
+  font-size: larger;
+}
+.body-content-header-flex a .bi:hover {
+  background-color: rgb(79, 79, 79);
 }
 .body-content-header-flex .body-content-header span {
   font-size: 2rem;

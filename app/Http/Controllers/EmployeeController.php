@@ -46,6 +46,16 @@ class EmployeeController extends Controller
         ->with('employee', $employee);
     }
 
+    public function getEmployees () {
+        
+        $employees = User::where('type',2)->where('is_accepted',2)->get();
+        $activeEmployeesCount = $employees->where('is_active', 1)->count();
+        $inactiveEmployeesCount = $employees->where('is_active', 0)->count();
+        return view('admin.admin-attendance')->with('employees', $employees)->with('activeEmployeesCount', $activeEmployeesCount)->with('inactiveEmployeesCount', $inactiveEmployeesCount);
+    }
+
+    
+
     public function updateEmployee(Request $request, $id)
 {
     $employee = User::findOrFail($id);

@@ -21,6 +21,31 @@
 
         .content-body-wrapper {
 
+            .body-content-header {
+                display: flex;
+                padding-left: 10px;
+                border-bottom: 1px solid black;
+                margin-bottom: 20px;
+    
+                a {
+                    font-size: 1.4rem;
+                    text-decoration: none;
+                    color: black;
+                    cursor: pointer;
+                }
+                .pad-left {
+                    padding-left: 20px;
+                }
+                .pad-right {
+                    padding-right: 20px;
+                }
+    
+    
+                .active-line {
+                    border-bottom: 2px solid blue;
+                }
+            }
+
 
             .cards-container {
 
