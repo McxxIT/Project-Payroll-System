@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('leave', function (Blueprint $table) {
+        Schema::create('attendance', function (Blueprint $table) {
             $table->id();
             $table->integer('userID');
             $table->string('username')->unique();
-            $table->string('leave');
+            $table->date('date');
+            $table->time('clock-in');
+            $table->time('clock-out');
             $table->timestamps();
         });
     }

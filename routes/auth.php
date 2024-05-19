@@ -167,9 +167,5 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
         return view('admin.admin-profile');
     })->name('admin-profile');
 
-    Route::get('attendance-monitoring/attendance', function () {
-        return view('attendance-monitoring.attendance');
-    })->name('monitoring-attendance');
-
 });
 
