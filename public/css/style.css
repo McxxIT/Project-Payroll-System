@@ -408,6 +408,11 @@ html {
   }
 }
 
+@media (max-width: 736px) {
+  .sidebar-wrapper {
+    display: none;
+  }
+}
 @media (max-width: 780px) {
   .sidebar-wrapper {
     display: none;

@@ -244,6 +244,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.x.x/dist/alpine.min.js" defer></script>
+
     <script src="/javascript/jquery-3.7.1.min.js"></script>
     <script src="/javascript/topbar-menu-toggle.js"></script>
 
@@ -251,6 +252,7 @@
         document.addEventListener("DOMContentLoaded", () => {
             const sidebarToggle = document.getElementById("sidebarToggle");
             const sidebar = document.querySelector(".sidebar-wrapper");
+
             sidebarToggle.addEventListener("click", () => {
                 sidebar.classList.toggle("active");
             });
