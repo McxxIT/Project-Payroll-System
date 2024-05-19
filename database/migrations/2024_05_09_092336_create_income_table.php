@@ -28,6 +28,17 @@ return new class extends Migration
             $table->integer('Bonuses');
             $table->integer('otTotal');
 
+            $table->integer('philHealth');
+            $table->integer('pagIbig');
+            $table->integer('sss');
+
+            $table->integer('lates');
+            $table->integer('absents');
+            $table->integer('totalDeduction');
+
+            $table->integer('totalSalary');
+
+
             $table->date('datefrom');
             $table->date('dateto');
 

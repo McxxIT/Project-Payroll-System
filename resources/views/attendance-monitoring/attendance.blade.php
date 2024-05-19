@@ -19,8 +19,8 @@
             <div class="form-group">
                 <input type="text" class="form-control" id="employeeId" placeholder="Enter your userID">
             </div>
-            <button type="submit" class="btn btn-primary">Clock In</button>
-            <button type="submit" class="btn btn-primary">Clock Out</button>
+            <button type="submit" class="btn btn-primary" name="clock-in">Clock In</button>
+            <button type="submit" class="btn btn-primary" name="clock-out">Clock Out</button>
         </form>
     </div>
 
