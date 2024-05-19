@@ -1,216 +1,119 @@
-.employee_c {
-    .e-main-content {
-        margin-left: 230px;
+.e-main-content {
+    margin-top: 100px;
+    margin-left: 230px;
 
-        .e-main-content-wrapper {
-            margin: 20px;
+    @media screen and (max-width: 780px) {
+        margin-left: 0;
+
+    }
+
+    .e-main-content-flex {
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+
+        .item {
             display: flex;
             flex-direction: column;
+            padding: 15px 20px;
+            background: white;
 
-            .main-content-1 {
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .item:first-child {
+            margin-bottom: 20px;
+            align-self: center;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 3px solid green;
+            height: 150px;
+
+            .header {
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+
+            .body {
                 display: flex;
-                flex-direction: column;
-                gap: 50px;
+                gap: 10px;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.25rem;
+                color: grey;
+            }
+        }
 
-                .title-welcome {
-                    font-size: 30px;
-                    font-weight: 600;
-                    margin-bottom: 20px;
+        .item:last-child {
+            padding: 10px 20px 50px 20px;
+
+            .sub:first-child {
+                margin-bottom: 50px;
+
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+
+            .sub:last-child {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.25rem;
+                color: grey;
+
+                @media screen and (max-width: 780px) {
+                    flex-direction: column;
+                    gap: 20px;
+
                 }
 
-                .card-1 {
+                .grand-ch {
+                    width: 100%;
                     display: flex;
-                    gap: 40px;
-                    height: 200px;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
 
-                    .body-card-left {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        width: 70%;
-                        background-color: white;
-                        border-left: 3px solid orange;
-                        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-                        padding: 20px 40px;
-                        gap: 20px;
+                    &:not(:last-child) {
+                        @media screen and (max-width: 780px) {
+                            padding-bottom: 10px;
+                            border-bottom: 1px solid grey;
 
-                        .title {
-                            font-size: 20px;
-                            font-weight: 600;
-                        }
-
-                        .body-card-flex {
-                            align-self: center;
-                            flex: 1;
-                            display: flex;
-                            justify-content: space-between;
-                            gap: 20px;
-
-                            .box {
-                                display: flex;
-                                flex-direction: column;
-
-                                .green {
-                                    color: green;
-                                }
-
-                                .red {
-                                    color: red;
-                                }
-
-                                .blue {
-                                    color: blue;
-                                }
-
-                                span:nth-child(1) {
-                                    font-size: 35px;
-
-                                }
-
-                                span:nth-child(2) {
-                                    font-size: 20px;
-                                    color: grey;
-                                }
-                            }
                         }
                     }
 
-                    .body-card-right {
-                        display: flex;
-                        flex-direction: column;
-                        width: 30%;
-                        background-color: white;
-                        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-                        padding: 20px 40px;
-                        gap: 20px;
+                    .first {
+                        font-size: 1.875rem;
+                        color: black;
+                    }
 
-                        .title {
-                            font-size: 20px;
-                            font-weight: 600;
-                        }
-
-                        .box {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-
-                            .blue {
-                                color: blue;
-                            }
-
-                            span:nth-child(1) {
-                                font-size: 35px;
-                            }
-
-                            span:nth-child(2) {
-                                font-size: 20px;
-                                color: grey;
-                            }
-                        }
+                    .second {
+                        font-size: 1.25rem;
+                        color: grey;
                     }
                 }
 
-                .card-2 {
-                    display: flex;
-                    gap: 40px;
+                .grand-ch:first-child {
 
-                    .body-card-left {
-                        display: flex;
-                        flex-direction: column;
-                        width: 70%;
-                        gap: 15px;
 
-                        .item-1 {
-                            display: flex;
-                            flex-direction: column;
-                            
-                            background-color: white;
-                            height: 220px;
-                         
-                            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-                            padding: 20px 40px;
-                            gap: 20px;
-
-                            .title-heading {
-                                font-size: 20px;
-                                font-weight: 600;
-
-                            }
-
-                            .box-1-flex {
-                                display: flex;
-                                justify-content: space-between;
-                                flex:1;
-                               
-
-                                .box {
-                                    display: flex;
-                                    flex-direction: column;
-                                    align-items: center;
-                                    align-self:center;
-                                    width:20%;
-                                    gap:20px;
-                                    .orange{
-                                        color:orange;
-                                    }
-                                    .yellow{
-                                        color:yellow;
-                                    }
-                                    .red-orange{
-                                        color:#FF5349;
-                                    }
-                                    .green{
-                                        color:green;
-                                    }
-                                    .red{
-                                        color:red;
-                                    }
-                                    span:nth-child(1) {
-                                        font-size: 40px;
-                                        
-                                    }
-                                    span:nth-child(2) {
-                                        font-size: 25px;
-                                        color:grey;
-                                        white-space: nowrap;
-                                    }
-                                }
-                            }
-
-                        }
+                    .second {
+                        color: green;
                     }
+                }
 
-                    .body-card-right {
-                        display: flex;
-                        flex-direction: column;
-                        width: 30%;
-                        height:350px;
-                        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-                        background-color: white;
-                        .body-card-flex{
-                            display:flex;
-                            flex-direction: column;
-                            justify-content: space-evenly;
-                            align-items: center;
-                            flex:1;
-                            .box{
-                                display:flex;
-                                flex-direction: column;
-                                align-items: center;
-                                width:50%;
-                                white-space: nowrap;
-                                .red{
-                                    color:red;
-                                }
-                                span:nth-child(1) {
-                                    font-size: 40px;
-                                }
-                                span:nth-child(2) {
-                                    font-size: 25px;
-                                    color:grey;
-                                }
-                            }
-                        }
+                .grand-ch:nth-child(2) {
+                    .second {
+                        color: red;
+                    }
+                }
+
+                .grand-ch:last-child {
+                    .second {
+                        color: green;
                     }
                 }
             }
