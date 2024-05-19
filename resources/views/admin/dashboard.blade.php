@@ -25,22 +25,39 @@
                 </div>
 
                 <div class="sider-menu">
-                    <a class="menu-background active"><i class="bi bi-boxes"></i><span>Dashboard</span></a>
-                    <a class="menu-background" href="{{ route('employee') }}"><i
-                            class="bi bi-person-rolodex"></i><span>Employees</span></a>
-                    <a class="menu-background" href="{{ route('applicant') }}"><i
-                            class="bi bi-person-rolodex"></i><span>Applicant</span></a>
-                    <a class="menu-background" href="{{ route('archive') }}"><i
-                            class="bi bi-archive"></i><span>Archive</span></a>
-                    <a class="menu-background" href="{{ route('payroll') }}"><i
-                            class="bi bi-credit-card-2-front"></i><span>Payroll</span></a>
-                    <a class="menu-background" href="{{ route('payroll-report') }}"><i
-                            class="bi bi-file-earmark-post"></i></i><span>Payroll Report</span></a>
-                    <a class="menu-background" href="{{ route('payslip') }}"><i
-                            class="bi bi-wallet"></i><span>Payslip</span></a>
-                    <a class="menu-background" href="{{ route('company') }}"><i
-                            class="bi bi-buildings"></i><span>Company</span></a>
+                    <a class="menu-background active">
+                        <i class="bi bi-boxes"></i>
+                        <span>Dashboard</span></a>
+                    <a class="menu-background" href="{{ route('employee') }}">
+                        <i class="bi bi-person-rolodex"></i>
+                        <span>Employees</span></a>
+                    <a class="menu-background" href="{{ route('applicant') }}">
+                        <i class="bi bi-person-rolodex"></i>
+                        <span>Applicant</span></a>
+                    <a class="menu-background" href="{{ route('archive') }}">
+                        <i class="bi bi-archive"></i>
+                        <span>Archive</span></a>
+                    <a class="menu-background" href="{{ route('payroll') }}">
+                        <i class="bi bi-credit-card-2-front"></i>
+                        <span>Payroll</span></a>
+                    <a class="menu-background" href="{{ route('payroll-report') }}">
+                        <i class="bi bi-file-earmark-post"></i>
+                        <span>Payroll Report</span></a>
+                    <a class="menu-background" href="{{ route('payslip') }}">
+                        <i class="bi bi-wallet"></i>
+                        <span>Payslip</span>
+                    </a>
+                    <a class="menu-background" href="{{ route('company') }}">
+                        <i class="bi bi-buildings"></i>
+                        <span>Company</span>
+                    </a>
                 </div>
+                <form method="POST" action="{{ route('logout') }}" class="logout">
+                    @csrf
+                    <div class="out-flex-wrapper" onclick="event.preventDefault(); this.closest('form').submit();">
+                        <span class="text-logout">Logout</span>
+                    </div>
+                </form>
             </div>
         </div>
 
@@ -59,15 +76,66 @@
                 </div>
                 <div class="profile">
                     <a href="{{ route('admin-profile') }}" class="name">Robert</a>
-                    <a href="{{ route('admin-profile') }}"><img class="profile-link" src="/assets/imgs/pfp.jpg"></a>
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <div class="out-flex-wrapper" onclick="event.preventDefault(); this.closest('form').submit();">
-                            <span class="text-logout">Logout</span>
+
+                </div>
+                <div class="menu">
+                    <div class="menu-flex">
+                        <div class="info">
+                            <a href="" class="view-person">
+                                <span>
+                                    <span class="">Robert</span>
+                                </span>
+                            </a>
                         </div>
-                    </form>
+                        <a class="menu-item act">
+                            <i class="bi bi-boxes"></i>
+                            <span>Dashboard</span></a>
+                        </a>
+                        <a href="{{ route('employee') }}" class="menu-item">
+                            <i class="bi bi-person-rolodex"></i>
+                            <span>Employees</span></a>
+                        </a>
+                        <a href="{{ route('applicant') }}" class="menu-item">
+                            <i class="bi bi-person-rolodex"></i>
+                            <span>Applicant</span></a>
+                        </a>
+                        <a href="{{ route('archive') }}" class="menu-item">
+                            <i class="bi bi-archive"></i>
+                            <span>Archive</span></a>
+                        </a>
+                        <a href="{{ route('payroll') }}" class="menu-item">
+                            <i class="bi bi-credit-card-2-front"></i>
+                            <span>Payroll</span></a>
+                        </a>
+                        <a href="{{ route('payroll-report') }}" class="menu-item">
+                            <i class="bi bi-file-earmark-post"></i>
+                            <span>Payroll Report</span></a>
+                        </a>
+                        <a href="{{ route('payslip') }}" class="menu-item">
+                            <i class="bi bi-wallet"></i>
+                            <span>Payslip</span>
+                        </a>
+                        <a href="{{ route('company') }}" class="menu-item">
+                            <i class="bi bi-buildings"></i>
+                            <span>Company</span>
+                        </a>
+                        <div class="info">
+                            <form method="POST" action="{{ route('logout') }}" class="form"
+                                onclick="event.preventDefault(); this.submit();">
+                                @csrf
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Logout</span>
+                            </form>
+                        </div>
+
+
+
+
+                    </div>
                 </div>
             </div>
+
+
         </div>
 
 
@@ -76,33 +144,6 @@
             <!-- ================MAIN CONTENT DATA=========== -->
             <div class="content-body">
                 <div class="c-body-flex">
-                    {{-- <div class="item-1">
-                        <div class="item-header">Last Pay Run</div>
-                        <div class="item-body">
-                            <div class="body-flex">
-                                <div class="body-flex-item">
-                                    <div class="header">EMPLOYEES NET PAY</div>
-                                    <div class="body">₱0.00</div>
-                                </div>
-                                <div class="body-flex-item">
-                                    <div class="header">PAYMENT DATE</div>
-                                    <div class="body">02/02/2019</div>
-                                </div>
-                                <div class="body-flex-item">
-                                    @php
-                                        $acceptedEmployees = $employees->where('is_accepted', 2)->count();
-                                    @endphp
-                                    <div class="header">NO. OF EMPLOYEES</div>
-                                    <div class="body">{{ $acceptedEmployees }}</div>
-                                </div>
-                                <div class="body-flex-item">
-                                    <div class="body redirect-details">
-                                        <a href="{{ route('payroll-report') }}">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                     <div class="item-2">
                         <div class="item-header">
                         </div>
@@ -203,37 +244,20 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.x.x/dist/alpine.min.js" defer></script>
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
-=======
 
+    <script src="/javascript/jquery-3.7.1.min.js"></script>
+    <script src="/javascript/topbar-menu-toggle.js"></script>
 
->>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const sidebarToggle = document.getElementById("sidebarToggle");
             const sidebar = document.querySelector(".sidebar-wrapper");
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-    
-=======
 
->>>>>>> Stashed changes
-=======
->>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
             sidebarToggle.addEventListener("click", () => {
                 sidebar.classList.toggle("active");
             });
         });
     </script>
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 
 </body>
 

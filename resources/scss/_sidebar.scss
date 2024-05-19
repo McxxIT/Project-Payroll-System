@@ -35,6 +35,7 @@
             align-self: flex-start;
             font-size: 20px;
             gap: 10px;
+            flex: 1;
             padding-bottom: 20px;
             padding-top: 30px;
             width: 100%;
@@ -66,6 +67,27 @@
                 font-size: 1.1rem;
             }
 
+        }
+
+        .logout {
+            display: flex;
+            justify-content: center;
+            justify-self: flex-end;
+            align-items: center;
+            margin-top: 20px;
+            padding: 10px;
+            width: 100%;
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            font-family: fonts;
+            cursor: pointer;
+
+            .out-flex-wrapper {
+                height: 100%;
+                width: 100%;
+                text-align: center;
+            }
         }
 
         .profile-wrapper {
@@ -137,24 +159,9 @@
 
 
             }
-<<<<<<< HEAD
+
         }
 
-<<<<<<< Updated upstream
-   
-=======
-<<<<<<< Updated upstream
-    @media(max-width:736px){
-        .sidebar-wrapper{
-            display:none;
-        }
-    }
-=======
-    }
-}
-
-=======
-        }
 
         @media(max-width:736px) {
             .sidebar-wrapper {
@@ -162,18 +169,22 @@
             }
         }
 
-
     }
 }
 
->>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
+
+
+
+@media(max-width:736px) {
+    .sidebar-wrapper {
+        display: none;
+    }
+}
+
+
+
 @media(max-width:780px) {
     .sidebar-wrapper {
         display: none;
     }
 }
-<<<<<<< HEAD
->>>>>>> Stashed changes
->>>>>>> Stashed changes
-=======
->>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
