@@ -382,7 +382,13 @@ html {
 .sidebar-wrapper .sidebar-flex .profile-wrapper .profile-menu .active:hover {
   scale: 1.1;
 }
+@media (max-width: 736px) {
+  .sidebar-wrapper .sidebar-flex .sidebar-wrapper {
+    display: none;
+  }
+}
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< Updated upstream
@@ -390,11 +396,17 @@ html {
 =======
 @media (max-width: 780px) {
 >>>>>>> Stashed changes
+=======
+@media (max-width: 780px) {
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
   .sidebar-wrapper {
     display: none;
   }
 }
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
 .topbar-wrapper {
   background-color: rgb(20, 20, 20);
   margin-left: 230px;
@@ -413,6 +425,9 @@ html {
   height: 100%;
   justify-content: space-between;
   padding: 20px 30px;
+}
+.topbar-wrapper .profile-wrapper .sidebar-toggle {
+  display: none;
 }
 .topbar-wrapper .profile-wrapper .sidebar-toggle {
   display: none;
@@ -613,6 +628,12 @@ html {
   border-radius: 3px;
   display: flex;
   flex-direction: column;
+  height: 200px;
+  border-radius: 3px;
+  height: 100%;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
 }
 .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex {
   display: flex;
@@ -809,6 +830,57 @@ html {
   .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body {
     border-radius: 3px;
   }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .item-header {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .item-body {
+    border-radius: 3px;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .item-body .body-flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    flex-grow: 1;
+    gap: 15px;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .item-body .body-flex .body-flex-item {
+    width: 100%;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .item-body .body-flex .body-flex-item2 {
+    width: 100%;
+    flex-grow: 1;
+    gap: 15px;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .item-body .body-flex .body-flex-item2 .body-flex-item {
+    width: 100%;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .item-body .body-flex .body-flex-item2 .body-flex-item2 {
+    width: 100%;
+  }
+}
+@media (max-width: 780px) {
+  .dashboard-container .content-wrapper {
+    margin-left: 0;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-header {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body {
+    border-radius: 3px;
+  }
   .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex {
     display: flex;
     flex-direction: column;
@@ -819,11 +891,27 @@ html {
   }
   .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item {
     width: 100%;
+    flex-direction: column;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item .inside-body-item {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item .inside-body-item .header {
+    flex-direction: row;
+  }
+  .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item .inside-body-item .body {
+    flex-direction: row;
+    align-items: center;
   }
   .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item2 {
     width: 100%;
   }
 }
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 @media (max-width: 780px) {
@@ -877,6 +965,8 @@ html {
     width: 100%;
   }
 }
+=======
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
 @media (max-width: 600px) {
   .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .body-flex .body-flex-item .inside-body-item {
     flex-direction: column;
@@ -889,8 +979,11 @@ html {
     align-items: center;
   }
 }
+<<<<<<< HEAD
 >>>>>>> Stashed changes
 >>>>>>> Stashed changes
+=======
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
 .employee-container {
   background: whitesmoke;
 }
@@ -3182,6 +3275,7 @@ html {
   .dashboard-container .content-wrapper .content-body .c-body-flex .item-2 .item-body .latest-employees {
     display: none;
   }
+<<<<<<< HEAD
 }
 @media (max-width: 736px) {
   .topbar-wrapper {
@@ -3217,4 +3311,6 @@ html {
 =======
 >>>>>>> Stashed changes
 >>>>>>> Stashed changes
+=======
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
 }/*# sourceMappingURL=style.css.map */

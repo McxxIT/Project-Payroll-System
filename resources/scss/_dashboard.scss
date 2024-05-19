@@ -95,10 +95,15 @@
                     }
 
                     .item-body {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                         height:100%;
+=======
+
+                        height: 100%;
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
                         border-radius: 3px;
-                        display:flex;
+                        display: flex;
                         flex-direction: column;
 =======
 <<<<<<< Updated upstream
@@ -111,6 +116,16 @@
                         flex-direction: column;
 >>>>>>> Stashed changes
 >>>>>>> Stashed changes
+
+
+                        height: 200px;
+                        border-radius: 3px;
+
+                        height: 100%;
+                        border-radius: 3px;
+                        display: flex;
+                        flex-direction: column;
+
 
 
 
@@ -262,14 +277,26 @@
                         }
 
                         .latest-employees {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                       
 =======
 <<<<<<< Updated upstream
+=======
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
 
 =======
 >>>>>>> Stashed changes
 >>>>>>> Stashed changes
+
+                            overflow-x: auto;
+
+
+
+
+
+
+
 
                             overflow-x: auto;
 
@@ -311,7 +338,11 @@
                                     }
 
                                     span:nth-child(3) {
+<<<<<<< HEAD
                                         width: 40%; 
+=======
+                                        width: 40%;
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
                                         min-width: 100px;
                                     }
                                 }
@@ -360,6 +391,7 @@
     .content-wrapper {
         margin-left: 0;
     }
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 }
 
@@ -372,43 +404,161 @@
 
 @media(max-width: 1000px) {
 >>>>>>> Stashed changes
+=======
+
+}
+
+@media(max-width: 1000px) {}
+
+
+
+@media(max-width: 1000px) {
+
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
     .dashboard-container {
         .content-wrapper {
             margin-top: 100px;
             margin-left: 230px;
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     
 =======
 
 >>>>>>> Stashed changes
+=======
+
+
+
+
+
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
             .content-body {
                 .c-body-flex {
                     display: flex;
                     flex-direction: column;
                     padding: 20px;
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 
 >>>>>>> Stashed changes
+=======
+
+
+
+
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
                     .item-2 {
                         display: flex;
                         flex-direction: column;
                         gap: 15px;
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     
+=======
+
+
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
                         .item-header {
                             font-size: 1.2rem;
                             font-weight: 700;
-    
+
                         }
-    
+
                         .item-body {
-                          
+
                             border-radius: 3px;
+<<<<<<< HEAD
     
     
     
 =======
+=======
+
+
+
+
+
+                            .item-header {
+                                font-size: 1.2rem;
+                                font-weight: 700;
+
+                            }
+
+                            .item-body {
+
+                                border-radius: 3px;
+
+
+
+
+                                .body-flex {
+                                    display: flex;
+                                    flex-direction: column;
+                                    height: 100%;
+                                    width: 100%;
+
+                                    flex-grow: 1;
+                                    gap: 15px;
+
+                                    .body-flex-item {
+                                        width: 100%;
+                                    }
+
+                                    .body-flex-item2 {
+                                        width: 100%;
+
+                                        flex-grow: 1;
+                                        gap: 15px;
+
+                                        .body-flex-item {
+                                            width: 100%;
+
+                                        }
+
+                                        .body-flex-item2 {
+                                            width: 100%;
+
+                                        }
+                                    }
+                                }
+                            }
+
+
+
+
+                        }
+
+
+
+                    }
+                }
+            }
+        }
+
+
+    }
+
+}
+
+
+@media(max-width:780px) {
+    .dashboard-container {
+        .content-wrapper {
+
+            margin-left: 0;
+
+            .content-body {
+                .c-body-flex {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px;
+
+                    .item-2 {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 15px;
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
 
                         .item-header {
                             font-size: 1.2rem;
@@ -422,18 +572,48 @@
 
 
 
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
                             .body-flex {
                                 display: flex;
                                 flex-direction: column;
                                 height: 100%;
                                 width: 100%;
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                                 flex-grow:1;
+=======
+                                flex-grow: 1;
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
                                 gap: 15px;
-                                .body-flex-item{
-                                    width:100%;
+
+                                .body-flex-item {
+                                    width: 100%;
+                                    flex-direction: column;
+
+                                    .inside-body-item {
+                                        flex-direction: row;
+                                        width: 100%;
+                                        align-items: center;
+                                        justify-content: space-between;
+                                        gap: 10px;
+
+                                        .header {
+                                            flex-direction: row;
+
+                                        }
+
+                                        .body {
+                                            flex-direction: row;
+                                            align-items: center;
+
+                                        }
+                                    }
+
                                 }
+<<<<<<< HEAD
                                 .body-flex-item2{
                                     width:100%;
 =======
@@ -448,10 +628,53 @@
                                 .body-flex-item2 {
                                     width: 100%;
 >>>>>>> Stashed changes
+=======
+
+                                .body-flex-item2 {
+                                    width: 100%;
                                 }
                             }
                         }
                     }
+
+
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:600px) {
+    .dashboard-container {
+        .content-wrapper {
+            .content-body {
+                .c-body-flex {
+                    .item-2 {
+                        .item-header {}
+
+                        .item-body {
+                            .body-flex {
+                                .body-flex-item {
+                                    .inside-body-item {
+                                        flex-direction: column;
+
+                                        .header {
+                                            flex-direction: row;
+
+                                        }
+
+                                        .body {
+                                            flex-direction: column;
+                                            align-items: center;
+
+                                        }
+                                    }
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
+                                }
+                            }
+                        }
+                    }
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                     
                     
@@ -459,11 +682,14 @@
 
 
 >>>>>>> Stashed changes
+=======
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
                 }
             }
         }
     }
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 }
 =======
@@ -583,3 +809,6 @@
 }
 >>>>>>> Stashed changes
 >>>>>>> Stashed changes
+=======
+}
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d

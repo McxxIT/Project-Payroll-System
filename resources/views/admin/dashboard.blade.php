@@ -203,20 +203,28 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@2.x.x/dist/alpine.min.js" defer></script>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <<<<<<< Updated upstream
 =======
 >>>>>>> Stashed changes
+=======
+
+
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const sidebarToggle = document.getElementById("sidebarToggle");
             const sidebar = document.querySelector(".sidebar-wrapper");
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     
 =======
 
 >>>>>>> Stashed changes
+=======
+>>>>>>> f8d953b718eebdbc2a5157a46dc6cee71ae3420d
             sidebarToggle.addEventListener("click", () => {
                 sidebar.classList.toggle("active");
             });
