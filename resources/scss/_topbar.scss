@@ -2,21 +2,29 @@
 
     background-color: rgb(20, 20, 20);
     margin-left: 230px;
+    height: 100px;
     white-space: nowrap;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: 1000;
-    
+
 
     .profile-wrapper {
         display: flex;
         text-align: center;
         flex-direction: row;
+        height: 100%;
         justify-content: space-between;
         padding: 20px 30px;
 
+<<<<<<< Updated upstream
+=======
+        .sidebar-toggle {
+            display: none;
+        }
+>>>>>>> Stashed changes
 
         .c-header-flex {
             display: flex;
@@ -84,7 +92,7 @@
                         color: blue;
                     }
                 }
-                
+
             }
 
 
@@ -131,4 +139,51 @@
         }
     }
 
+}
+
+@media(max-width:600px) {}
+
+@media(max-width:780px) {
+    .topbar-wrapper {
+        margin-left: 0px;
+
+        .profile-wrapper {
+            padding: 10px;
+
+            .sidebar-toggle {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 10px;
+                cursor: pointer;
+
+                .bi {
+                    font-size: 2rem;
+                    color: white;
+                }
+            }
+
+            .c-header-flex {
+                width: 100%;
+
+                .title {
+                    display: flex;
+                    align-items: flex-start;
+                    width: 100%;
+                    border: none;
+
+                }
+
+                .greetings {
+                    display: none;
+                }
+            }
+
+            .profile {
+                display: none;
+            }
+        }
+
+
+    }
 }

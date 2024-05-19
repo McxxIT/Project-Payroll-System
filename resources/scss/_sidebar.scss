@@ -1,147 +1,157 @@
+.sidebar-wrapper {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
 
-    .sidebar-wrapper {
-        left: 0;
-        top: 0;
-        bottom: 0;
-        position: fixed;
-        width: 230px;
+    width: 230px;
+    height: 100%;
+    background-color: rgb(20, 20, 20);
+
+    .sidebar-flex {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
         height: 100%;
-        background-color: rgb(20, 20, 20);
 
-        .sidebar-flex {
+
+        .brand {
+            a {
+                img {
+                    width: 150px;
+                    height: auto;
+                    border-radius: 20px;
+                    background-color: rgba(255, 255, 255, 0.558);
+                }
+            }
+        }
+
+        .sider-menu {
 
             display: flex;
             flex-direction: column;
-            align-items: center;
-            padding: 10px;
-            height: 100%;
-            
+            align-self: flex-start;
+            font-size: 20px;
+            gap: 10px;
+            padding-bottom: 20px;
+            padding-top: 30px;
+            width: 100%;
+            cursor: pointer;
 
-            .brand {
-                a {
-                    img {
-                        width: 150px;
-                        height: auto;
-                        border-radius: 20px;
-                        background-color: rgba(255, 255, 255, 0.558);
-                    }
+            .menu-background {
+                color: rgb(148, 157, 180);
+
+                padding-left: 20px;
+                padding-bottom: 10px;
+                text-decoration: none;
+
+                i {
+                    margin-right: 10px;
                 }
             }
 
-            .sider-menu {
+            .menu-background:hover {
+                color: rgb(18, 0, 157);
+                scale: 1.1;
+            }
 
+            .menu-background.active {
+                color: rgb(0, 157, 29);
+            }
+
+            a:nth-child(4) {
+                margin-left: 35px;
+                font-size: 1.1rem;
+            }
+
+        }
+
+        .profile-wrapper {
+            padding: 10px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+
+
+
+            .profile {
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 50px;
+                    height: auto;
+                    border-radius: 100%;
+                    border: 2px solid green;
+                }
+
+                span {
+                    color: whitesmoke;
+                    padding: 5px;
+                }
+            }
+
+            .profile:hover {
+                cursor: default;
+            }
+
+            .profile-menu {
                 display: flex;
                 flex-direction: column;
-                align-self: flex-start;
                 font-size: 20px;
                 gap: 10px;
-                padding-bottom: 20px;
-                padding-top: 30px;
+                padding: 20px 0 20px 0px;
+                font-family: fonts;
                 width: 100%;
-                cursor: pointer;
 
-                .menu-background{
+
+                a {
+
                     color: rgb(148, 157, 180);
-                    
-                    padding-left: 20px;
-                    padding-bottom: 10px;
                     text-decoration: none;
 
                     i {
                         margin-right: 10px;
                     }
+
                 }
 
-                .menu-background:hover {
+                a:not(.active):hover {
                     color: rgb(18, 0, 157);
                     scale: 1.1;
                 }
-                .menu-background.active{
-                    color: rgb(0, 157, 29);
-                }
 
-                a:nth-child(4) {
-                    margin-left: 35px;
-                    font-size: 1.1rem;
-                }
-                
-            }
+                .active {
+                    color: green;
 
-            .profile-wrapper {
-                padding: 10px;
-                text-align: center;
-                flex-grow: 1;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-
-
-                
-
-                .profile {
-                    display: flex;
-                    align-items: center;
-
-                    img {
-                        width: 50px;
-                        height: auto;
-                        border-radius: 100%;
-                        border: 2px solid green;
-                    }
-
-                    span {
-                        color: whitesmoke;
-                        padding: 5px;
-                    }
-                }
-
-                .profile:hover {
-                    cursor:default;
-                }
-
-                .profile-menu {
-                    display: flex;
-                    flex-direction: column;
-                    font-size: 20px;
-                    gap: 10px;
-                    padding: 20px 0 20px 0px;
-                    font-family: fonts;
-                    width: 100%;
-
-
-                    a {
-
-                        color: rgb(148, 157, 180);
-                        text-decoration: none;
-
-                        i {
-                            margin-right: 10px;
-                        }
-
-                    }
-                    a:not(.active):hover {
-                        color: rgb(18, 0, 157);
+                    &:hover {
                         scale: 1.1;
                     }
 
-                    .active {
-                        color: green;
-
-                        &:hover {
-                            scale: 1.1;
-                        }
-
-                    }
-                    
-
                 }
+
+
             }
-
         }
-    }
 
+<<<<<<< Updated upstream
     @media(max-width:736px){
         .sidebar-wrapper{
             display:none;
         }
     }
+=======
+    }
+}
+
+@media(max-width:780px) {
+    .sidebar-wrapper {
+        display: none;
+    }
+}
+>>>>>>> Stashed changes
