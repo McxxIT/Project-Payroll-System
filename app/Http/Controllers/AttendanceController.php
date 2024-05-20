@@ -17,7 +17,8 @@ class AttendanceController extends Controller
     public function store(Request $request)
     {
         $employeeId = $request->input('employeeId');
-        $currentDateTime = Carbon::now();
+        $timezone = 'Asia/Manila';
+        $currentDateTime = Carbon::now($timezone);
 
         // Retrieve the user with the given employee ID
         $user = User::where('userID', $employeeId)->first();
@@ -52,32 +53,26 @@ class AttendanceController extends Controller
         }
 
         if ($request->has('clock-out')) {
-            // Check if there is a clock-in record without a clock-out time for this user
             $attendance = Attendance::where('userID', $employeeId)
                 ->whereNotNull('clockin')
                 ->whereNull('clockout')
                 ->orderBy('clockin', 'desc')
                 ->first();
-
             if ($attendance) {
-                $clockInTime = Carbon::parse($attendance->clockin);
+                $clockInTime = Carbon::parse($attendance->clockin, $timezone);
                 $clockOutTime = $currentDateTime;
-
-                // Calculate the duration between clock-in and clock-out
+                \Log::info('Clock-in Time: ' . $clockInTime);
+                \Log::info('Clock-out Time: ' . $clockOutTime);
                 $duration = $clockOutTime->diff($clockInTime);
-
-                // Convert duration to decimal hours
+                \Log::info('Duration: ' . $duration->format('%H:%I:%S'));
                 $hours = $duration->h;
                 $minutes = $duration->i;
                 $decimalHours = $hours + ($minutes / 60);
-
+                \Log::info('Decimal Hours: ' . $decimalHours);
                 $attendance->clockout = $clockOutTime->toTimeString();
-                $attendance->hoursRendered = round($decimalHours, 2); // Store the decimal hours rendered
-                $attendance->save();
-
+                $attendance->hoursRendered = round($decimalHours, 2);
                 return redirect()->back()->with('success', 'Clocked Out');
             } else {
-                // No clock-in record found
                 return redirect()->back()->with('error', 'No clock-in record found');
             }
         }
