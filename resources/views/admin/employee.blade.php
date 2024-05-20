@@ -216,8 +216,8 @@
                                             <div class="table-cell">{{ $employee->userID }}</div>
                                             <div class="table-cell">{{ $employee->firstname }}
                                                 {{ $employee->lastname }}</div>
-                                            <div class="table-cell">{{ $employee->position }}</div>
-                                            <div class="table-cell">{{ $employee->department }}</div>
+                                            <div class="table-cell">{{ $employee->position_name }}</div>
+                                            <div class="table-cell">{{ $employee->department_name }}</div>
 
                                             @if ($employee->is_active == 1)
                                                 <div class="table-cell green">Active</div>

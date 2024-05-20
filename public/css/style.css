@@ -1683,10 +1683,6 @@ html {
   flex-direction: column;
   margin-bottom: 0;
 }
-.data-3 .table-3 .table-header-3 {
-  min-width: -moz-fit-content;
-  min-width: fit-content;
-}
 .data-3 .table-3 .table-header-3 .table-row-3 {
   display: flex;
   width: 100%;
@@ -1730,7 +1726,7 @@ html {
 }
 .data-3 .table-3 .table-body-3 .table-row-3 {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
 }
 .data-3 .table-3 .table-body-3 .table-row-3 .emp-payslip-cell {
   border-right: 1px solid rgb(224, 224, 224);
@@ -1738,9 +1734,6 @@ html {
   padding: 10px;
   white-space: nowrap;
   flex-grow: 1;
-}
-.data-3 .table-3 .table-body-3 .table-row-3 .emp-payslip-cell a {
-  text-decoration: none;
 }
 .data-3 .table-3 .table-body-3 .table-row-3 .red {
   color: red;

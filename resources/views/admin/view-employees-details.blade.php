@@ -205,7 +205,7 @@
                                     <span>{{ $employee->userID }}</span>
                                 </div>
                             </div>
-
+                    
                             <div class="inside-body">
                                 <div class="flex">
                                     <span>Department</span>
@@ -214,14 +214,12 @@
                                     <select name="department_id" id="departmentSelect">
                                         <option disabled selected>-</option>
                                         @foreach ($departments as $department)
-                                            <option value="{{ $department->department_id }}" id="department">
-                                                {{ $department->department_name }}</option>
+                                            <option value="{{ $department->department_id }}">{{ $department->department_name }}</option>
                                         @endforeach
-
                                     </select>
                                 </div>
                             </div>
-
+                    
                             <div class="inside-body">
                                 <div class="flex">
                                     <span>Position</span>
@@ -230,22 +228,12 @@
                                     <select name="position_id" id="position">
                                         <option disabled selected>-</option>
                                         @foreach ($positions as $position)
-                                            <option value="{{ $position->position_id }}" id="position">
-                                                {{ $position->position_name }}</option>
+                                            <option value="{{ $position->position_id }}">{{ $position->position_name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                             </div>
-
-                            <div class="inside-body">
-                                <div class="flex">
-                                    <span>Nationality</span>
-                                </div>
-                                <div class="flex">
-                                    <span>{{ $employee->nationality }}</span>
-                                </div>
-                            </div>
-
+                    
                             <div class="inside-body">
                                 <div class="flex">
                                     <span>Status</span>
@@ -255,33 +243,28 @@
                                         <option value="1">Active</option>
                                         <option value="0">Inactive</option>
                                     </select>
-                                    {{-- @if ($employee->is_active == 1)
-                                        <span>Active</span>
-                                    @elseif ($employee->is_active == 0)
-                                        <span>Inactive</span>
-                                    @endif --}}
                                 </div>
                             </div>
-
+                    
                             <div class="inside-body">
                                 <div class="flex">
                                     <span>Work Shift</span>
                                 </div>
                                 <div class="flex">
-                                    <select name="shift_type" id="type">
+                                    <select name="shift_type" id="workShift">
                                         <option value="1">Day Shift (7am-3pm)</option>
-                                        <option value="2">Swing Shif (3pm-11pm)</option>
+                                        <option value="2">Swing Shift (3pm-11pm)</option>
                                         <option value="3">Graveyard Shift (11pm-7am)</option>
                                     </select>
                                 </div>
                             </div>
-
+                    
                             <div class="inside-body">
                                 <div class="flex">
                                     <span>User Type</span>
                                 </div>
                                 <div class="flex">
-                                    <select name="user_type" id="type">
+                                    <select name="user_type" id="userType">
                                         <option value="2">Employee</option>
                                         <option value="1">Admin</option>
                                     </select>
@@ -289,6 +272,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
 
 
@@ -388,13 +372,15 @@
                     justify-content: flex-end;
                     gap: 10px;
                     padding-right: 20px">
-                        <button
-                            style="background-color: green; width: 90px;
+                        <a href="{{ route('employee') }}" style="text-decoration: none;">
+                            <button
+                                style="background-color: green; width: 90px;
                         height: 30px;
                         border: none;
                         color: white;
                         border-radius: 3px;"
-                            type="button">Back</button></a>
+                                type="button">Back</button>
+                        </a>
                         <button
                             style="background-color: blue; width: 90px;
                         height: 30px;

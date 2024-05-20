@@ -64,7 +64,7 @@
                             <div class="emp-payslip-cell">Hourly Rate</div>
                             <div class="emp-payslip-cell">Hours Rendered</div>
                             <div class="emp-payslip-cell">Working Days</div>
-                            <div class="emp-payslip-cell"></div>
+                            <div class="emp-payslip-cell">Action</div>
                         </div>
                     </div>
 

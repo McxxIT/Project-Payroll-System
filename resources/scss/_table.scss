@@ -467,7 +467,6 @@
         margin-bottom: 0;
 
         .table-header-3 {
-            min-width: fit-content;
 
             .table-row-3 {
                 display: flex;
@@ -525,18 +524,13 @@
 
             .table-row-3 {
                 display: flex;
-                justify-content: space-between;
-
+                flex-direction: row;
                 .emp-payslip-cell {
                     border-right: 1px solid rgb(224, 224, 224);
                     border-bottom: 1px solid rgb(224, 224, 224);
                     padding: 10px;
                     white-space: nowrap;
                     flex-grow: 1;
-
-                    a {
-                        text-decoration: none;
-                    }
                 }
 
                 .red {
