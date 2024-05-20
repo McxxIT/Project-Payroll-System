@@ -17,7 +17,7 @@ class AttendanceController extends Controller
     public function store(Request $request)
     {
         $employeeId = $request->input('employeeId');
-        $currentDateTime = Carbon::now();
+        $currentDateTime = Carbon::now()->timezone('Asia/Manila');
 
         // Retrieve the user with the given employee ID
         $user = User::where('userID', $employeeId)->first();

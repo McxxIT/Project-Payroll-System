@@ -69,7 +69,7 @@
         </div>
         <!-- ================MAIN CONTENT DATA=========== -->
         <div class="content-wrapper">
-            <form action="{{ route('submit-payslip') }}" method="POST">
+            <form action="{{ route('submit-payslip', ['id' => $employee->userID]) }}" method="POST">
                 @csrf
                 <div class="payroll-wrapper">
 
@@ -182,7 +182,7 @@
                                 </div>
                                 <div class="total-footer">
                                     <span>Total Deductions: </span>
-                                    <input type="number" class="form-control" placeholder="0" name="totalDeductions" id="totalDeductionsInput" readonly>
+                                    <input type="number" class="form-control" placeholder="0" name="totalDeduction" id="totalDeductionsInput" readonly>
                                 </div>
 
 

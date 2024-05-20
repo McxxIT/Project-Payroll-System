@@ -24,6 +24,8 @@ class Income extends Model
         'Incentives',
         'Bonuses',
         'otTotal',
+        'totalDeduction',
+        'totalSalary',
         'grossSalary',
 
         'datefrom',

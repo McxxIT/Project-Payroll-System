@@ -115,7 +115,7 @@
 
             <div class="content-body-wrapper">
 
-                <div class="cards-container">
+                {{-- <div class="cards-container">
                     <div class="flex-1-container">
 
                         <div class="flex-row-card">
@@ -131,13 +131,13 @@
 
                     </div>
 
-                </div>
+                </div> --}}
 
                 <div class="body-content">
 
-                    <div class="leave-form">
+                    {{-- <div class="leave-form">
                         <button class="add">Request a Leave</button>
-                    </div>
+                    </div> --}}
 
                     <div class="body-content-flex">
 

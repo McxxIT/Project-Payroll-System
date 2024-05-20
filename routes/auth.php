@@ -144,7 +144,7 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
 
     Route::post('payroll-update/{id}', [PayrollController::class, 'employeePayroll'])->name('employeePayroll');
 
-    Route::post('employeeIncome', [IncomeController::class, 'getIncome'])->name('submit-payslip');
+    Route::post('employeeIncome/{id}', [IncomeController::class, 'getIncome'])->name('submit-payslip');
 
     Route::post('update-employee', [PayslipController::class, 'updatePayslip'])->name('update-payslip');
 
