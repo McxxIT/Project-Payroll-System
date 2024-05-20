@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="sider-menu">
-                    <a class="menu-background ">
+                    <a class="menu-background" href="{{ route('dashboard') }}">
                         <i class="bi bi-boxes"></i>
                         <span>Dashboard</span></a>
                     <a class="menu-background" href="{{ route('employee') }}">
@@ -34,7 +34,7 @@
                     <a class="menu-background " href="{{ route('applicant') }}">
                         <i class="bi bi-person-rolodex"></i>
                         <span>Applicant</span></a>
-                    <a class="menu-background active" href="{{ route('archive') }}">
+                    <a class="menu-background active" href="#">
                         <i class="bi bi-archive"></i>
                         <span>Archive</span></a>
                     <a class="menu-background" href="{{ route('payroll') }}">

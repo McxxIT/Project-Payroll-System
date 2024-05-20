@@ -25,13 +25,13 @@
                 </div>
 
                 <div class="sider-menu">
-                    <a class="menu-background ">
+                    <a class="menu-background" href="{{ route('dashboard') }}">
                         <i class="bi bi-boxes"></i>
                         <span>Dashboard</span></a>
                     <a class="menu-background" href="{{ route('employee') }}">
                         <i class="bi bi-person-rolodex"></i>
                         <span>Employees</span></a>
-                    <a class="menu-background active" href="{{ route('applicant') }}">
+                    <a class="menu-background active" href="#">
                         <i class="bi bi-person-rolodex"></i>
                         <span>Applicant</span></a>
                     <a class="menu-background" href="{{ route('archive') }}">

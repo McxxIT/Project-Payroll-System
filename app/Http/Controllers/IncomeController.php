@@ -35,7 +35,7 @@ class IncomeController extends Controller
         } while (Income::where('income_id', $income_id)->exists());
 
         $income = new Income();
-        $income->income_id = 4242;
+        $income->income_id = rand(000000000, 999999999);
         $income->userID = $request->employeeID;
         $income->workDays = $request->workDays;
         $income->hourlyRate = $request->hourlyRate;
@@ -49,6 +49,12 @@ class IncomeController extends Controller
         $income->Incentives = $request->Incentives;
         $income->Bonuses = $request->Bonuses;
         $income->otTotal = $request->otTotal;
+
+        $income->philHealth = $request->philHealth;
+        $income->pagIbig = $request->pagIbig;
+        $income->sss = $request->sss;
+        $income->totalDeduction = $request->totalDeduction;
+        $income->totalSalary = $request->totalSalary;
         $income->grossSalary = $request->grossSalary;
 
         $income->datefrom = $request->datefrom;

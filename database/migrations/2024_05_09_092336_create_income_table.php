@@ -32,8 +32,6 @@ return new class extends Migration
             $table->integer('pagIbig');
             $table->integer('sss');
 
-            $table->integer('lates');
-            $table->integer('absents');
             $table->integer('totalDeduction');
 
             $table->integer('totalSalary');
