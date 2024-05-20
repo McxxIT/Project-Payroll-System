@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('attendance', function (Blueprint $table) {
             $table->id();
             $table->integer('userID');
-            $table->string('username')->unique();
             $table->date('date');
-            $table->time('clock-in');
-            $table->time('clock-out');
+            $table->time('clockin')->nullable();
+            $table->time('clockout')->nullable();
+            $table->integer('hoursRendered')->nullable();
+
+            $table->foreign('userID')->references('userID')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

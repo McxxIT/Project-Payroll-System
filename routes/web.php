@@ -15,6 +15,8 @@ Route::get('attendance-monitoring/attendance', function () {
 
 Route::get('attendance-monitoring/attendance', [AttendanceController::class, 'redirect'])->name('payslip');
 
+Route::post('attendance/store', [AttendanceController::class, 'store'])->name('attendance.store');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

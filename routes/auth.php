@@ -21,6 +21,7 @@ use App\Http\Controllers\PositionController;
 use App\Http\Controllers\PayrollController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\IncomeController;
+use App\Http\Controllers\TimekeepingController;
 
 
 Route::middleware('guest')->group(function () {
@@ -83,10 +84,6 @@ Route::middleware(['auth', 'verified', 'employee'])->group(function () {
         return view('employee.employee-payslip');
     })->name('employee-payslip');
 
-    Route::get('employee/timekeeping', function () {
-        return view('employee.employee-timekeeping');
-    })->name('employee-timekeeping');
-
     Route::get('employee/details', function () {
         return view('employee.employee-details');
     })->name('employee-details');
@@ -94,6 +91,10 @@ Route::middleware(['auth', 'verified', 'employee'])->group(function () {
     Route::get('employee/profile', function () {
         return view('employee.employee-profile');
     })->name('employee-profile');
+
+
+
+    Route::get('employee/timekeepipng', [TimekeepingController::class, 'redirect'])->name('employee-timekeeping');
 
 
     Route::get('generate-pdf', [PDFController::class, 'generatePDF'])->name('generate-pdf');

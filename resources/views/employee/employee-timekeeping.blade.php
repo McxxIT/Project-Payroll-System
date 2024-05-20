@@ -146,12 +146,10 @@
                                 <div class="table-header-4">
                                     <div class="table-row-4">
                                         <div class="tk-cell">Date</div>
-                                        <div class="tk-cell">Clock In<i id="sortNameIcon"
-                                                class="bi bi-sort-alpha-down"></i></div>
+                                        <div class="tk-cell">Clock In</div>
                                         <div class="tk-cell">Clock Out</div>
-                                        <div class="tk-cell">Hours Rendered<i id="sortStatusIcon"
-                                                class="bi bi-arrow-down-up"></i></div>
-                                        <div class="tk-cell">Lates</div>
+                                        <div class="tk-cell">Time Rendered</div>
+                                       
                                     </div>
                                 </div>
 
@@ -160,23 +158,14 @@
                                     {{-- <div id="notFoundMessage" class="not-found-message">
                                         NOT FOUND
                                     </div> --}}
-
+                                    @foreach ($attendanceRecords as $attendanceRecord)
                                     <div class="table-row-4">
-                                        <div class="tk-cell">02/01/2024</div>
-                                        <div class="tk-cell">08:00</div>
-                                        <div class="tk-cell">16:30</div>
-                                        <div class="tk-cell">8.5</div>
-                                        <div class="tk-cell green">0</div>
+                                        <div class="tk-cell">{{ $attendanceRecord->date }}</div>
+                                        <div class="tk-cell">{{ $attendanceRecord->clockin }}</div>
+                                        <div class="tk-cell">{{ $attendanceRecord->clockout }}</div>
+                                        <div class="tk-cell">{{ $attendanceRecord->hoursRendered }}</div>
                                     </div>
-                                    <div class="table-row-4">
-                                        <div class="tk-cell">02/31/2024</div>
-                                        <div class="tk-cell">08:05</div>
-                                        <div class="tk-cell">16:30</div>
-                                        <div class="tk-cell">8.42</div>
-                                        <div class="tk-cell green">0.08</div>
-                                    </div>
-
-
+                                    @endforeach
                                 </div>
 
                             </div>
