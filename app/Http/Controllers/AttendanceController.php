@@ -20,14 +20,13 @@ class AttendanceController extends Controller
         $timezone = 'Asia/Manila';
         $currentDateTime = Carbon::now($timezone);
 
-        // Retrieve the user with the given employee ID
         $user = User::where('userID', $employeeId)->first();
 
         if (!$user) {
             return redirect()->back()->with('error', 'User not found');
         }
 
-        // Check if the user's is_accepted status is 1 (pending) or 3 (declined)
+
         if ($user->is_accepted == 1 || $user->is_accepted == 3) {
             return redirect()->back()->with('error', 'User is not allowed to clock in or out');
         }
@@ -61,14 +60,10 @@ class AttendanceController extends Controller
             if ($attendance) {
                 $clockInTime = Carbon::parse($attendance->clockin, $timezone);
                 $clockOutTime = $currentDateTime;
-                \Log::info('Clock-in Time: ' . $clockInTime);
-                \Log::info('Clock-out Time: ' . $clockOutTime);
                 $duration = $clockOutTime->diff($clockInTime);
-                \Log::info('Duration: ' . $duration->format('%H:%I:%S'));
                 $hours = $duration->h;
                 $minutes = $duration->i;
                 $decimalHours = $hours + ($minutes / 60);
-                \Log::info('Decimal Hours: ' . $decimalHours);
                 $attendance->clockout = $clockOutTime->toTimeString();
                 $attendance->hoursRendered = round($decimalHours, 2);
                 return redirect()->back()->with('success', 'Clocked Out');
