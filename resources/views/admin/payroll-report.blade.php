@@ -140,7 +140,7 @@
         <!-- ================MAIN CONTENT DATA=========== -->
 
         <div class="content-wrapper">
-            <div class="overview-report">
+            {{-- <div class="overview-report">
                 <div class="overview-report-flex">
                     <div class="header">NET PAY</div>
                     <div class="body">₱600,000</div>
@@ -163,28 +163,19 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
-
-            </div>
+            </div> --}}
 
             <div class="body-content">
 
 
                 <div class="body-content-header-flex">
-                    <!-- <div class="body-content-header">
-                        <span>Active Employees</span>
-
-                    </div> -->
-
                     <div class="search-sort">
                         <div class="search">
                             <i class="bi bi-search"></i>
                             <input class="search-input" type="search" placeholder="Search">
                         </div>
-                        <i class="bi bi-filter text"></i>
                     </div>
 
                 </div>
@@ -199,24 +190,19 @@
                             <span>Net Pay</span>
                         </div>
                         <div class="content-col">
-                            <div class="body-row" data-toggle="dropdown">
-                                <span>Front Desk</span>
-                                <span>1</span>
-                                <span>₱500,000</span>
-                                <span>₱500,000</span>
-                                <span>₱500,000</span>
-                                <i class="bi bi-chevron-down"></i>
-                            </div>
-                            <div class="dropdown-row">
-                                <div class="dropdown-row-flex">
-                                    <span>Donald</span>
-                                    <span>123</span>
-                                    <span>₱50,000</span>
-                                    <span>₱50,000</span>
-                                    <span>₱50,000</span>
+                            @foreach ($employees as $employee)
+                                <div class="body-row" data-toggle="dropdown">
+                                    <span>{{ $employee->department->department_name }}</span>
+                                    <span>1</span>
+                                    <span>₱500,000</span>
+                                    <span>₱500,000</span>
+                                    <span>₱500,000</span>
+                                    <i class="bi bi-chevron-down"></i>
                                 </div>
-                            </div>
-                            <div class="body-row" data-toggle="dropdown">
+                            @endforeach
+ 
+
+                            {{-- <div class="body-row" data-toggle="dropdown">
                                 <span>Housekeeping</span>
                                 <span>1</span>
                                 <span>₱500,000</span>
@@ -290,7 +276,7 @@
                                 <span>₱50,000</span>
                                 <span>₱50,000</span>
                                 <span>₱50,000</span>
-                            </div>
+                            </div> --}}
 
                         </div>
                     </div>
@@ -301,45 +287,9 @@
         </div>
     </div>
 
-
-    {{-- <script>
-        // $(document).ready(function() {
-        //     $('.body-row[data-toggle="dropdown"]').click(function() {
-        //         var $dropdownRow = $(this).next('.dropdown-row');
-
-        //         if ($dropdownRow.is(':visible')) {
-        //             $dropdownRow.slideUp();
-        //             $(this).find('i').removeClass('bi-chevron-up').addClass('bi-chevron-down');
-        //         } else {
-        //             $('.dropdown-row').slideUp(); // Slide up all other dropdowns
-        //             $('.body-row i').removeClass('bi-chevron-up').addClass(
-        //                 'bi-chevron-down'); // Reset all icons
-        //             $dropdownRow.slideDown();
-        //             $(this).find('i').removeClass('bi-chevron-down').addClass('bi-chevron-up');
-        //         }
-        //     });
-        // });
-
-        // $(document).ready(function() {
-        //     $('.body-row[data-toggle="dropdown"]').click(function() {
-        //         var $dropdownRow = $(this).next('.dropdown-row');
-
-        //         if ($dropdownRow.is(':visible')) {
-        //             $dropdownRow.slideUp();
-        //             $(this).find('i').removeClass('bi-chevron-up').addClass('bi-chevron-down');
-        //         } else {
-        //             $dropdownRow.slideDown();
-        //             $(this).find('i').removeClass('bi-chevron-down').addClass('bi-chevron-up');
-        //         }
-        //     });
-        // });
-    </script> --}}
     <script src="/javascript/jquery-3.7.1.min.js"></script>
     <script src="/javascript/topbar-menu-toggle.js"></script>
     <script src="../javascript/more-table.js"></script>
-
-
-
 
 </body>
 

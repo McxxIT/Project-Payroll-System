@@ -171,46 +171,33 @@
                                         <div class="payslip-cell"></div>
                                     </div>
                                 </div>
-
                                 <div class="table-body-2">
-
                                     <div id="notFoundMessage" class="not-found-message">
                                         NOT FOUND
                                     </div>
                                     @foreach ($employees as $employee)
                                         <div class="table-row-2">
                                             <div class="payslip-cell">{{ $employee->userID }}</div>
-                                            <div class="payslip-cell">{{ $employee->department }}</div>
-                                            <div class="payslip-cell">{{ $employee->position }}</div>
+                                            <div class="payslip-cell">{{ $employee->department_id ? $employee->department->department_name : 'N/A' }}</div>
+                                            <div class="payslip-cell">{{ $employee->position_id ? $employee->position->position_name : 'N/A' }}</div>
                                             <div class="payslip-cell">{{ $employee->firstname }}
                                                 {{ $employee->lastname }}</div>
                                             <div class="payslip-cell green">{{ $employee->email }}</div>
-                                            <div class="payslip-cell">
-                                                <a href="#"><span>
-                                                        <i class="bi bi-pencil-square"></i>View Details
-                                                    </span></a>
-                                            </div>
+                                            <form action="/view-employee-payslip/{{ $employee->userID }}" method="post" class="payslip-cell">
+                                                @csrf
+                                                <button type="submit" class="btn"><span>
+                                                        <i class="bi bi-pencil-square"></i>View Details</span>
+                                                </button>
+                                            </form>
                                         </div>
                                     @endforeach
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
-
                 </div>
-
-
-
             </div>
-
-
-
-
         </div>
-
-
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

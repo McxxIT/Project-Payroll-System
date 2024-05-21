@@ -225,8 +225,8 @@
                                                 <span>{{ $employee->created_at }}</span>
                                                 <span>{{ $employee->firstname }} {{ $employee->lastname }}</span>
                                                 <span>{{ $employee->email }}</span>
-                                                <span></span>
-                                                <span></span>
+                                                <span>{{ $employee->position_id ? $employee->position->position_name : 'N/A' }}</span>
+                                                <span>{{ $employee->department_id ? $employee->department->department_name : 'N/A' }}</span>
                                             </div>
                                         @endforeach
                                     </div>

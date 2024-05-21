@@ -9,7 +9,7 @@ use App\Models\Department;
 class PositionController extends Controller
 {
     public function redirect() {
-        $positions = Position::where('is_active', 1)->get();
+        $positions = Position::get();
         $departments = Department::where('is_active', 1)->get();
         return view('admin.position')->with('positions', $positions)->with('departments', $departments);
     }
@@ -29,6 +29,22 @@ class PositionController extends Controller
 
         $position->save();
         return redirect()->back()->with("success", "Position Added Successfully");
+    }
+
+    public function activate($id)
+    {
+        $position = Position::findOrFail($id);
+        $position->update(['is_active' => 1]);
+
+        return redirect()->back()->with('success', 'Position activated successfully');
+    }
+
+    public function deactivate($id)
+    {
+        $position = Position::findOrFail($id);
+        $position->update(['is_active' => 0]);
+
+        return redirect()->back()->with('success', 'Position deactivated successfully');
     }
 }
 

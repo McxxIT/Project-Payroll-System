@@ -10,6 +10,17 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class, 'department_id', 'department_id');
+    }
+
+    public function position()
+    {
+        return $this->belongsTo(Position::class, 'position_id', 'position_id');
+    }
+
     protected $table = 'users';
     protected $primaryKey = 'id';
 
@@ -42,18 +53,6 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-    // Define the relationship with Position
-    public function position()
-    {
-        return $this->belongsTo(Position::class, 'position_id');
-    }
-
-    // Define the relationship with Department
-    public function department()
-    {
-        return $this->belongsTo(Department::class, 'department_id');
     }
 
     public function attendances() {

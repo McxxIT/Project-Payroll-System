@@ -193,10 +193,9 @@
                                 @foreach ($employees as $employee)
                                     <div class="table-row">
                                         <div class="table-cell">{{ $employee->userID }}</div>
-                                        <div class="table-cell">{{ $employee->firstname }} {{ $employee->lastname }}
-                                        </div>
-                                        <div class="table-cell">{{ $employee->department }}</div>
-                                        <div class="table-cell">{{ $employee->position }}</div>
+                                        <div class="table-cell">{{ $employee->firstname }} {{ $employee->lastname }}</div>
+                                        <div class="table-cell">{{ $employee->position_id ? $employee->position->position_name : 'N/A' }}</div>
+                                        <div class="table-cell">{{ $employee->department_id ? $employee->department->department_name : 'N/A' }}</div>
                                         <div class="table-cell red">Pending</div>
                                         <div class="table-cell blue">
                                             <form method="POST" action="/payroll-update/{{ $employee->userID }}">
