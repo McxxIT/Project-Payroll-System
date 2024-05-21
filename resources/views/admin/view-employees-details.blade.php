@@ -212,9 +212,12 @@
                                 </div>
                                 <div class="flex">
                                     <select name="department_id" id="departmentSelect">
-                                        <option disabled selected>-</option>
                                         @foreach ($departments as $department)
+                                        @if ($employee->department_id == $department->department_id)
+                                            <option value="{{ $department->department_id }}" selected>{{ $department->department_name }}</option>
+                                        @elseif ($employee->department_id != $department->department_id)
                                             <option value="{{ $department->department_id }}">{{ $department->department_name }}</option>
+                                        @endif
                                         @endforeach
                                     </select>
                                 </div>
@@ -225,10 +228,13 @@
                                     <span>Position</span>
                                 </div>
                                 <div class="flex">
-                                    <select name="position_id" id="position">
-                                        <option disabled selected>-</option>
+                                    <select name="position_id" id="position" required>
                                         @foreach ($positions as $position)
+                                        @if ($employee->position_id == $position->position_id)
+                                            <option value="{{ $position->position_id }}" selected>{{ $position->position_name }}</option>
+                                        @elseif ($employee->position_id != $position->position_id)
                                             <option value="{{ $position->position_id }}">{{ $position->position_name }}</option>
+                                        @endif
                                         @endforeach
                                     </select>
                                 </div>
@@ -239,7 +245,7 @@
                                     <span>Status</span>
                                 </div>
                                 <div class="flex">
-                                    <select name="is_active" id="status">
+                                    <select name="is_active" id="status" required>
                                         <option value="1">Active</option>
                                         <option value="0">Inactive</option>
                                     </select>
@@ -251,7 +257,7 @@
                                     <span>Work Shift</span>
                                 </div>
                                 <div class="flex">
-                                    <select name="shift_type" id="workShift">
+                                    <select name="shift_type" id="workShift" required>
                                         <option value="1">Day Shift (7am-3pm)</option>
                                         <option value="2">Swing Shift (3pm-11pm)</option>
                                         <option value="3">Graveyard Shift (11pm-7am)</option>
@@ -264,7 +270,7 @@
                                     <span>User Type</span>
                                 </div>
                                 <div class="flex">
-                                    <select name="user_type" id="userType">
+                                    <select name="user_type" id="userType" required>
                                         <option value="2">Employee</option>
                                         <option value="1">Admin</option>
                                     </select>

@@ -84,12 +84,11 @@
                                     <span>Employee Name</span>
                                     <input type="text" class="form-control" name="employeeName" value="{{ $employee->firstname }} {{ $employee->lastname }}" readonly>
                                     <span>Department</span>
-                                    <input type="text" class="form-control" name="employeeDepartment" value="{{ $employee->department }}" readonly>
+                                    <input type="text" class="form-control" name="employeeDepartment" value="{{ $employee->department->department_name ?? '-' }}" readonly>
                                     <span>Position</span>
-                                    <input type="text" class="form-control" name="employeePosition" value="{{ $employee->position }}" readonly>
+                                    <input type="text" class="form-control" name="employeePosition" value="{{ $employee->position->position_name ?? '-' }}" readonly>
                                 </div>
-                            </fieldset>
-
+                            </fieldset>                            
                         </div>
                         <div class="card-body">
                             <div class="flex">

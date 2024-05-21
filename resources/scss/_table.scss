@@ -836,10 +836,13 @@
                     align-items: center;
 
                     form {
+                        button {
+                            width: 100%;
+                        }
                         .accept {
                             background-color: green;
                             color: white;
-                            width: 70px;
+                            width: 90px;
                             padding: 3px 10px;
                             border-radius: 3px;
                             cursor: pointer;
@@ -850,7 +853,7 @@
                             color: white;
                             padding: 3px 10px;
                             border-radius: 3px;
-                            width: 70px;
+                            width: 90px;
                             cursor: pointer;
                         }
                     }
@@ -1010,20 +1013,25 @@
                             align-items: center;
 
                             form {
+                                button {
+                                    width: 100%;
+                                }
                                 .accept {
                                     background-color: green;
                                     color: white;
-                                    width: 70px;
+                                    width: 90px;
                                     padding: 3px 10px;
                                     border-radius: 3px;
+                                    cursor: pointer;
                                 }
-
+        
                                 .decline {
                                     background-color: red;
                                     color: white;
-                                    width: 70px;
                                     padding: 3px 10px;
                                     border-radius: 3px;
+                                    width: 90px;
+                                    cursor: pointer;
                                 }
                             }
                         }

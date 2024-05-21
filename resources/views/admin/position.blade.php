@@ -231,17 +231,17 @@
                                                             <div class="table-cell-6 red">Inactive</div>
                                                         @endif
                                                         <div class="table-cell-6">
-                                                            <form
-                                                                action="department/active/{{ $department->department_id }}">
-                                                                <button type="submit"
-                                                                    class="button accept">Active</button>
-                                                            </form>
-
-                                                            <form
-                                                                action="department/inactive/{{ $department->department_id }}">
-                                                                <button type="submit"
-                                                                    class="button decline">Inactive</button>
-                                                            </form>
+                                                            @if ($position->is_active == 1)
+                                                            <form action="{{ route('position.deactivate', $position->id) }}" method="POST">
+                                                                    @csrf
+                                                                    <button type="submit" class="button decline">Deactivate</button>
+                                                                </form>
+                                                            @elseif ($position->is_active == 0)
+                                                                <form action="{{ route('position.activate', $position->id) }}" method="POST">
+                                                                    @csrf
+                                                                    <button type="submit" class="button accept">Activate</button>
+                                                                </form>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>

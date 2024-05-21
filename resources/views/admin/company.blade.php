@@ -200,24 +200,24 @@
                                     <div class="table-row-5">
                                         <div class="table-cell-5">{{ $department->department_id }}</div>
                                         <div class="table-cell-5">{{ $department->department_name }}</div>
-                                        <div class="table-cell-5 green">
-
+                                        @if ($department->is_active == 1)
+                                            <div class="table-cell-5 green">Active</div>
+                                        @elseif ($department->is_active == 0)
+                                            <div class="table-cell-5 red">Inactive</div>
+                                        @endif
+                                        <div class="table-cell-5">
                                             @if ($department->is_active == 1)
-                                                Active
+                                                <form action="{{ route('department.deactivate', $department->id) }}" method="POST">
+                                                    @csrf
+                                                    <button type="submit" class="button decline">Deactivate</button>
+                                                </form>
+                                            @else
+                                                <form action="{{ route('department.activate', $department->id) }}" method="POST">
+                                                    @csrf
+                                                    <button type="submit" class="button accept">Activate</button>
+                                                </form>
                                             @endif
                                         </div>
-                                        <div class="table-cell-5">
-                                            <form action="department/active/{{ $department->department_id }}">
-                                                <button type="submit" class="button accept">Active</button>
-                                            </form>
-
-                                            <form action="department/inactive/{{ $department->department_id }}">
-                                                <button type="submit" class="button decline">Inactive</button>
-                                            </form>
-
-
-                                        </div>
-
                                     </div>
                                 @endforeach
                             </div>

@@ -1973,10 +1973,13 @@ html {
   justify-content: space-evenly;
   align-items: center;
 }
+.data-5 .table-5 .table-body-5 .table-row-5 .table-cell-5:nth-child(4) form button {
+  width: 100%;
+}
 .data-5 .table-5 .table-body-5 .table-row-5 .table-cell-5:nth-child(4) form .accept {
   background-color: green;
   color: white;
-  width: 70px;
+  width: 90px;
   padding: 3px 10px;
   border-radius: 3px;
   cursor: pointer;
@@ -1986,7 +1989,7 @@ html {
   color: white;
   padding: 3px 10px;
   border-radius: 3px;
-  width: 70px;
+  width: 90px;
   cursor: pointer;
 }
 
@@ -2109,19 +2112,24 @@ html {
   justify-content: space-evenly;
   align-items: center;
 }
+.data-6 .table-6 .table-body-6 .position-body-wrapper .dropdown-row .table-row-6 .table-cell-6:nth-child(5) form button {
+  width: 100%;
+}
 .data-6 .table-6 .table-body-6 .position-body-wrapper .dropdown-row .table-row-6 .table-cell-6:nth-child(5) form .accept {
   background-color: green;
   color: white;
-  width: 70px;
+  width: 90px;
   padding: 3px 10px;
   border-radius: 3px;
+  cursor: pointer;
 }
 .data-6 .table-6 .table-body-6 .position-body-wrapper .dropdown-row .table-row-6 .table-cell-6:nth-child(5) form .decline {
   background-color: red;
   color: white;
-  width: 70px;
   padding: 3px 10px;
   border-radius: 3px;
+  width: 90px;
+  cursor: pointer;
 }
 .data-6 .table-6 .table-body-6 .position-body-wrapper .dropdown-row .dropdown-row-flex {
   display: flex;

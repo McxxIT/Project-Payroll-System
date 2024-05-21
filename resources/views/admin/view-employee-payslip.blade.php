@@ -4,19 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee</title>
+    <title>Payslip</title>
+    <link rel="stylesheet" href="../css/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
         integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
-
 </head>
 
 <body>
 
-    <div class="employee-container">
-
-        <!-- SIDEBAR PART -->
-
+    <div class="employee_c">
 
         <div class="sidebar-wrapper">
             <div class="sidebar-flex">
@@ -29,7 +25,7 @@
                     <a class="menu-background" href="{{ route('dashboard') }}">
                         <i class="bi bi-boxes"></i>
                         <span>Dashboard</span></a>
-                    <a class="menu-background active" href="#">
+                    <a class="menu-background active" href="{{ route('employee') }}">
                         <i class="bi bi-person-rolodex"></i>
                         <span>Employees</span></a>
                     <a class="menu-background" href="{{ route('applicant') }}">
@@ -128,9 +124,6 @@
                                 <span>Logout</span>
                             </form>
                         </div>
-
-
-
                     </div>
                 </div>
             </div>
@@ -138,137 +131,50 @@
 
         </div>
 
-
-
-        <!-- MAIN CONTENT DATA -->
+        {{-- ===================MAIN CONTENT===================== --}}
 
         <div class="content-wrapper">
-
-            <div class="content-body-wrapper">
-
-                <div class="cards-container">
-                    <div class="flex-1-container">
-
-                        <div class="flex-row-card">
-                            <div class="card-wrapper">
-                                <span class="number">0</span>
-                                <span class="text-pending">LATES</span>
-                            </div>
-                            <div class="card-wrapper">
-                                <span class="number">0</span>
-                                <span class="text-overdue">ABSENTS</span>
-                            </div>
+            <div class="data-3">
+                <div class="table-3">
+                    <div class="table-header-3">
+                        <div class="table-row-3">
+                            <div class="emp-payslip-cell">Ref. no.</div>
+                            <div class="emp-payslip-cell">Period From</div>
+                            <div class="emp-payslip-cell">Period to</div>
+                            <div class="emp-payslip-cell">Hourly Rate</div>
+                            <div class="emp-payslip-cell">Hours Rendered</div>
+                            <div class="emp-payslip-cell">Working Days</div>
+                            <div class="emp-payslip-cell">Action</div>
                         </div>
+                    </div>
 
-                        <div class="divider"></div>
-
-
-                        <div class="flex-row-card">
-                            <div class="card-wrapper">
-                                <span class="number-green">{{ $activeEmployeesCount }}</span>
-                                <span class="text-pending">ACTIVE</span>
-                            </div>
-                            <div class="card-wrapper">
-                                <span class="number-red">{{ $inactiveEmployeesCount }}</span>
-                                <span class="text-overdue">INACTIVE</span>
-                            </div>
-                        </div>
-
+                    <div class="table-body-3">
+                        @foreach ($submitEmployeePayslipForAdmin as $submitPayslip)
+                        <form class="table-row-3" action="/view-employee-payslip/{{ $submitPayslip->userID }}" method="POST">
+                            @csrf
+                            <div class="emp-payslip-cell">{{ $submitPayslip->income_id }}</div>
+                            <div class="emp-payslip-cell">{{ $submitPayslip->datefrom }}</div>
+                            <div class="emp-payslip-cell">{{ $submitPayslip->dateto }}</div>
+                            <div class="emp-payslip-cell">{{ $submitPayslip->hourlyRate }}</div>
+                            <div class="emp-payslip-cell">{{ $submitPayslip->hoursRendered }}</div>
+                            <div class="emp-payslip-cell">{{ $submitPayslip->workDays }}</div>
+                            <div class="emp-payslip-cell"><button type="submit">View Details</button></div>
+                        </form>
+                    @endforeach
                     </div>
 
                 </div>
 
-                <div class="body-content">
-
-                    <div class="body-content-flex">
-
-                        <div class="body-content-header-flex">
-                            <div class="search-sort">
-                                <div class="search">
-                                    <i class="bi bi-search"></i>
-                                    <input id="searchInput" class="search-input" type="search"
-                                        placeholder="Search">
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="data">
-                            <div class="table">
-                                <div class="table-header">
-                                    <div class="table-row">
-                                        <div class="table-cell">ID</div>
-                                        <div class="table-cell">Name</div>
-                                        <div class="table-cell">Position</div>
-                                        <div class="table-cell">Department</div>
-                                        <div class="table-cell">Status</div>
-                                        <div class="table-cell">Action</div>
-                                    </div>
-                                </div>
-
-                                <div class="table-body">
-
-                                    <div id="notFoundMessage" class="not-found-message">
-                                        NOT FOUND
-                                    </div>
-
-                                    @foreach ($employees as $employee)
-                                        <div class="table-row">
-
-                                            <div class="table-cell">{{ $employee->userID }}</div>
-                                            <div class="table-cell">{{ $employee->firstname }}{{ $employee->lastname }}</div>
-                                            <div class="table-cell">{{ $employee->position_id ? $employee->position->position_name : 'N/A' }}</div>
-                                            <div class="table-cell">{{ $employee->department_id ? $employee->department->department_name : 'N/A' }}</div>
-
-                                            @if ($employee->is_active == 1)
-                                                <div class="table-cell green">Active</div>
-                                            @elseif ($employee->is_active == 0)
-                                                <div class="table-cell red">Inactive</div>
-                                            @endif
-                                            <form action="/employee-details/{{ $employee->userID }}" method="post"
-                                                class="table-cell">
-                                                @csrf
-                                                <button type="submit" class="btn"><span>
-                                                        <i class="bi bi-pencil-square"></i>View Details</span>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    @endforeach
-                                </div>
-
-                            </div>
-
-                            <div class="table-footer">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
+                <div class="table-footer">
 
                 </div>
-
-
-
 
             </div>
-
-
         </div>
+
 
 
     </div>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-    <script src="/javascript/jquery-3.7.1.min.js"></script>
-    <script src="/javascript/topbar-menu-toggle.js"></script>
-    <script src="../javascript/search-script-employee-admin.js"></script>
-
-
 </body>
 
 </html>

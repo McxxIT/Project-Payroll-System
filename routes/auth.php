@@ -126,10 +126,13 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
 
     Route::get('admin/payroll', [PayrollController::class, 'getEmployee'])->name('payroll');
 
-    Route::get('admin.payslip', [PayslipController::class, 'redirect'])->name('payslip');
-
-
+    Route::get('admin.payslip', [PayslipController::class, 'redirect'])->name('payslip');   
     
+    Route::get('admin/employee/payroll-report', [EmployeeController::class, 'updatePayrollReport'])->name('employee-payroll-report');
+
+    Route::get('view-employee-payslip', [IncomeController::class, 'viewEmployeePayslip'])->name('employee-payslip-details');
+
+
 
 
     Route::post('applicant/accepted/{id}', [ApplicantController::class, 'acceptedApplicant'])->name('acceptedApplicant');
@@ -150,12 +153,22 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
 
     Route::put('update-employee/{id}', [EmployeeController::class, 'updateEmployee'])->name('update-employee');
 
+    Route::post('view-employee-payslip/{id}', [EmployeeController::class, 'getEmployeeForPayslip'])->name('getEmployeeForPayslip');
+
+
+
+
+    Route::post('department/activate/{id}', [DepartmentController::class, 'activate'])->name('department.activate');
+    Route::post('department/deactivate/{id}', [DepartmentController::class, 'deactivate'])->name('department.deactivate');
+
+    Route::post('position/activate/{id}', [PositionController::class, 'activate'])->name('position.activate');
+    Route::post('position/deactivate/{id}', [PositionController::class, 'deactivate'])->name('position.deactivate');
         
 
 
-    Route::get('admin/payroll-report', function () {
-        return view('admin.payroll-report');
-    })->name('payroll-report');
+    // Route::get('admin/payroll-report', function () {
+    //     return view('admin.payroll-report');
+    // })->name('payroll-report');
 
     // Route::get('admin/payslip', function () {
     //     return view('admin.payslip');

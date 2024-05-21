@@ -12,6 +12,12 @@ class Department extends Model
     protected $table = "departments";
     protected $fillable = [
         "department_name",
-        "deparment_id"
+        "department_id",
+        "is_active",
     ];
+
+    public function users()
+    {
+        return $this->hasMany(User::class, 'department_id', 'department_id');
+    }
 }

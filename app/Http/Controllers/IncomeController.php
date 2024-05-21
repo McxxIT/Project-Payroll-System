@@ -59,16 +59,23 @@ class IncomeController extends Controller
 
         $income->datefrom = $request->datefrom;
         $income->dateto = $request->dateto;
-        
 
 
         $income->save();
-
         return redirect()->route('payroll');
     }
 
-    public function submitEmployeePayslip() {
+    public function submitEmployeePayslip()
+    {
         $submitEmployeePayslip = Income::all();
-        return view ('employee.employee-payslip')->with('submitEmployeePayslip', $submitEmployeePayslip);
+        return view('employee.employee-payslip')->with('submitEmployeePayslip', $submitEmployeePayslip);
     }
+
+    public function viewEmployeePayslip()
+    {
+        $submitEmployeePayslipForAdmin = Income::all();
+        return view('admin.view-employee-payslip', ['submitEmployeePayslipForAdmin' => $submitEmployeePayslipForAdmin])
+        ->with('submitEmployeePayslipForAdmin', $submitEmployeePayslipForAdmin);
+    }
+
 }

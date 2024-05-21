@@ -9,7 +9,7 @@ class DepartmentController extends Controller
 {
     public function redirect()
     {
-        $departments = Department::where('is_active', 1)->get();
+        $departments = Department::get();
         return view('admin.company')->with('departments', $departments);
     }
     public function store(Request $request)
@@ -28,6 +28,22 @@ class DepartmentController extends Controller
 
         $department->save();
         return redirect()->back()->with("success", "Department Added Successfully");
+    }
 
+
+    public function activate($id)
+    {
+        $department = Department::findOrFail($id);
+        $department->update(['is_active' => 1]);
+
+        return redirect()->back()->with('success', 'Department activated successfully');
+    }
+
+    public function deactivate($id)
+    {
+        $department = Department::findOrFail($id);
+        $department->update(['is_active' => 0]);
+
+        return redirect()->back()->with('success', 'department deactivated successfully');
     }
 }
