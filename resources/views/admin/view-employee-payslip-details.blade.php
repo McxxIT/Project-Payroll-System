@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Details</title>
+    <title>Payslip</title>
     <link rel="stylesheet" href="../css/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
         integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
@@ -29,7 +29,7 @@
                     <a class="menu-background" href="{{ route('dashboard') }}">
                         <i class="bi bi-boxes"></i>
                         <span>Dashboard</span></a>
-                    <a class="menu-background active" href="{{ route('employee') }}">
+                    <a class="menu-background" href="{{ route('employee') }}">
                         <i class="bi bi-person-rolodex"></i>
                         <span>Employees</span></a>
                     <a class="menu-background" href="{{ route('applicant') }}">
@@ -145,6 +145,7 @@
                             <div class="p-h-content">
                                 <span>ID:</span>
                                 <span>Name:</span>
+                                <span>Department:</span>
                                 <span>Position:</span>
                                 <span>Email:</span>
                                 <span>Phone no.:</span>
@@ -152,11 +153,12 @@
                             </div>
                             <div class="p-h-content">
                                 <span>{{ $employee->userID }}</span>
-                                <span>{{ $employee->firstname }}{{ $employee->lastname }}</span>
-                                <span>{{ $employee->position_name }}</span>
-                                <span>{{ $employee->email }}</span>
-                                <span>{{ $employee->contact }}</span>
-                                <span>{{ $employee->address }}</span>
+                                <span>{{ $user->firstname }} {{ $user->lastname }}</span>
+                                <span>{{ $user_department->department_name }}</span>
+                                <span>{{ $user_position->position_name }}</span>
+                                <span>{{ $user->email }}</span>
+                                <span>{{ $user->contact }}</span>
+                                <span>{{ $user->address }}</span>
                             </div>
                         </div>
                         <div class="payslip-header-right">
@@ -177,11 +179,11 @@
                         <div class="p-c-body">
                             <div class="p-c">
                                 <span>Period From:</span>
-                                <span>12/01/2024</span>
+                                <span>{{ $employee->datefrom ?? 'N/A' }}</span>
                             </div>
                             <div class="p-c">
                                 <span>Period To:</span>
-                                <span>12/31/2024</span>
+                                <span>{{ $employee->dateto ?? 'N/A' }}</span>
                             </div>
                         </div>
                     </div>
@@ -199,14 +201,14 @@
                                         <span>Worked Days:</span>
                                     </div>
                                     <div class="p-c">
-                                        <span>86.76</span>
-                                        <span>8.5</span>
-                                        <span>24</span>
+                                        <span>{{ $employee->hourlyRate }}</span>
+                                        <span>{{ $employee->hoursRendered }}</span>
+                                        <span>{{ $employee->workDays }}</span>
                                     </div>
                                 </div>
                                 <div class="p-c-footer">
                                     <span>Total:</span>
-                                    <span>17,699.04</span>
+                                    <span>{{ $employee->totalIncome }}</span>
                                 </div>
 
                             </div>
@@ -221,22 +223,18 @@
                                         <span>PhilHealth:</span>
                                         <span>Pag-Ibig:</span>
                                         <span>SSS:</span>
-                                        <span>Withholding Tax:</span>
                                         <span>late/s:</span>
-                                        <span>Absent/s:</span>
                                     </div>
                                     <div class="p-c">
-                                        <span>1,234.00</span>
-                                        <span>1,234.00</span>
-                                        <span>1,234.00</span>
-                                        <span>1,234.00</span>
-                                        <span>123.00</span>
-                                        <span>737.46</span>
+                                        <span>{{ $employee->philHealth }}</span>
+                                        <span>{{ $employee->pagIbig }}</span>
+                                        <span>{{ $employee->sss }}</span>
+                                        <span>{{ $employee->lates }}</span>
                                     </div>
                                 </div>
                                 <div class="p-c-footer">
                                     <span>Total:</span>
-                                    <span>5,796.46</span>
+                                    <span>{{ $employee->totalDeduction }}</span>
                                 </div>
 
                             </div>
@@ -257,17 +255,17 @@
                                         <span>Bonuses:</span>
                                     </div>
                                     <div class="p-c">
-                                        <span>343.54</span>
-                                        <span>999.99</span>
-                                        <span>532.12</span>
-                                        <span>1,000.00</span>
-                                        <span>737.46</span>
-                                        <span>1,000.00</span>
+                                        <span>{{ $employee->RegOT }}</span>
+                                        <span>{{ $employee->Allowances }}</span>
+                                        <span>{{ $employee->SunOT }}</span>
+                                        <span>{{ $employee->Incentives }}</span>
+                                        <span>{{ $employee->HolOT }}</span>
+                                        <span>{{ $employee->Bonuses }}</span>
                                     </div>
                                 </div>
                                 <div class="p-c-footer">
                                     <span>Gross:</span>
-                                    <span>4,613.11</span>
+                                    <span>{{ $employee->grossSalary }}</span>
                                 </div>
 
                             </div>
@@ -276,11 +274,11 @@
                                 <div class="p-c-c-flex">
                                     <div class="p-c">
                                         <span>Ref. no.:</span>
-                                        <span>123456</span>
+                                        <span>{{ $employee->income_id }}</span>
                                     </div>
                                     <div class="p-c">
                                         <span>Net Income:</span>
-                                        <span>16,515.69</span>
+                                        <span>{{ $employee->totalSalary }}</span>
                                     </div>
                                 </div>
 

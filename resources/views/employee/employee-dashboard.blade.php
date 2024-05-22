@@ -49,13 +49,13 @@
                     <span class="greetings">Hello, Robert! Welcome Back!</span>
                 </div>
                 <div class="profile">
-                    <a href="{{ route('admin-profile') }}" class="name">Robert</a>
+                    <a href="{{ route('employee-profile') }}" class="name">Robert</a>
 
                 </div>
                 <div class="menu">
                     <div class="menu-flex">
                         <div class="info">
-                            <a href="" class="view-person">
+                            <a href="{{ route('employee-profile') }}" class="view-person">
                                 <span>
                                     <span class="">Robert</span>
                                 </span>
@@ -65,11 +65,11 @@
                             <i class="bi bi-boxes"></i>
                             <span>Dashboard</span></a>
                         </a>
-                        <a href="{{ route('employee') }}" class="menu-item">
+                        <a href="{{ route('employee.payslip') }}" class="menu-item">
                             <i class="bi bi-person-rolodex"></i>
                             <span>Payslip</span></a>
                         </a>
-                        <a href="{{ route('applicant') }}" class="menu-item">
+                        <a href="{{ route('employee-timekeeping') }}" class="menu-item">
                             <i class="bi bi-person-rolodex"></i>
                             <span>Timekeeping</span></a>
                         </a>

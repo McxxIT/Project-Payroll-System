@@ -185,7 +185,12 @@
                                             <div class="payslip-cell green">{{ $employee->email }}</div>
                                             <form action="/view-employee-payslip/{{ $employee->userID }}" method="post" class="payslip-cell">
                                                 @csrf
-                                                <button type="submit" class="btn"><span>
+                                                <button type="submit" class="btn" style="width: 100%;
+                                                background-color: transparent;
+                                                border: none;
+                                                color: blue;
+                                                text-align: center;
+                                                padding: 2px;"><span>
                                                         <i class="bi bi-pencil-square"></i>View Details</span>
                                                 </button>
                                             </form>

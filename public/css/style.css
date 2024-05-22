@@ -1769,6 +1769,14 @@ html {
   width: 10%;
   min-width: 100px;
 }
+.data-3 .table-3 .table-body-3 .table-row-3 .emp-payslip-cell:nth-child(7) button {
+  width: 100%;
+  background-color: blue;
+  border: none;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
 
 .data-4 {
   overflow-x: auto;

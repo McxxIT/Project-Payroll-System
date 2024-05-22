@@ -86,7 +86,7 @@ Route::middleware(['auth', 'verified', 'employee'])->group(function () {
 
     Route::get('employee/details', function () {
         return view('employee.employee-details');
-    })->name('employee-details');
+    })->name('employee/details');
 
     Route::get('employee/profile', function () {
         return view('employee.employee-profile');
@@ -101,7 +101,11 @@ Route::middleware(['auth', 'verified', 'employee'])->group(function () {
 
     Route::get('employee/payslip', [IncomeController::class, 'submitEmployeePayslip'])->name('employee.payslip');
 
-    Route::post('employee-payslip/{id}', [EmployeeController::class,'getEmployeeForEmpPage'])->name('employee.employee-details');
+
+    Route::get('employee-payslip', [IncomeController::class, 'viewEmployeePayslip'])->name('employee-payslip');
+
+    Route::post('employee/payslip/details/{id}', [PayrollController::class, 'getEmpPayslipForEmployee']);
+
 
 });
 
@@ -132,6 +136,10 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
 
     Route::get('view-employee-payslip', [IncomeController::class, 'viewEmployeePayslip'])->name('employee-payslip-details');
 
+    Route::post('view-employee-payslip-details/{id}', [PayrollController::class, 'getEmployeePayroll']);
+
+    Route::get('admin/payroll-report',[PayrollController::class, 'payrollReport'])->name('payroll-report');
+
 
 
 
@@ -153,7 +161,7 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
 
     Route::put('update-employee/{id}', [EmployeeController::class, 'updateEmployee'])->name('update-employee');
 
-    Route::post('view-employee-payslip/{id}', [EmployeeController::class, 'getEmployeeForPayslip'])->name('getEmployeeForPayslip');
+    Route::post('view-employee-payslip/{id}', [IncomeController::class, 'getEmployeeForPayslip'])->name('view-employee-payslip');
 
 
 
@@ -166,13 +174,12 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
         
 
 
-    // Route::get('admin/payroll-report', function () {
-    //     return view('admin.payroll-report');
-    // })->name('payroll-report');
+    
 
     // Route::get('admin/payslip', function () {
     //     return view('admin.payslip');
     // })->name('payslip');
+    
 
     Route::get('admin/profile', function () {
         return view('admin.admin-profile');

@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Details</title>
-    <link rel="stylesheet" href="../css/style.css?v=<?php echo time(); ?>">
+    <title>Payslip</title>
+    <link rel="stylesheet" href="/../css/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
         integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
 </head>
 
 <body onload="autoClick();">
@@ -20,40 +20,73 @@
 
         <div class="sidebar-wrapper">
             <div class="sidebar-flex">
-
                 <div class="brand">
                     <a href="dashboard.php"><img src="/assets/imgs/brand.png" alt="MPS"></a>
                 </div>
 
                 <div class="sider-menu">
-                    <a class="menu-background" href="{{ route('employee-dashboard') }}"><i
-                            class="bi bi-boxes"></i><span>Dashboard</span></a>
-                    <a class="menu-background" href="{{ route ('employee.payslip') }}"><i
-                            class="bi bi-person-rolodex"></i><span>Payslip</span></a>
-                    <a class="menu-background" href="{{ route('employee-timekeeping') }}"><i
-                            class="bi bi-alarm"></i><span>Timekeeping</span></a>
+                    <a class="menu-background" href="{{ route('employee-dashboard') }}">
+                        <i class="bi bi-boxes"></i>
+                        <span>Dashboard</span></a>
+                    <a class="menu-background" href="{{ route('employee.payslip') }}">
+                        <i class="bi bi-person-rolodex"></i>
+                        <span>Payslip</span></a>
+                    <a class="menu-background"href="{{ route('employee-timekeeping') }}">
+                        <i class="bi bi-alarm"></i>
+                        <span>Timekeeping</span></a>
                 </div>
+                <form method="POST" action="{{ route('logout') }}" class="logout">
+                    @csrf
+                    <div class="out-flex-wrapper" onclick="event.preventDefault(); this.closest('form').submit();">
+                        <span class="text-logout">Logout</span>
+                    </div>
+                </form>
             </div>
         </div>
-
         <!-- =====================TOP BAR================ -->
-
         <div class="topbar-wrapper">
             <div class="profile-wrapper">
-
+                <div class="sidebar-toggle" id="sidebarToggle">
+                    <i class="bi bi-list"></i>
+                </div>
                 <div class="c-header-flex">
-                    <span class="title">Details</span>
-                    <span class="greetings">Payslip Details</span>
+                    <span class="title">Dashboard</span>
+                    <span class="greetings">Hello, Robert! Welcome Back!</span>
                 </div>
                 <div class="profile">
-                    <a href="#" class="name">Robert</a>
-                    <a href="#"><img class="profile-link" src="/assets/imgs/pfp.jpg"></a>
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <div class="out-flex-wrapper" onclick="event.preventDefault(); this.closest('form').submit();">
-                            <span class="text-logout">Logout</span>
+                    <a href="{{ route('employee-profile') }}" class="name">Robert</a>
+
+                </div>
+                <div class="menu">
+                    <div class="menu-flex">
+                        <div class="info">
+                            <a href="" class="view-person">
+                                <span>
+                                    <span class="">Robert</span>
+                                </span>
+                            </a>
                         </div>
-                    </form>
+                        <a class="menu-item" href="{{ route('employee-dashboard') }}" class="menu-item">
+                            <i class="bi bi-boxes"></i>
+                            <span>Dashboard</span></a>
+                        </a>
+                        <a href="{{ route('employee.payslip') }}" class="menu-item">
+                            <i class="bi bi-person-rolodex"></i>
+                            <span>Payslip</span></a>
+                        </a>
+                        <a href="{{ route('employee-timekeeping') }}" class="menu-item">
+                            <i class="bi bi-person-rolodex"></i>
+                            <span>Timekeeping</span></a>
+                        </a>
+                        <div class="info">
+                            <form method="POST" action="{{ route('logout') }}" class="form"
+                                onclick="event.preventDefault(); this.submit();">
+                                @csrf
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Logout</span>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,6 +101,7 @@
                             <div class="p-h-content">
                                 <span>ID:</span>
                                 <span>Name:</span>
+                                <span>Department:</span>
                                 <span>Position:</span>
                                 <span>Email:</span>
                                 <span>Phone no.:</span>
@@ -75,11 +109,12 @@
                             </div>
                             <div class="p-h-content">
                                 <span>{{ $employee->userID }}</span>
-                                <span>{{ $employee->firstname }}{{ $employee->lastname }}</span>
-                                <span>{{ $employee->position_name }}</span>
-                                <span>{{ $employee->email }}</span>
-                                <span>{{ $employee->contact }}</span>
-                                <span>{{ $employee->address }}</span>
+                                <span>{{ $user->firstname }} {{ $user->lastname }}</span>
+                                <span>{{ $user_department->department_name }}</span>
+                                <span>{{ $user_position->position_name }}</span>
+                                <span>{{ $user->email }}</span>
+                                <span>{{ $user->contact }}</span>
+                                <span>{{ $user->address }}</span>
                             </div>
                         </div>
                         <div class="payslip-header-right">
@@ -100,11 +135,11 @@
                         <div class="p-c-body">
                             <div class="p-c">
                                 <span>Period From:</span>
-                                <span>12/01/2024</span>
+                                <span>{{ $employee->datefrom ?? 'N/A' }}</span>
                             </div>
                             <div class="p-c">
                                 <span>Period To:</span>
-                                <span>12/31/2024</span>
+                                <span>{{ $employee->dateto ?? 'N/A' }}</span>
                             </div>
                         </div>
                     </div>
@@ -122,14 +157,14 @@
                                         <span>Worked Days:</span>
                                     </div>
                                     <div class="p-c">
-                                        <span>86.76</span>
-                                        <span>8.5</span>
-                                        <span>24</span>
+                                        <span>{{ $employee->hourlyRate }}</span>
+                                        <span>{{ $employee->hoursRendered }}</span>
+                                        <span>{{ $employee->workDays }}</span>
                                     </div>
                                 </div>
                                 <div class="p-c-footer">
                                     <span>Total:</span>
-                                    <span>17,699.04</span>
+                                    <span>{{ $employee->totalIncome }}</span>
                                 </div>
 
                             </div>
@@ -144,22 +179,18 @@
                                         <span>PhilHealth:</span>
                                         <span>Pag-Ibig:</span>
                                         <span>SSS:</span>
-                                        <span>Withholding Tax:</span>
                                         <span>late/s:</span>
-                                        <span>Absent/s:</span>
                                     </div>
                                     <div class="p-c">
-                                        <span>1,234.00</span>
-                                        <span>1,234.00</span>
-                                        <span>1,234.00</span>
-                                        <span>1,234.00</span>
-                                        <span>123.00</span>
-                                        <span>737.46</span>
+                                        <span>{{ $employee->philHealth }}</span>
+                                        <span>{{ $employee->pagIbig }}</span>
+                                        <span>{{ $employee->sss }}</span>
+                                        <span>{{ $employee->lates }}</span>
                                     </div>
                                 </div>
                                 <div class="p-c-footer">
                                     <span>Total:</span>
-                                    <span>5,796.46</span>
+                                    <span>{{ $employee->totalDeduction }}</span>
                                 </div>
 
                             </div>
@@ -180,17 +211,17 @@
                                         <span>Bonuses:</span>
                                     </div>
                                     <div class="p-c">
-                                        <span>343.54</span>
-                                        <span>999.99</span>
-                                        <span>532.12</span>
-                                        <span>1,000.00</span>
-                                        <span>737.46</span>
-                                        <span>1,000.00</span>
+                                        <span>{{ $employee->RegOT }}</span>
+                                        <span>{{ $employee->Allowances }}</span>
+                                        <span>{{ $employee->SunOT }}</span>
+                                        <span>{{ $employee->Incentives }}</span>
+                                        <span>{{ $employee->HolOT }}</span>
+                                        <span>{{ $employee->Bonuses }}</span>
                                     </div>
                                 </div>
                                 <div class="p-c-footer">
                                     <span>Gross:</span>
-                                    <span>4,613.11</span>
+                                    <span>{{ $employee->grossSalary }}</span>
                                 </div>
 
                             </div>
@@ -199,11 +230,11 @@
                                 <div class="p-c-c-flex">
                                     <div class="p-c">
                                         <span>Ref. no.:</span>
-                                        <span>123456</span>
+                                        <span>{{ $employee->income_id }}</span>
                                     </div>
                                     <div class="p-c">
                                         <span>Net Income:</span>
-                                        <span>16,515.69</span>
+                                        <span>{{ $employee->totalSalary }}</span>
                                     </div>
                                 </div>
 
@@ -219,14 +250,17 @@
 
     </div>
 
+    <script src="/javascript/jquery-3.7.1.min.js"></script>
+    <script src="/javascript/topbar-menu-toggle.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             var element = $("#payslip-body");
-    
+
             $("#download").on('click', function() {
                 html2canvas(element, {
                     onrendered: function(canvas) {
-                        var imageData = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+                        var imageData = canvas.toDataURL("image/jpeg").replace("image/jpeg",
+                            "image/octet-stream");
                         var link = document.createElement('a');
                         link.download = "image.jpg";
                         link.href = imageData;
@@ -234,7 +268,7 @@
                     }
                 });
             });
-    
+
             // Optional: Automatically trigger the download when the page loads
             // $("#download").click();
         });

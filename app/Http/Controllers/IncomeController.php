@@ -6,6 +6,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\Income;
+use App\Models\User;
+use App\Models\Department;
+use App\Models\Position;
 
 
 
@@ -54,8 +57,11 @@ class IncomeController extends Controller
         $income->pagIbig = $request->pagIbig;
         $income->sss = $request->sss;
         $income->totalDeduction = $request->totalDeduction;
-        $income->totalSalary = $request->totalSalary;
+
         $income->grossSalary = $request->grossSalary;
+
+        $income->totalSalary = $request->totalSalary;
+
 
         $income->datefrom = $request->datefrom;
         $income->dateto = $request->dateto;
@@ -71,11 +77,22 @@ class IncomeController extends Controller
         return view('employee.employee-payslip')->with('submitEmployeePayslip', $submitEmployeePayslip);
     }
 
-    public function viewEmployeePayslip()
-    {
-        $submitEmployeePayslipForAdmin = Income::all();
-        return view('admin.view-employee-payslip', ['submitEmployeePayslipForAdmin' => $submitEmployeePayslipForAdmin])
-        ->with('submitEmployeePayslipForAdmin', $submitEmployeePayslipForAdmin);
+    public function getEmployeeForPayslip ($id) {
+        $employeePayslips = Income::where('userID', $id)->get();
+        return view('admin.view-employee-payslip')->with('employeePayslips', $employeePayslips);
     }
+
+    // public function payrollEmployeeDetails ($id) {
+    //     $employee = User::where('userID', $id)->first();
+    //     $departments = Department::where('is_active',1)->get();
+    //     $positions = Position::where('is_active',1)->get();
+    //     $employeeDetails = Income::where('userID', $id)->get();
+    //     $income = Income::where('userID', $id)->first();
+    //     return view('admin.view-employee-payslip-details')->with('employeeDetails', $employeeDetails)
+    //     ->with('positions', $positions)
+    //     ->with('departments', $departments)
+    //     ->with('employee', $employee)
+    //     ->with('income', $income);
+    // }
 
 }

@@ -44,31 +44,6 @@ class EmployeeController extends Controller
         ->with('employee', $employee);
     }
 
-    public function getEmployeeForPayslip ($id) {
-        $employee = User::where('userID', $id)->first();
-        $departments = Department::where('is_active',1)->get();
-        $positions = Position::where('is_active',1)->get();
-        return view('admin.view-employee-payslip')
-        ->with('positions', $positions) 
-        ->with('departments', $departments)
-        ->with('employee', $employee);
-    }
-
-    
-
-    public function getEmployeeForEmpPage ($id) {
-        $employee = User::where('userID', $id)->first();
-        $departments = Department::where('is_active',1)->get();
-        $positions = Position::where('is_active',1)->get();
-        return view('employee.employee-details')
-        ->with('positions', $positions) 
-        ->with('departments', $departments)
-        ->with('employee', $employee);
-    }
-
-
-
-
     public function updateCompany($id) {
         $employee = User::where('userID', $id)->first();
         $departments = Department::where('is_active',1)->get();

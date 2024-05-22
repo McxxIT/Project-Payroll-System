@@ -574,6 +574,15 @@
                 .emp-payslip-cell:nth-child(7) {
                     width: 10%;
                     min-width: 100px;
+
+                    button {
+                        width: 100%;
+                        background-color: blue;
+                        border: none;
+                        color: white;
+                        text-align: center;
+                        padding: 10px;
+                    }
                 }
             }
         }

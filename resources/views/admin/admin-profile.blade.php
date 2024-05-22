@@ -22,72 +22,139 @@
             <div class="sidebar-flex">
 
                 <div class="brand">
-                    <a href="employee.php"><img src="/assets/imgs/brand.png" alt="MPS"></a>
+                    <a href="dashboard.php"><img src="/assets/imgs/brand.png" alt="MPS"></a>
                 </div>
 
                 <div class="sider-menu">
-                    <a class="menu-background" href="{{ route('dashboard') }}"><i
-                            class="bi bi-boxes"></i><span>Dashboard</span></a>
-                    <a class="menu-background" href="{{ route('employee') }}"><i
-                            class="bi bi-person-rolodex"></i><span>Employees</span></a>
-                    <a class="menu-background" href="{{ route('applicant') }}"><i
-                            class="bi bi-person-rolodex"></i><span>Applicant</span></a>
-                    <a class="menu-background" href="{{ route('archive') }}"><i
-                            class="bi bi-archive"></i><span>Archive</span></a>
-                    <a class="menu-background" href="{{ route('payroll') }}"><i
-                            class="bi bi-credit-card-2-front"></i><span>Payroll</span></a>
-                    <a class="menu-background" href="{{ route('payroll-report') }}"><i
-                            class="bi bi-file-earmark-post"></i></i><span>Payroll Report</span></a>
-                    <a class="menu-background" href="{{ route('payslip') }}"><i
-                            class="bi bi-wallet"></i><span>Payslip</span></a>
-                    <a class="menu-background" href="{{ route('company') }}"><i
-                            class="bi bi-buildings"></i><span>Company</span></a>
+                    <a class="menu-background" href="{{ route('dashboard') }}">
+                        <i class="bi bi-boxes"></i>
+                        <span>Dashboard</span></a>
+                    <a class="menu-background" href="{{ route('employee') }}">
+                        <i class="bi bi-person-rolodex"></i>
+                        <span>Employees</span></a>
+                    <a class="menu-background" href="{{ route('applicant') }}">
+                        <i class="bi bi-person-rolodex"></i>
+                        <span>Applicant</span></a>
+                    <a class="menu-background" href="{{ route('archive') }}">
+                        <i class="bi bi-archive"></i>
+                        <span>Archive</span></a>
+                    <a class="menu-background" href="{{ route('payroll') }}">
+                        <i class="bi bi-credit-card-2-front"></i>
+                        <span>Payroll</span></a>
+                    <a class="menu-background" href="{{ route('payroll-report') }}">
+                        <i class="bi bi-file-earmark-post"></i>
+                        <span>Payroll Report</span></a>
+                    <a class="menu-background" href="{{ route('payslip') }}">
+                        <i class="bi bi-wallet"></i>
+                        <span>Payslip</span>
+                    </a>
+                    <a class="menu-background" href="{{ route('company') }}">
+                        <i class="bi bi-buildings"></i>
+                        <span>Company</span>
+                    </a>
                 </div>
-
+                <form method="POST" action="{{ route('logout') }}" class="logout">
+                    @csrf
+                    <div class="out-flex-wrapper" onclick="event.preventDefault(); this.closest('form').submit();">
+                        <span class="text-logout">Logout</span>
+                    </div>
+                </form>
             </div>
         </div>
+
+
 
         <!-- =====================TOP BAR================ -->
 
         <div class="topbar-wrapper">
             <div class="profile-wrapper">
-
+                <div class="sidebar-toggle" id="sidebarToggle">
+                    <i class="bi bi-list"></i>
+                </div>
                 <div class="c-header-flex">
                     <span class="title">Dashboard</span>
-                    <span class="greetings">My Profile</span>
+                    <span class="greetings">Hello, Robert! Welcome Back!</span>
                 </div>
                 <div class="profile">
-                    <a href="{{ route('admin-profile') }}" class="name">Robert</a>
-                    <a href="{{ route('admin-profile') }}"><img class="profile-link" src="/assets/imgs/pfp.jpg"></a>
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <div class="out-flex-wrapper" onclick="event.preventDefault(); this.closest('form').submit();">
-                            <span class="text-logout">Logout</span>
-                        </div>
-                    </form>
+                    <a href="{{ route('admin-profile') }}" class="name">{{ Auth::user()->username }}</a>
 
                 </div>
+                <div class="menu">
+                    <div class="menu-flex">
+                        <div class="info">
+                            <a href="" class="view-person">
+                                <span>
+                                    <span class="">Robert</span>
+                                </span>
+                            </a>
+                        </div>
+                        <a class="menu-item act">
+                            <i href="{{ route('dashboard') }}" class="bi bi-boxes"></i>
+                            <span>Dashboard</span></a>
+                        </a>
+                        <a href="{{ route('employee') }}" class="menu-item">
+                            <i class="bi bi-person-rolodex"></i>
+                            <span>Employees</span></a>
+                        </a>
+                        <a href="{{ route('applicant') }}" class="menu-item">
+                            <i class="bi bi-person-rolodex"></i>
+                            <span>Applicant</span></a>
+                        </a>
+                        <a href="{{ route('archive') }}" class="menu-item">
+                            <i class="bi bi-archive"></i>
+                            <span>Archive</span></a>
+                        </a>
+                        <a href="{{ route('payroll') }}" class="menu-item">
+                            <i class="bi bi-credit-card-2-front"></i>
+                            <span>Payroll</span></a>
+                        </a>
+                        <a href="{{ route('payroll-report') }}" class="menu-item">
+                            <i class="bi bi-file-earmark-post"></i>
+                            <span>Payroll Report</span></a>
+                        </a>
+                        <a href="{{ route('payslip') }}" class="menu-item">
+                            <i class="bi bi-wallet"></i>
+                            <span>Payslip</span>
+                        </a>
+                        <a href="{{ route('company') }}" class="menu-item">
+                            <i class="bi bi-buildings"></i>
+                            <span>Company</span>
+                        </a>
+                        <div class="info">
+                            <form method="POST" action="{{ route('logout') }}" class="form"
+                                onclick="event.preventDefault(); this.submit();">
+                                @csrf
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Logout</span>
+                            </form>
+                        </div>
 
 
+
+
+                    </div>
+                </div>
             </div>
+
+
         </div>
 
         <!-- MAIN CONTENT DATA -->
 
         <div class="admin-profile">
-
             <div class="background"></div>
             <div class="profile-account">
                 <div class="profile-pic">
-                    <img src="/assets/imgs/robert.jpg">
+                    <img src="/assets/imgs/pfp.jpg">
                 </div>
                 <div class="username">
-                    <span>Robert Jhon Falle</span>
-                    <span>Robertjhonjhon@gmail.com</span>
+                    <span>Name Read Only Update</span>
+                    <span>Email Read Only Update</span>
                 </div>
             </div>
-            <div class="about-me-wrapper">
-
+            <form action="" method="POST" class="about-me-wrapper">
+                @csrf
+                @method('PUT')
                 <div class="by-col">
                     <div class="by-details">
                         <div class="header">
@@ -99,73 +166,30 @@
                                     <span>Full Name</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Robert Jhon Falle</span>
+                                    <input type="text">
                                 </div>
                             </div>
-    
+
                             <div class="inside-body">
                                 <div class="flex">
                                     <span>Email Address</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Robert Jhon Falle</span>
+                                    <input type="email">
                                 </div>
                             </div>
-    
+
                             <div class="inside-body">
                                 <div class="flex">
                                     <span>User Name</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Robert Jhon Falle</span>
-                                </div>
-                            </div>
-    
-                            <div class="inside-body">
-                                <div class="flex">
-                                    <span>Password</span>
-                                </div>
-                                <div class="flex">
-                                    <span>Robert Jhon Falle</span>
+                                    <input type="text">
                                 </div>
                             </div>
                         </div>
                     </div>
-    
-    
-                    <div class="by-details">
-                        <div class="header">
-                            <span>Contact Information</span>
-                        </div>
-                        <div class="body">
-                            <div class="inside-body">
-                                <div class="flex">
-                                    <span>Mailing Address</span>
-                                </div>
-                                <div class="flex">
-                                    <span>Robert Jhon Falle</span>
-                                </div>
-                            </div>
-    
-                            <div class="inside-body">
-                                <div class="flex">
-                                    <span>Phone Number</span>
-                                </div>
-                                <div class="flex">
-                                    <span>Robert Jhon Falle</span>
-                                </div>
-                            </div>
-    
-                            <div class="inside-body">
-                                <div class="flex">
-                                    <span>Telephone Number</span>
-                                </div>
-                                <div class="flex">
-                                    <span>Robert Jhon Falle</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
 
                     <div class="by-details">
                         <div class="header">
@@ -177,47 +201,57 @@
                                     <span>Employee ID</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Robert Jhon Falle</span>
+                                    <span>Read Only</span>
                                 </div>
                             </div>
-    
-                            <div class="inside-body">
-                                <div class="flex">
-                                    <span>Job Title</span>
-                                </div>
-                                <div class="flex">
-                                    <span>Admin</span>
-                                </div>
-                            </div>
-    
+
                             <div class="inside-body">
                                 <div class="flex">
                                     <span>Department</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Robert Jhon Falle</span>
+                                    <span>Read Only</span>
                                 </div>
                             </div>
-    
+
+                            <div class="inside-body">
+                                <div class="flex">
+                                    <span>Position</span>
+                                </div>
+                                <div class="flex">
+                                    <span>Read Only</span>
+                                </div>
+                            </div>
+
                             <div class="inside-body">
                                 <div class="flex">
                                     <span>Status</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Robert Jhon Falle</span>
+                                    <span>Read Only</span>
                                 </div>
                             </div>
-    
+
                             <div class="inside-body">
                                 <div class="flex">
-                                    <span>Nationality</span>
+                                    <span>Work Shift</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Robert Jhon Falle</span>
+                                    <span>Read Only</span>
+                                </div>
+                            </div>
+
+                            <div class="inside-body">
+                                <div class="flex">
+                                    <span>User Type</span>
+                                </div>
+                                <div class="flex">
+                                    <span>Read Only</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
 
@@ -232,195 +266,114 @@
                                     <span>Gender</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Robert Jhon Falle</span>
+                                    <input type="text" name="" id="">
                                 </div>
                             </div>
-    
+
                             <div class="inside-body">
                                 <div class="flex">
                                     <span>Birthdate</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Robert Jhon Falle</span>
+                                    <input type="text" name="" id="">
                                 </div>
                             </div>
-    
+
                             <div class="inside-body">
                                 <div class="flex">
                                     <span>Address</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Robert Jhon Falle</span>
+                                    <input type="text" name="" id="">
                                 </div>
                             </div>
-    
+
                             <div class="inside-body">
                                 <div class="flex">
                                     <span>Status</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Robert Jhon Falle</span>
+                                    <input type="text" name="" id="">
                                 </div>
                             </div>
-    
+
                             <div class="inside-body">
                                 <div class="flex">
                                     <span>Nationality</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Robert Jhon Falle</span>
+                                    <input type="text" name="" id="">
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="by-details">
+                        <div class="header">
+                            <span>Contact Information</span>
+                        </div>
+                        <div class="body">
+                            <div class="inside-body">
+                                <div class="flex">
+                                    <span>Mailing Address</span>
+                                </div>
+                                <div class="flex">
+                                    <input type="text" name="" id="">
+                                </div>
+                            </div>
+
+                            <div class="inside-body">
+                                <div class="flex">
+                                    <span>Phone Number</span>
+                                </div>
+                                <div class="flex">
+                                    <input type="text" name="" id="">
+                                </div>
+                            </div>
+
+                            <div class="inside-body">
+                                <div class="flex">
+                                    <span>Telephone Number</span>
+                                </div>
+                                <div class="flex">
+                                    <input type="text" name="" id="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer"
+                        style="display: flex;
+                    justify-content: flex-end;
+                    gap: 10px;
+                    padding-right: 20px">
+                        <a href="{{ route('employee') }}" style="text-decoration: none;">
+                            <button
+                                style="background-color: green; width: 90px;
+                        height: 30px;
+                        border: none;
+                        color: white;
+                        border-radius: 3px;"
+                                type="button">Back</button>
+                        </a>
+                        <button
+                            style="background-color: blue; width: 90px;
+                        height: 30px;
+                        border: none;
+                        color: white;
+                        border-radius: 3px;"
+                            type="submit">Update</button>
                     </div>
                 </div>
-
-
-
-
-
-                {{-- <div class="about-me">
-                    <span>About Me</span>
-                </div>
-
-                <div class="about-me-details-flex">
-                    <div class="about-me-details">
-                        <div class="about-me-header">
-                            <span>Personal Information:</span>
-                            <button><i class="bi bi-pencil-square"></i>Edit</button>
-                        </div>
-
-                        <div class="content-details-wrapper">
-                            <div class="c-details">
-                                <div class="c-header-details">
-                                    <span>Last Name: </span>
-                                </div>
-                                <div class="c-body-details">
-                                    <span>Falle </span>
-                                </div>
-                            </div>
-                            <div class="c-details">
-                                <div class="c-header-details">
-                                    <span>First Name: </span>
-                                </div>
-                                <div class="c-body-details">
-                                    <span>Robert </span>
-                                </div>
-                            </div>
-                            <div class="c-details">
-                                <div class="c-header-details">
-                                    <span>Status: </span>
-                                </div>
-                                <div class="c-body-details">
-                                    <span>Single </span>
-                                </div>
-                            </div>
-                            <div class="c-details">
-                                <div class="c-header-details">
-                                    <span>Nationality: </span>
-                                </div>
-                                <div class="c-body-details">
-                                    <span>Jhon Doe </span>
-                                </div>
-                            </div>
-                            <div class="c-details">
-                                <div class="c-header-details">
-                                    <span>Birthdate: </span>
-                                </div>
-                                <div class="c-body-details">
-                                    <span>03/31/1777 </span>
-                                </div>
-                            </div>
-                            <div class="c-details">
-                                <div class="c-header-details">
-                                    <span>Gender: </span>
-                                </div>
-                                <div class="c-body-details">
-                                    <span>Female</span>
-                                </div>
-                            </div>
-                            <div class="c-details">
-                                <div class="c-header-details">
-                                    <span>Address: </span>
-                                </div>
-                                <div class="c-body-details">
-                                    <span>Davao City</span>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="about-me-details">
-                        <div class="about-me-header">
-                            <span>Employee Details:</span>
-                        </div>
-
-                        <div class="content-details-wrapper">
-
-                            <div class="c-details">
-                                <div class="c-header-details">
-                                    <span>ID:</span>
-                                </div>
-                                <div class="c-body-details">
-                                    <span>12345 </span>
-                                </div>
-                            </div>
-                            <div class="c-details">
-                                <div class="c-header-details">
-                                    <span>Department: </span>
-                                </div>
-                                <div class="c-body-details">
-                                    <span>Front Office Department</span>
-                                </div>
-                            </div>
-                            <div class="c-details">
-                                <div class="c-header-details">
-                                    <span>Position:</span>
-                                </div>
-                                <div class="c-body-details">
-                                    <span>Front Desk Clerk</span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="about-me-details">
-                        <div class="about-me-header">
-                            <span>Privacy & Security:</span>
-                        </div>
-
-                        <div class="content-details-wrapper">
-
-                            <div class="c-details">
-                                <div class="c-header-details">
-                                    <span>Email:</span>
-                                </div>
-                                <div class="c-body-details">
-                                    <span>JhondoeRobert@gmail.com </span>
-                                </div>
-                            </div>
-                            <div class="c-details">
-                                <div class="c-header-details">
-                                    <span>Password: </span>
-                                </div>
-                                <div class="c-body-details">
-                                    <span>***************** </span>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                </div> --}}
-            </div>
-
-
-
+            </form>
         </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+        <script src="/javascript/jquery-3.7.1.min.js"></script>
+        <script src="/javascript/topbar-menu-toggle.js"></script>
+
 
 </body>
 

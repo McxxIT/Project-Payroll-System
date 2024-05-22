@@ -11,6 +11,7 @@ class Income extends Model
 
     protected $table = 'income';
     protected $fillable = [
+        'income_id',
         'userID',
         'workDays',
         'hourlyRate',
@@ -31,4 +32,10 @@ class Income extends Model
         'datefrom',
         'dateto',
     ];
+
+
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'userID');
+    }
 }

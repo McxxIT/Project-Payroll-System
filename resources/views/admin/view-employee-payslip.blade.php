@@ -25,7 +25,7 @@
                     <a class="menu-background" href="{{ route('dashboard') }}">
                         <i class="bi bi-boxes"></i>
                         <span>Dashboard</span></a>
-                    <a class="menu-background active" href="{{ route('employee') }}">
+                    <a class="menu-background" href="{{ route('employee') }}">
                         <i class="bi bi-person-rolodex"></i>
                         <span>Employees</span></a>
                     <a class="menu-background" href="{{ route('applicant') }}">
@@ -134,6 +134,20 @@
         {{-- ===================MAIN CONTENT===================== --}}
 
         <div class="content-wrapper">
+            <div class="back">
+                <a href="{{ route('payslip') }}" class="back-button"
+                    style="text-decoration: none; 
+                    color: inherit; 
+                    display: flex; 
+                    align-items: 
+                    center; 
+                    gap: 5px; 
+                    font-weight: 500; 
+                    padding: 10px">
+                    <i class="bi bi-arrow-left"></i>
+                    <span>Back</span>
+                </a>
+            </div>
             <div class="data-3">
                 <div class="table-3">
                     <div class="table-header-3">
@@ -149,18 +163,19 @@
                     </div>
 
                     <div class="table-body-3">
-                        @foreach ($submitEmployeePayslipForAdmin as $submitPayslip)
-                        <form class="table-row-3" action="/view-employee-payslip/{{ $submitPayslip->userID }}" method="POST">
-                            @csrf
-                            <div class="emp-payslip-cell">{{ $submitPayslip->income_id }}</div>
-                            <div class="emp-payslip-cell">{{ $submitPayslip->datefrom }}</div>
-                            <div class="emp-payslip-cell">{{ $submitPayslip->dateto }}</div>
-                            <div class="emp-payslip-cell">{{ $submitPayslip->hourlyRate }}</div>
-                            <div class="emp-payslip-cell">{{ $submitPayslip->hoursRendered }}</div>
-                            <div class="emp-payslip-cell">{{ $submitPayslip->workDays }}</div>
-                            <div class="emp-payslip-cell"><button type="submit">View Details</button></div>
-                        </form>
-                    @endforeach
+                        @foreach ($employeePayslips as $employeePayslip)
+                            <form class="table-row-3" action="/view-employee-payslip-details/{{ $employeePayslip->income_id }}"
+                                method="POST">
+                                @csrf
+                                <div class="emp-payslip-cell">{{ $employeePayslip->income_id }}</div>
+                                <div class="emp-payslip-cell">{{ $employeePayslip->datefrom }}</div>
+                                <div class="emp-payslip-cell">{{ $employeePayslip->dateto }}</div>
+                                <div class="emp-payslip-cell">{{ $employeePayslip->hourlyRate }}</div>
+                                <div class="emp-payslip-cell">{{ $employeePayslip->hoursRendered }}</div>
+                                <div class="emp-payslip-cell">{{ $employeePayslip->workDays }}</div>
+                                <div class="emp-payslip-cell"><button type="submit">View Details</button></div>
+                            </form>
+                        @endforeach
                     </div>
 
                 </div>

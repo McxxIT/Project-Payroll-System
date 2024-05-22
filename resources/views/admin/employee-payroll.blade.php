@@ -163,19 +163,15 @@
                                             <span>Pag-ibig: </span>
                                             <input type="number" class="form-control" placeholder="0.00" name="pagIbig" id="pagIbigInput">
                                         </div>
+                                    </div>
+                                    <div class="card-body-flex">
                                         <div class="flex">
                                             <span>SSS: </span>
                                             <input type="number" class="form-control" placeholder="0.00" name="sss" id="sssInput">
                                         </div>
-                                    </div>
-                                    <div class="card-body-flex">
                                         <div class="flex">
                                             <span>Lates: </span>
-                                            <input type="number" class="form-control" placeholder="0" name="lates" id="latesInput">
-                                        </div>
-                                        <div class="flex">
-                                            <span>Absents: </span>
-                                            <input type="number" class="form-control" placeholder="0" name="absents" id="absentsInput">
+                                            <input type="number" class="form-control" placeholder="0" name="lates" id="latesInput" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -247,8 +243,7 @@
                 var pagIbig = parseFloat(document.getElementById('pagIbigInput').value) || 0;
                 var sss = parseFloat(document.getElementById('sssInput').value) || 0;
                 var lates = parseFloat(document.getElementById('latesInput').value) || 0;
-                var absents = parseFloat(document.getElementById('absentsInput').value) || 0;
-                var totalDeductions = philHealth + pagIbig + sss + lates + absents;
+                var totalDeductions = philHealth + pagIbig + sss + lates;
                 document.getElementById('totalDeductionsInput').value = totalDeductions.toFixed(2);
                 updateTotalSalary();
             }

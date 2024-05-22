@@ -185,20 +185,24 @@
                         <div class="header-col">
                             <span>Department</span>
                             <span>Employee Count</span>
-                            <span>Total Employer Cost</span>
-                            <span>Total Gross Pay</span>
                             <span>Net Pay</span>
                         </div>
                         <div class="content-col">
-                            @foreach ($employees as $employee)
+                            @foreach ($departments as $department)
                                 <div class="body-row" data-toggle="dropdown">
-                                    <span>{{ $employee->department->department_name }}</span>
-                                    <span>1</span>
-                                    <span>₱500,000</span>
-                                    <span>₱500,000</span>
-                                    <span>₱500,000</span>
+                                    <span>{{ $department->department_name }}</span>
+                                    <span>{{ $department->users_count}}</span>
+                                    <span>{{ $totalPaysByDepartment[$department->department_id]}}</span>
                                     <i class="bi bi-chevron-down"></i>
                                 </div>
+
+                               
+                                    <div class="dropdown-row">
+                                        <span>Donald</span>
+                                        <span>123</span>
+                                        <span>₱50,000</span>
+                                    </div>
+                              
                             @endforeach
  
 
