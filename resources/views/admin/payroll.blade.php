@@ -142,7 +142,7 @@
         <div class="content-wrapper">
             <div class="content-body-wrapper">
 
-                <div class="cards-container">
+                {{-- <div class="cards-container">
                     <div class="flex-1-container">
 
                         <div class="flex-row-card">
@@ -159,7 +159,7 @@
 
                     </div>
 
-                </div>
+                </div> --}}
 
                 <div class="body-content">
 
@@ -175,12 +175,11 @@
                         <div class="table">
                             <div class="table-header">
                                 <div class="table-row">
-                                    <div class="table-cell">ID</div>
-                                    <div class="table-cell">Name</div>
-                                    <div class="table-cell">Department</div>
-                                    <div class="table-cell">Position</div>
-                                    <div class="table-cell">Status</div>
-                                    <div class="table-cell">Action</div>
+                                    <div class="table-cell payroll">ID</div>
+                                    <div class="table-cell payroll">Name</div>
+                                    <div class="table-cell payroll">Department</div>
+                                    <div class="table-cell payroll">Position</div>
+                                    <div class="table-cell payroll">Action</div>
                                 </div>
                             </div>
 
@@ -192,12 +191,11 @@
 
                                 @foreach ($employees as $employee)
                                     <div class="table-row">
-                                        <div class="table-cell">{{ $employee->userID }}</div>
-                                        <div class="table-cell">{{ $employee->firstname }} {{ $employee->lastname }}</div>
-                                        <div class="table-cell">{{ $employee->position_id ? $employee->position->position_name : 'N/A' }}</div>
-                                        <div class="table-cell">{{ $employee->department_id ? $employee->department->department_name : 'N/A' }}</div>
-                                        <div class="table-cell red">Pending</div>
-                                        <div class="table-cell blue">
+                                        <div class="table-cell payroll">{{ $employee->userID }}</div>
+                                        <div class="table-cell payroll">{{ $employee->firstname }} {{ $employee->lastname }}</div>
+                                        <div class="table-cell payroll">{{ $employee->position_id ? $employee->position->position_name : 'N/A' }}</div>
+                                        <div class="table-cell payroll">{{ $employee->department_id ? $employee->department->department_name : 'N/A' }}</div>
+                                        <div class="table-cell blue payroll">
                                             <form method="POST" action="/payroll-update/{{ $employee->userID }}">
                                                 @csrf
                                                 <button type="submit"><i class="bi bi-pencil-square"></i>Update

@@ -13,35 +13,35 @@ return new class extends Migration
     {
         Schema::create('income', function (Blueprint $table) {
             $table->id();
-            $table->integer('income_id');
+            $table->bigInteger('income_id');
             $table->integer('userID');
-            $table->integer('workDays');
-            $table->integer('hourlyRate');
-            $table->integer('hoursRendered');
-            $table->integer('totalIncome');
+            $table->bigInteger('workDays');
+            $table->bigInteger('hourlyRate');
+            $table->bigInteger('hoursRendered');
+            $table->bigInteger('totalIncome');
 
-            $table->integer('RegOT');
-            $table->integer('SunOT');
-            $table->integer('HolOT');
-            $table->integer('Allowances');
-            $table->integer('Incentives');
-            $table->integer('Bonuses');
-            $table->integer('otTotal');
+            $table->bigInteger('RegOT');
+            $table->bigInteger('SunOT');
+            $table->bigInteger('HolOT');
+            $table->bigInteger('Allowances');
+            $table->bigInteger('Incentives');
+            $table->bigInteger('Bonuses');
+            $table->bigInteger('otTotal');
 
-            $table->integer('philHealth');
-            $table->integer('pagIbig');
-            $table->integer('sss');
+            $table->bigInteger('philHealth');
+            $table->bigInteger('pagIbig');
+            $table->bigInteger('sss');
 
-            $table->integer('totalDeduction');
+            $table->bigInteger('totalDeduction');
 
-            $table->integer('totalSalary');
+            $table->bigInteger('totalSalary');
 
 
             $table->date('datefrom');
             $table->date('dateto');
 
             $table->foreign('userID')->references('userID')->on('users');
-            $table->integer('grossSalary');
+            $table->bigInteger('grossSalary');
             $table->timestamps();
         });
     }

@@ -19,33 +19,39 @@ class PayrollController extends Controller
             ->with('employees', $employees);
     }
 
-    public function payrollReport(){
+    public function payrollReport()
+    {
+        $departments = Department::where('is_active', 1)
+            ->with(['users' => function($query) {
+                $query->with('incomes');
+            }])
+            ->withCount('users')
+            ->get();
 
-    $departments = Department::where('is_active', 1)->withCount('users')->get();
-      
-    $totalPaysByDepartment = [];
+        $totalPaysByDepartment = [];
+        $totalPaysByUser = [];
 
+        foreach ($departments as $department) {
+            $totalPayByDepartment = 0;
 
-    foreach ($departments as $department) {
-       
-        $totalPay = User::where('department_id', $department->department_id)
-                        ->join('income', 'users.userID', '=', 'income.userID')
-                        ->sum('income.totalSalary');
+            foreach ($department->users as $user) {
+                $totalPayByUser = $user->incomes->sum('totalSalary');
+                $totalPaysByUser[$user->userID] = number_format($totalPayByUser, 2);
+                $totalPayByDepartment += $totalPayByUser;
+            }
 
-        $formattedTotalPay = number_format($totalPay);
-        $totalPaysByDepartment[$department->department_id] = $formattedTotalPay;
+            $totalPaysByDepartment[$department->department_id] = number_format($totalPayByDepartment, 2);
+        }
+
+        return view('admin.payroll-report', [
+            'departments' => $departments,
+            'totalPaysByDepartment' => $totalPaysByDepartment,
+            'totalPaysByUser' => $totalPaysByUser
+        ]);
     }
-
-    return view('admin.payroll-report', [
-        'departments' => $departments,
-        'totalPaysByDepartment' => $totalPaysByDepartment
-    ]);
-    }
-
     public function employeePayroll($id)
     {
         $employee = User::with(['department', 'position'])->where('userID', $id)->first();
-        $income = $employee->incomes()->latest()->first();
         return view('admin.employee-payroll')->with('employee', $employee);
     }
 

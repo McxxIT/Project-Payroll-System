@@ -182,7 +182,7 @@
                                             <span class="title">PENDING APPLICANTS</span>
                                         </div>
                                         <div class="body">
-                                            <span class="">{{ $pendings->count() }}</span>
+                                            <span class="">{{ $pendings->where('type', 2)->count() }}</span>
                                             <a href="{{ route('applicant') }}">View Details</a>
                                         </div>
                                     </div>

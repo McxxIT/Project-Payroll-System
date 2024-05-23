@@ -183,28 +183,32 @@
                 <div class="payroll-report">
                     <div class="body">
                         <div class="header-col">
-                            <span>Department</span>
                             <span>Employee Count</span>
+                            <span>Department</span>
                             <span>Net Pay</span>
                         </div>
                         <div class="content-col">
                             @foreach ($departments as $department)
                                 <div class="body-row" data-toggle="dropdown">
+                                    <span>{{ $department->users_count }}</span>
                                     <span>{{ $department->department_name }}</span>
-                                    <span>{{ $department->users_count}}</span>
-                                    <span>{{ $totalPaysByDepartment[$department->department_id]}}</span>
+                                    <span>{{ $totalPaysByDepartment[$department->department_id] }}</span>
                                     <i class="bi bi-chevron-down"></i>
                                 </div>
 
-                               
-                                    <div class="dropdown-row">
-                                        <span>Donald</span>
-                                        <span>123</span>
-                                        <span>₱50,000</span>
-                                    </div>
-                              
+                                <div class="dropdown-row">
+
+                                    @foreach ($department->users as $user)
+                                        <div class="dropdown-row-flex">
+                                            <span>{{ $user->userID }}</span>
+                                            <span>{{ $user->firstname }} {{ $user->lastname }}</span>
+                                            <span>{{ $totalPaysByUser[$user->userID] }}</span>
+                                            <i class="bi bi-chevron-down" style="color: transparent"></i>
+                                        </div>
+                                    @endforeach
+                                </div>
                             @endforeach
- 
+
 
                             {{-- <div class="body-row" data-toggle="dropdown">
                                 <span>Housekeeping</span>

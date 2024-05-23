@@ -1363,6 +1363,29 @@ html {
   justify-content: center;
   align-items: center;
 }
+.data .table .table-header .table-row .payroll:nth-child(1) {
+  width: 10;
+  min-width: 100px;
+}
+.data .table .table-header .table-row .payroll:nth-child(2) {
+  width: 26%;
+  min-width: 260px;
+}
+.data .table .table-header .table-row .payroll:nth-child(3) {
+  width: 22%;
+  min-width: 220px;
+}
+.data .table .table-header .table-row .payroll:nth-child(4) {
+  width: 22%;
+  min-width: 220px;
+}
+.data .table .table-header .table-row .payroll:nth-child(5) {
+  width: 10%;
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .data .table .table-body .not-found-message {
   display: none;
   justify-content: center;
@@ -1426,6 +1449,37 @@ html {
   padding: 2px;
 }
 .data .table .table-body .table-row .table-cell:nth-child(6) button {
+  border: none;
+  padding: 5px;
+  color: blue;
+  background-color: transparent;
+  cursor: pointer;
+}
+.data .table .table-body .table-row .payroll:nth-child(1) {
+  width: 10;
+  min-width: 100px;
+}
+.data .table .table-body .table-row .payroll:nth-child(2) {
+  width: 26%;
+  min-width: 260px;
+}
+.data .table .table-body .table-row .payroll:nth-child(3) {
+  width: 22%;
+  min-width: 220px;
+}
+.data .table .table-body .table-row .payroll:nth-child(4) {
+  width: 22%;
+  min-width: 220px;
+}
+.data .table .table-body .table-row .payroll:nth-child(5) {
+  width: 10%;
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+}
+.data .table .table-body .table-row .payroll:nth-child(5) button {
   border: none;
   padding: 5px;
   color: blue;
@@ -2167,6 +2221,7 @@ html {
 }
 .body-content .payroll-report .body .header-col {
   display: flex;
+  justify-content: space-between;
   min-width: 1000px;
   border-bottom: 2px solid black;
   background-color: rgb(0, 0, 0);
@@ -2216,13 +2271,16 @@ html {
 .body-content .payroll-report .body .content-col .dropdown-row .dropdown-row-flex {
   display: flex;
   justify-content: space-between;
-  flex-grow: 1;
+  min-width: 1000px;
+  border-bottom: 1.5px solid grey;
+  padding: 5px;
 }
 .body-content .payroll-report .body .content-col .dropdown-row .dropdown-row-flex span {
-  width: 30%;
+  width: 20%;
+  padding-right: 20px;
 }
-.body-content .payroll-report .body .content-col .dropdown-row .dropdown-row-flex span:nth-child(1) {
-  width: 40%;
+.body-content .payroll-report .body .content-col .dropdown-row .dropdown-row-flex:last-child {
+  border-bottom: none;
 }
 .body-content .payroll-report .body .content-col .dropdown-row:last-child {
   border-bottom: none;

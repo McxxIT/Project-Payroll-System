@@ -59,6 +59,34 @@
                     justify-content: center;
                     align-items: center;
                 }
+
+                .payroll:nth-child(1) {
+                    width: 10;
+                    min-width: 100px;
+                }
+
+                .payroll:nth-child(2) {
+                    width: 26%;
+                    min-width: 260px;
+                }
+
+                .payroll:nth-child(3) {
+                    width: 22%;
+                    min-width: 220px;
+                }
+
+                .payroll:nth-child(4) {
+                    width: 22%;
+                    min-width: 220px;
+                }
+
+                .payroll:nth-child(5) {
+                    width: 10%;
+                    min-width: 150px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
             }
         }
 
@@ -130,6 +158,43 @@
                 }
 
                 .table-cell:nth-child(6) {
+                    width: 10%;
+                    min-width: 150px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 2px;
+
+                    button {
+                        border: none;
+                        padding: 5px;
+                        color: blue;
+                        background-color: transparent;
+                        cursor: pointer;
+                    }
+                }
+
+                .payroll:nth-child(1) {
+                    width: 10;
+                    min-width: 100px;
+                }
+
+                .payroll:nth-child(2) {
+                    width: 26%;
+                    min-width: 260px;
+                }
+
+                .payroll:nth-child(3) {
+                    width: 22%;
+                    min-width: 220px;
+                }
+
+                .payroll:nth-child(4) {
+                    width: 22%;
+                    min-width: 220px;
+                }
+
+                .payroll:nth-child(5) {
                     width: 10%;
                     min-width: 150px;
                     display: flex;

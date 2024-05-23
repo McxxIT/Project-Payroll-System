@@ -39,6 +39,7 @@ class IncomeController extends Controller
 
         $income = new Income();
         $income->income_id = rand(000000000, 999999999);
+
         $income->userID = $request->employeeID;
         $income->workDays = $request->workDays;
         $income->hourlyRate = $request->hourlyRate;

@@ -149,7 +149,7 @@
                 <div class="cards-container">
                     <div class="flex-1-container">
 
-                        <div class="flex-row-card">
+                        {{-- <div class="flex-row-card">
                             <div class="card-wrapper">
                                 <span class="number">0</span>
                                 <span class="text-pending">LATES</span>
@@ -160,7 +160,7 @@
                             </div>
                         </div>
 
-                        <div class="divider"></div>
+                        <div class="divider"></div> --}}
 
 
                         <div class="flex-row-card">
