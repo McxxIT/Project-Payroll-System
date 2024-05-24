@@ -8,6 +8,7 @@ use App\Models\Department;
 use App\Models\Position;
 use App\Models\Shift;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 
 class EmployeeController extends Controller
@@ -20,11 +21,19 @@ class EmployeeController extends Controller
     
         $activeEmployeesCount = $employees->where('is_active', 1)->count();
         $inactiveEmployeesCount = $employees->where('is_active', 0)->count();
-    
+        $user = Auth::user();
+        $name = $user->username;
         return view('admin.employee')
+               ->with('user_name', $name)
                ->with('employees', $employees)
                ->with('activeEmployeesCount', $activeEmployeesCount)
                ->with('inactiveEmployeesCount', $inactiveEmployeesCount);
+    }
+
+    public function getEmp() {
+        $user = Auth::user();
+        $name = $user->username;
+        return view ('employee.employee-dashboard')->with('user_name', $name);
     }
     
 
@@ -38,7 +47,10 @@ class EmployeeController extends Controller
         $employee = User::where('userID', $id)->first();
         $departments = Department::where('is_active',1)->get();
         $positions = Position::where('is_active',1)->get();
+        $user = Auth::user();
+        $name = $user->username;
         return view('admin.view-employees-details')
+        ->with('user_name', $name)
         ->with('positions', $positions) 
         ->with('departments', $departments)
         ->with('employee', $employee);

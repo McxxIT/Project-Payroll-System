@@ -71,6 +71,9 @@ class AttendanceController extends Controller
                 \Log::info('Decimal Hours: ' . $decimalHours);
                 $attendance->clockout = $clockOutTime->toTimeString();
                 $attendance->hoursRendered = round($decimalHours, 2);
+
+                $attendance->save();
+                
                 return redirect()->back()->with('success', 'Clocked Out');
             } else {
                 return redirect()->back()->with('error', 'No clock-in record found');

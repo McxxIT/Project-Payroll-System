@@ -72,8 +72,8 @@
                     <i class="bi bi-list"></i>
                 </div>
                 <div class="c-header-flex">
-                    <span class="title">Dashboard</span>
-                    <span class="greetings">Hello, Robert! Welcome Back!</span>
+                    <span class="title">My Profile</span>
+                    <span class="greetings">Hello, {{ $user->username }}! Welcome Back!</span>
                 </div>
                 <div class="profile">
                     <a href="{{ route('admin-profile') }}" class="name">{{ Auth::user()->username }}</a>
@@ -84,7 +84,7 @@
                         <div class="info">
                             <a href="" class="view-person">
                                 <span>
-                                    <span class="">Robert</span>
+                                    <span class="">{{ $user->user_name }}</span>
                                 </span>
                             </a>
                         </div>
@@ -148,8 +148,8 @@
                     <img src="/assets/imgs/pfp.jpg">
                 </div>
                 <div class="username">
-                    <span>Name Read Only Update</span>
-                    <span>Email Read Only Update</span>
+                    <span><p>{{ $user->firstname }} <p>{{ $user->lastname }}</p></p></span>
+                    <span><p>{{ $user->email }}</p></span>
                 </div>
             </div>
             <form action="" method="POST" class="about-me-wrapper">
@@ -163,28 +163,28 @@
                         <div class="body">
                             <div class="inside-body">
                                 <div class="flex">
-                                    <span>Full Name</span>
+                                    <span>Name</span>
                                 </div>
                                 <div class="flex">
-                                    <input type="text">
-                                </div>
-                            </div>
-
-                            <div class="inside-body">
-                                <div class="flex">
-                                    <span>Email Address</span>
-                                </div>
-                                <div class="flex">
-                                    <input type="email">
+                                    <input type="text" value="{{ $user->firstname }} {{ $user->lastname }}">
                                 </div>
                             </div>
 
                             <div class="inside-body">
                                 <div class="flex">
-                                    <span>User Name</span>
+                                    <span>Email</span>
                                 </div>
                                 <div class="flex">
-                                    <input type="text">
+                                    <input type="email" value="{{ $user->email }}">
+                                </div>
+                            </div>
+
+                            <div class="inside-body">
+                                <div class="flex">
+                                    <span>Username</span>
+                                </div>
+                                <div class="flex">
+                                    <input type="text" value="{{ $user->username }}">
                                 </div>
                             </div>
                         </div>
@@ -201,7 +201,7 @@
                                     <span>Employee ID</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Read Only</span>
+                                    <span>{{ $user->userID }}</span>
                                 </div>
                             </div>
 
@@ -210,7 +210,7 @@
                                     <span>Department</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Read Only</span>
+                                    <span>{{ $user->department_name }}</span>
                                 </div>
                             </div>
 
@@ -219,7 +219,7 @@
                                     <span>Position</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Read Only</span>
+                                    <span>{{ $user->position_name }}</span>
                                 </div>
                             </div>
 
@@ -228,7 +228,13 @@
                                     <span>Status</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Read Only</span>
+                                    <span>
+                                        @if ($user->is_active == 1)
+                                        Active
+                                        @elseif ($user->is_active == 2)
+                                        Inactive
+                                        @endif
+                                    </span>
                                 </div>
                             </div>
 
@@ -237,7 +243,15 @@
                                     <span>Work Shift</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Read Only</span>
+                                    <span>
+                                        @if ($user->workshift_id == 1)
+                                        Day Shift (7am-3pm)
+                                        @elseif ($user->workshift_id == 2)
+                                        Swing Shift (3pm-11pm)
+                                        @elseif ($user->workshift_id == 3)
+                                        Graveyard Shift (11pm-7am)
+                                        @endif
+                                    </span>
                                 </div>
                             </div>
 
@@ -246,7 +260,13 @@
                                     <span>User Type</span>
                                 </div>
                                 <div class="flex">
-                                    <span>Read Only</span>
+                                    <span>
+                                        @if ($user->type == 1)
+                                        Admin
+                                        @elseif ($user->type == 2)
+                                        Employee
+                                        @endif
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -266,7 +286,12 @@
                                     <span>Gender</span>
                                 </div>
                                 <div class="flex">
-                                    <input type="text" name="" id="">
+                                    @if ($user->gender == 1)
+                                    <input type="text" name="" id="" value="Male">
+                                    @elseif ($user->gender == 2)
+                                    <input type="text" name="" id="" value="Female">
+                                    @endif
+                                    
                                 </div>
                             </div>
 
@@ -275,7 +300,7 @@
                                     <span>Birthdate</span>
                                 </div>
                                 <div class="flex">
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="" id="" value="{{ $user->birthdate }}">
                                 </div>
                             </div>
 
@@ -284,7 +309,7 @@
                                     <span>Address</span>
                                 </div>
                                 <div class="flex">
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="" id="" value="{{ $user->address }}">
                                 </div>
                             </div>
 
@@ -293,7 +318,7 @@
                                     <span>Status</span>
                                 </div>
                                 <div class="flex">
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="" id="" value="{{ $user->status }}">
                                 </div>
                             </div>
 
@@ -302,7 +327,7 @@
                                     <span>Nationality</span>
                                 </div>
                                 <div class="flex">
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="" id="" value="{{ $user->nationality }}">
                                 </div>
                             </div>
                         </div>
@@ -318,7 +343,7 @@
                                     <span>Mailing Address</span>
                                 </div>
                                 <div class="flex">
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="" id="" value="{{ $user->email }}"> 
                                 </div>
                             </div>
 
@@ -327,7 +352,7 @@
                                     <span>Phone Number</span>
                                 </div>
                                 <div class="flex">
-                                    <input type="text" name="" id="">
+                                    <input type="text" name="" id="" value="{{ $user->contact }}">
                                 </div>
                             </div>
 

@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Position;
 use App\Models\Department;
+use Illuminate\Support\Facades\Auth;
 
 class PositionController extends Controller
 {
     public function redirect() {
         $positions = Position::get();
         $departments = Department::where('is_active', 1)->get();
-        return view('admin.position')->with('positions', $positions)->with('departments', $departments);
+        $user = Auth::user();
+        $name = $user->username;
+        return view('admin.position')->with('user_name', $name)->with('positions', $positions)->with('departments', $departments);
     }
     public function store(Request $request){
         $request->validate([

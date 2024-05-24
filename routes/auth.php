@@ -9,12 +9,14 @@ use App\Http\Controllers\Auth\PasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\EmployeeProfileController;
 use App\Http\Controllers\PayslipController;
 use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\PositionController;
@@ -76,23 +78,20 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'verified', 'employee'])->group(function () {
 
-    Route::get('employee/dashboard', function () {
-        return view('employee.employee-dashboard');
-    })->name('employee-dashboard');
 
-    Route::get('employee/payslip', function () {
-        return view('employee.employee-payslip');
-    })->name('employee-payslip');
+
+    // Route::get('employee/payslip', function () {
+    //     return view('employee.employee-payslip');
+    // })->name('employee-payslip');
 
     Route::get('employee/details', function () {
         return view('employee.employee-details');
     })->name('employee/details');
 
-    Route::get('employee/profile', function () {
-        return view('employee.employee-profile');
-    })->name('employee-profile');
+    Route::get('employee/profile', [EmployeeProfileController::class, "redirect"])->name('employee-profile');
 
 
+    Route::get('employee/dashboard', [EmployeeController::class, 'getEmp'])->name('employee-dashboard');
 
     Route::get('employee/timekeepipng', [TimekeepingController::class, 'redirect'])->name('employee-timekeeping');
 
@@ -181,9 +180,7 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     // })->name('payslip');
     
 
-    Route::get('admin/profile', function () {
-        return view('admin.admin-profile');
-    })->name('admin-profile');
+    Route::get('admin/profile', [AdminProfileController::class, 'redirect'])->name('admin-profile');
 
 });
 

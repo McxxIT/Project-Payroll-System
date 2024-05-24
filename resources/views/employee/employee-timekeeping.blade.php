@@ -49,7 +49,7 @@
                     <span class="greetings">Time-Keeping and Attendance Monitoring</span>
                 </div>
                 <div class="profile">
-                    <a href="{{ route('employee-profile') }}" class="name">Robert</a>
+                    <a href="{{ route('employee-profile') }}" class="name">{{ $user_name }}</a>
 
                 </div>
                 <div class="menu">
@@ -57,7 +57,7 @@
                         <div class="info">
                             <a href="{{ route('employee-profile') }}" class="view-person">
                                 <span>
-                                    <span class="">Robert</span>
+                                    <span class="">{{ $user_name }}</span>
                                 </span>
                             </a>
                         </div>

@@ -72,7 +72,7 @@
                     <span class="greetings">&nbsp;</span>
                 </div>
                 <div class="profile">
-                    <a href="{{ route('admin-profile') }}" class="name">Robert</a>
+                    <a href="{{ route('admin-profile') }}" class="name">{{ $user_name }}</a>
 
                 </div>
                 <div class="menu">
@@ -80,7 +80,7 @@
                         <div class="info">
                             <a href="" class="view-person">
                                 <span>
-                                    <span class="">Robert</span>
+                                    <span class="">{{ $user_name }}</span>
                                 </span>
                             </a>
                         </div>
@@ -173,7 +173,12 @@
                                 <div class="emp-payslip-cell">{{ $employeePayslip->hourlyRate }}</div>
                                 <div class="emp-payslip-cell">{{ $employeePayslip->hoursRendered }}</div>
                                 <div class="emp-payslip-cell">{{ $employeePayslip->workDays }}</div>
-                                <div class="emp-payslip-cell"><button type="submit">View Details</button></div>
+                                <div class="emp-payslip-cell"><button type="submit" style="width: 100%;
+                                    background-color: transparent;
+                                    border: none;
+                                    color: blue;
+                                    text-align: center;
+                                    padding: 2px;">View Details</button></div>
                             </form>
                         @endforeach
                     </div>

@@ -10,10 +10,11 @@ class TimekeepingController extends Controller
     {
 
         $user = Auth::user();
-
+        $name = $user->username;
         $attendanceRecords = Attendance::where('userID', $user->userID)->get();
         // Pass the user data to the view
-        return view('employee.employee-timekeeping', compact('attendanceRecords'));
+        return view('employee.employee-timekeeping', compact('attendanceRecords'))
+        ->with('user_name', $name);
 
     }
 }

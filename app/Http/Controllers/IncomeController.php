@@ -9,6 +9,7 @@ use App\Models\Income;
 use App\Models\User;
 use App\Models\Department;
 use App\Models\Position;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -75,12 +76,16 @@ class IncomeController extends Controller
     public function submitEmployeePayslip()
     {
         $submitEmployeePayslip = Income::all();
-        return view('employee.employee-payslip')->with('submitEmployeePayslip', $submitEmployeePayslip);
+        $user = Auth::user();
+        $name = $user->username;
+        return view('employee.employee-payslip')->with('user_name', $name)->with('submitEmployeePayslip', $submitEmployeePayslip);
     }
 
     public function getEmployeeForPayslip ($id) {
         $employeePayslips = Income::where('userID', $id)->get();
-        return view('admin.view-employee-payslip')->with('employeePayslips', $employeePayslips);
+        $user = Auth::user();
+        $name = $user->username;
+        return view('admin.view-employee-payslip')->with('user_name', $name)->with('employeePayslips', $employeePayslips);
     }
 
     // public function payrollEmployeeDetails ($id) {

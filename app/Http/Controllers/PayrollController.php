@@ -8,6 +8,7 @@ use App\Models\Income;
 use App\Models\Department;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 
 class PayrollController extends Controller
@@ -15,7 +16,10 @@ class PayrollController extends Controller
     public function getEmployee()
     {
         $employees = User::where('type', 2)->where('is_accepted', 2)->get();
+        $user = Auth::user();
+        $name = $user->username;
         return view('admin.payroll')
+        ->with('user_name', $name)
             ->with('employees', $employees);
     }
 
@@ -43,16 +47,22 @@ class PayrollController extends Controller
             $totalPaysByDepartment[$department->department_id] = number_format($totalPayByDepartment, 2);
         }
 
+        $user = Auth::user();
+        $name = $user->username;
+
         return view('admin.payroll-report', [
             'departments' => $departments,
             'totalPaysByDepartment' => $totalPaysByDepartment,
-            'totalPaysByUser' => $totalPaysByUser
+            'totalPaysByUser' => $totalPaysByUser,
+            'user_name' => $name
         ]);
     }
     public function employeePayroll($id)
     {
         $employee = User::with(['department', 'position'])->where('userID', $id)->first();
-        return view('admin.employee-payroll')->with('employee', $employee);
+        $user = Auth::user();
+        $name = $user->username;
+        return view('admin.employee-payroll')->with('user_name', $name)->with('employee', $employee);
     }
 
     public function getEmployeePayroll($id)
@@ -61,7 +71,10 @@ class PayrollController extends Controller
         $user = DB::table('users')->where('userID', $employee->userID)->first();
         $user_department = DB::table('departments')->where('department_id', $user->department_id)->first();
         $user_position = DB::table('positions')->where('position_id', $user->position_id)->first();
+        $uname = Auth::user();
+        $name = $uname->username;
         return view('admin.view-employee-payslip-details')
+        ->with('user_name', $name)
         ->with('employee', $employee)
         ->with('user_department', $user_department)
         ->with('user_position', $user_position)
@@ -75,7 +88,10 @@ class PayrollController extends Controller
         $user = DB::table('users')->where('userID', $employee->userID)->first();
         $user_department = DB::table('departments')->where('department_id', $user->department_id)->first();
         $user_position = DB::table('positions')->where('position_id', $user->position_id)->first();
+        $uname = Auth::user();
+        $name = $uname->username;
         return view('employee.employee-details')
+        ->with('user_name', $name)
         ->with('employee', $employee)
         ->with('user_department', $user_department)
         ->with('user_position', $user_position)

@@ -75,7 +75,7 @@
                     <span class="greetings">Employees Payslip</span>
                 </div>
                 <div class="profile">
-                    <a href="{{ route('admin-profile') }}" class="name">Robert</a>
+                    <a href="{{ route('admin-profile') }}" class="name">{{ $user_name }}</a>
 
                 </div>
                 <div class="menu">
@@ -83,7 +83,7 @@
                         <div class="info">
                             <a href="" class="view-person">
                                 <span>
-                                    <span class="">Robert</span>
+                                    <span class="">{{ $user_name }}</span>
                                 </span>
                             </a>
                         </div>

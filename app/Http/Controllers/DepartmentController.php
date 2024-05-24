@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Department;
+use Illuminate\Support\Facades\Auth;
 
 class DepartmentController extends Controller
 {
     public function redirect()
     {
         $departments = Department::get();
-        return view('admin.company')->with('departments', $departments);
+        $user = Auth::user();
+        $name = $user->username;
+        return view('admin.company')->with('user_name', $name)->with('departments', $departments);
     }
     public function store(Request $request)
     {
